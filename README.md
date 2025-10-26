@@ -1,13 +1,3 @@
-# Navigate to your portfolio repo
-cd ~/path/to/Portfolio
-
-# Create README.md with all content
-cat << 'EOF' > README.md
-# 🌐 Raghav Upadhyay — Portfolio Website
-
-Welcome to the source code for my personal **Data Science Portfolio** — built with **HTML, CSS, and JavaScript**, and hosted on **GitHub Pages** using a custom domain: [raghavupadhyay.org](https://raghavupadhyay.org)
-
----
 
 ## 🧠 About Me
 Hi! I’m **Raghav Upadhyay**, a Data Scientist passionate about solving real-world problems using data-driven insights and intelligent systems.
