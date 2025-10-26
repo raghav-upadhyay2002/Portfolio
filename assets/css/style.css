@@ -468,3 +468,71 @@ p {
   background-color: #4da8ff;
   color: #001537;
 }
+footer {
+  background-color: #000f25;
+  color: #8fb8ff;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+/* ===== Experience Section ===== */
+#experience {
+  background-color: #001f3f; /* Dark navy */
+  color: #e6eefb;
+  padding: 5rem 2rem;
+}
+
+#experience h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #4da8ff;
+  margin-bottom: 2.5rem;
+}
+
+/* Grid Layout */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Experience Card */
+.experience-card {
+  background-color: #002b5b;
+  border-radius: 10px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.experience-card h3 {
+  color: #4da8ff;
+  margin-bottom: 0.4rem;
+  font-size: 1.3rem;
+}
+
+.experience-card h4 {
+  color: #9dc7ff;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.experience-duration {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #cdd9f0;
+  margin-bottom: 1rem;
+}
+
+.experience-card ul {
+  list-style-type: disc;
+  margin-left: 1.2rem;
+  color: #cdd9f0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
