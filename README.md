@@ -81,11 +81,3 @@ This project is open-source and available under the [MIT License](LICENSE).
 **GitHub:** [github.com/raghav-upadhyay2002](https://github.com/raghav-upadhyay2002)
 
 ---
-
-⭐️ *If you like this project, consider giving it a star on GitHub!*
-EOF
-
-# Add, commit, and push it to GitHub
-git add README.md
-git commit -m "Added professional README for portfolio"
-git push origin main
