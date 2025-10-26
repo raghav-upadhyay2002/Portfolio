@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raghav Upadhyay Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<!-- ===== Navbar ===== -->
+<nav class="navbar">
+  <a href="#home" class="nav-logo" aria-label="Go to Home">Raghav</a>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+    ☰
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<!-- ===== Hero / About Section ===== -->
+<section id="home" class="hero-section">
+  <div class="hero-container">
+    <img src="assets/images/Raghav_profile.jpg" alt="Raghav Upadhyay" class="hero-photo">
+    <h1 class="hero-name">Raghav Upadhyay</h1>
+    <h2 class="hero-title">Data Scientist</h2>
+    <p class="hero-tagline">I craft data-driven solutions that bridge the gap between information and impact.</p>
+    <p class="hero-about">
+      Passionate about machine learning, deep learning, and intelligent systems, 
+      I love uncovering insights hidden in data and transforming them into practical results.
+    </p>
+  </div>
+</section>
+
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="#resume" class="btn-outline">Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/main.js"></script>
+<!-- ===== Projects Section ===== -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h3>Bitcoin Market Behavior: Forecasts Across Timeframes</h3>
+        <p>
+          Built predictive models for short-, mid-, and long-term Bitcoin price forecasting
+          using LSTM and XGBoost. Compared moving averages for trend detection and optimized
+          prediction accuracy.
+        </p>
+        <a href="https://github.com/raghavupadhyay/bitcoin-prediction" target="_blank" class="btn-outline">View on GitHub</a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h3>Hate Speech Detection Model</h3>
+        <p>
+          Developed a text classification model using Logistic Regression and Random Forest
+          to detect hate speech in online data with 92% accuracy.
+        </p>
+        <a href="https://github.com/raghavupadhyay/Text-Classification" target="_blank" class="btn-outline">View on GitHub</a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <h3>Sentiment Analysis Annotation</h3>
+        <p>
+          Performed sentiment classification on Amazon reviews using Python and neural
+          networks, achieving high inter-annotator agreement and robust accuracy.
+        </p>
+        <a href="https://github.com/raghavupadhyay/Sentiment-Analysis-Annotation" target="_blank" class="btn-outline">View on GitHub</a>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <h3>Commonsense Reasoning with Pre-trained Models</h3>
+        <p>
+          Benchmarked LLMs such as RoBERTa-MNLI and OPT-1.3B on commonsense reasoning
+          datasets, achieving superior performance on PIQA tasks.
+        </p>
+        <a href="https://github.com/raghavupadhyay/Evaluation-of-Commonsense-Reasoning-Using-Pre-trained-Language-Models" target="_blank" class="btn-outline">View on GitHub</a>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card">
+        <h3>Library Management System</h3>
+        <p>
+          Designed and implemented a hybrid SQL + NoSQL database system for library
+          operations with features for transactions, reservations, and analytics.
+        </p>
+        <a href="https://github.com/raghavupadhyay/library-system" target="_blank" class="btn-outline">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Skills Section ===== -->
+<section id="skills" class="section">
+  <div class="container">
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Programming</h3>
+        <p>Python, R, SQL, C++, HTML, CSS</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Data Analysis & Processing</h3>
+        <p>Pandas, NumPy, Tidyverse, Excel (Advanced), Data Cleaning, Feature Engineering</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Machine Learning & AI</h3>
+        <p>Scikit-learn, XGBoost, Random Forest, Logistic Regression, LSTM, Neural Networks, NLP</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Deep Learning Frameworks</h3>
+        <p>TensorFlow, Keras, PyTorch</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Data Visualization</h3>
+        <p>Matplotlib, Seaborn, ggplot2, Power BI, Tableau</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Databases</h3>
+        <p>MySQL, PostgreSQL, MongoDB (NoSQL)</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Tools & Platforms</h3>
+        <p>Jupyter Notebook, Git/GitHub, yfinance, Excel Macros, Docker (basic), Linux/Unix</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== Resume Section ===== -->
+<section id="resume" class="section">
+  <div class="container">
+    <h2>Resume</h2>
+
+    <div class="resume-content">
+      <p>
+        You can download my latest resume or open it directly to view my professional experience, education, and project work.
+      </p>
+
+      <div class="resume-buttons">
+        <a href="assets/resume/Raghav_Upadhyay_resume.pdf" class="btn" download>Download Resume</a>
+        <a href="assets/resume/Raghav_Upadhyay_resume.pdf" class="btn-outline" target="_blank">View Online</a>
+      </div>
+
+      <p class="updated-date">Last Updated: August 26, 2025</p>
+    </div>
+  </div>
+</section>
+<!-- ===== Contact Section ===== -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p class="contact-text">
+      I’d love to connect! Whether you have a question, an opportunity, or just want to talk data — feel free to reach out.
+    </p>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:raghavupadhyay@arizona.edu">raghavupadhyay@arizona.edu</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/raghav-upadhyay-8288421ba/" target="_blank">linkedin.com/in/raghav-upadhyay</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/raghavupadhyay" target="_blank">github.com/raghavupadhyay</a></p>
+    </div>
+
+    <div class="contact-buttons">
+      <a href="mailto:raghavupadhyay@arizona.edu" class="btn">Send Email</a>
+      <a href="https://www.linkedin.com/in/raghav-upadhyay-8288421ba/" target="_blank" class="btn-outline">Message on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
