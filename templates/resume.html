@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='resume.css') }}">
     <title>Resume</title>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
             <a href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='Pictures/portfoliologo.png') }}" alt="logo" style="width: 80px; height: 80px;">
+                <img src="{{ url_for('static', filename='Pictures/portfoliologo.svg') }}" alt="logo" style="width: 80px; height: 80px;">
             </a>
         </div>
         <ul>
-            <li><a href="{{ url_for('projects') }}">Projects</a></li>
-            <li><a href="{{ url_for('resume') }}">Resume</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
-            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('index') }}" class="home_nav">Home</a></li>
+            <li><a href="{{ url_for('about') }}" class="about_nav">About</a></li>
+            <li><a href="{{ url_for('projects') }}" class="projects_nav">Projects</a></li>
+            <li><a href="{{ url_for('resume') }}" class="resume_nav">Resume</a></li>
+            <li><a href="{{ url_for('contact') }}" class="contact_nav">Contact</a></li>
         </ul>
     </nav>
     <div class="pdf">
