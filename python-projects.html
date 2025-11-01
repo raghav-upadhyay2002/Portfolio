@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Projects | Raghav’s Portfolio</title>
-  <link rel="stylesheet" href="assets/css/projects.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Data Science Journey | Raghav’s Projects</title>
+  <link rel="stylesheet" href="journey.css">
 </head>
 <body>
 
@@ -18,56 +18,114 @@
     </ul>
   </nav>
 
-  <!-- ===== Projects Section ===== -->
-  <section id="all-projects" class="section">
-    <div class="container">
-      <h2>All Projects</h2>
-      <p style="text-align:center; max-width:700px; margin:0 auto 2rem;">
-        A complete list of my development, data science, and visualization projects — each linking directly to its GitHub repository.
-      </p>
+  <!-- ===== Intro Section ===== -->
+  <section class="intro">
+    <h1>My Data Science Journey</h1>
+    <p>Every project I built marks a milestone in my learning path — from mastering Python basics to developing deep learning models and visualizing insights. Here’s how I evolved as a data scientist.</p>
+  </section>
 
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Bitcoin Market Behavior</h3>
-          <p>LSTM and XGBoost models predicting Bitcoin prices across multiple timeframes.</p>
-          <a href="https://github.com/raghav615/Stock-Price-Prediction" target="_blank" class="btn-outline">GitHub</a>
-        </div>
+  <!-- ===== Python Foundation ===== -->
+  <section class="timeline-section">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h2>🐍 Python Foundation</h2>
+      <p>My journey began with Python — understanding data types, loops, and working with libraries like <strong>Pandas</strong> and <strong>NumPy</strong>. These projects helped me develop strong fundamentals.</p>
 
-        <div class="project-card">
-          <h3>Library Management System</h3>
-          <p>Hybrid SQL + NoSQL backend for managing users, books, and analytics.</p>
-          <a href="https://github.com/raghavupadhyay/library-system" target="_blank" class="btn-outline">GitHub</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Text Summarizer App</h3>
-          <p>Streamlit app using Hugging Face DistilBART for text summarization.</p>
-          <a href="https://github.com/raghav/text-summarizer" target="_blank" class="btn-outline">GitHub</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Hate Speech Detection</h3>
-          <p>Logistic Regression and Random Forest models achieving 92% accuracy.</p>
-          <a href="https://github.com/raghav-upadhyay2002/Text-Classification" target="_blank" class="btn-outline">GitHub</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Smart City Data Dashboard</h3>
-          <p>Flask dashboard visualizing urban data and real-time metrics.</p>
-          <a href="https://github.com/raghav/smartcity-dashboard" target="_blank" class="btn-outline">GitHub</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Tableau Sales Dashboard</h3>
-          <p>Interactive Tableau dashboard for regional sales performance analysis.</p>
-          <a href="https://public.tableau.com/views/sales-dashboard" target="_blank" class="btn-outline">View Tableau</a>
-        </div>
-      </div>
+      <ul>
+        <li><strong>Text Summarizer App:</strong> Built using Streamlit and HuggingFace’s DistilBART model for NLP summarization.  
+          <a href="https://github.com/raghav/text-summarizer" target="_blank">View on GitHub</a>
+        </li>
+        <li><strong>Library Management System:</strong> Combined SQL + NoSQL for real-world data handling and user operations.  
+          <a href="https://github.com/raghavupadhyay/library-system" target="_blank">View on GitHub</a>
+        </li>
+      </ul>
     </div>
   </section>
 
+  <!-- ===== Data Analysis & SQL ===== -->
+  <section class="timeline-section">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h2>🧮 Data Analysis & SQL</h2>
+      <p>Next, I learned how to explore, clean, and query data using <strong>Pandas</strong>, <strong>Matplotlib</strong>, and SQL joins, subqueries, and aggregations.</p>
+
+      <ul>
+        <li><strong>Sales Insights (SQL):</strong> Query-based analytics project extracting KPIs from retail data.</li>
+        <li><strong>Excel Automation:</strong> Automated report generation using Python-Excel integration.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Machine Learning ===== -->
+  <section class="timeline-section">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h2>🤖 Machine Learning</h2>
+      <p>Diving into predictive modeling — understanding regression, classification, and feature engineering. Built real ML pipelines using <strong>Scikit-learn</strong> and <strong>XGBoost</strong>.</p>
+
+      <ul>
+        <li><strong>Hate Speech Detection:</strong> Trained Logistic Regression and Random Forest models to classify toxic content.  
+          <a href="https://github.com/raghav-upadhyay2002/Text-Classification" target="_blank">View on GitHub</a>
+        </li>
+        <li><strong>Bitcoin Price Forecasting:</strong> Developed multi-timeframe forecasting models (LSTM + XGBoost).  
+          <a href="https://github.com/raghav615/Stock-Price-Prediction" target="_blank">View on GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Deep Learning & NLP ===== -->
+  <section class="timeline-section">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h2>🧠 Deep Learning & NLP</h2>
+      <p>Explored neural networks, embeddings, and pre-trained models. Learned to fine-tune and evaluate transformers for real-world text applications.</p>
+
+      <ul>
+        <li><strong>Commonsense Reasoning with LLMs:</strong> Evaluated RoBERTa-MNLI and OPT-1.3B for PIQA reasoning.  
+          <a href="https://github.com/raghav-upadhyay2002/-Evaluation-of-Commonsense-Reasoning-Using-Pre-trained-Language-Models" target="_blank">GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Data Visualization ===== -->
+  <section class="timeline-section">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h2>📊 Data Visualization & Dashboarding</h2>
+      <p>Bringing insights to life through visualization. Learned to design analytical dashboards using <strong>Tableau</strong> and <strong>Flask</strong>.</p>
+
+      <ul>
+        <li><strong>Smart City Dashboard:</strong> Flask dashboard visualizing IoT and urban data metrics.  
+          <a href="https://github.com/raghav/smartcity-dashboard" target="_blank">GitHub</a>
+        </li>
+        <li><strong>Sales Dashboard (Tableau):</strong> Interactive Tableau visualization for regional sales analysis.  
+          <a href="https://public.tableau.com/views/sales-dashboard" target="_blank">View Tableau</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Deployment & Web Integration ===== -->
+  <section class="timeline-section">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h2>🚀 Deployment & Web Integration</h2>
+      <p>Learned to integrate data projects with the web using <strong>Flask</strong> and <strong>Streamlit</strong>. Focused on turning models into usable products.</p>
+
+      <ul>
+        <li><strong>Flask Task Manager:</strong> Full-stack web app to manage daily tasks.  
+          <a href="https://github.com/raghav/flask-task-manager" target="_blank">GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
   <footer>
-    <p>© 2025 Raghav Upadhyay | All Projects</p>
+    <p>© 2025 Raghav Upadhyay | My Data Science Journey</p>
   </footer>
+
 </body>
 </html>
