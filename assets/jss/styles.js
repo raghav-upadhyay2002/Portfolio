@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const typedEl = document.getElementById("typed-text");
   if (typedEl) {
     const phrases = [
-      "Data Scientist",
+      "AI Engineer",
+      "LLM & RAG Systems Builder",
       "ML Engineer",
-      "Deep Learning Enthusiast",
-      "NLP Practitioner"
+      "MS Data Science @ Arizona"
     ];
     let phraseIndex = 0;
     let charIndex = 0;
