@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Editor / OS noise
+*.swp
+*~
+Thumbs.db
