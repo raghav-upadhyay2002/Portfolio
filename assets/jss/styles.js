@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "AI Engineer",
       "LLM & RAG Systems Builder",
       "ML Engineer",
+      "Computer Vision & Robotics Tinkerer",
       "MS Data Science @ Arizona",
     ];
     let p = 0, c = 0, deleting = false;
