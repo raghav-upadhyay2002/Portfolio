@@ -236,9 +236,10 @@
           currently under review at NeurIPS 2026.
         </p>
         <p>
-          Lately I've been pushing into <strong>vision-driven robotics</strong> — building an autonomous
-          maze-navigating agent in Webots that has to find its way using nothing but a first-person
-          camera feed.
+          Lately I've been pushing into <strong>vision-driven robotics</strong> — I built an autonomous
+          maze-navigating robot in Webots that reaches its target using nothing but a first-person
+          camera feed, then stress-tested the perception stack under blur, occlusion and low light to
+          find where it breaks and why.
         </p>
         <p>
           Currently finishing my <strong>M.S. in Data Science at the University of Arizona</strong> (May 2026)
@@ -328,23 +329,29 @@
 
     <!-- Project grid -->
     <div class="projects-grid">
-      <article class="project-card is-wip" data-reveal>
+      <article class="project-card" data-reveal>
         <div class="project-card-top">
           <span class="project-number">02</span>
           <a href="https://github.com/raghav-upadhyay2002/Vision-Based-Virtual-Maze-Navigator" target="_blank" rel="noopener" class="card-icon-link" aria-label="View on GitHub">
             <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
         </div>
-        <span class="project-cat">Computer Vision · Robotics <span class="badge-wip">● building now</span></span>
+        <span class="project-cat">Computer Vision · Robotics</span>
         <h3>Vision-Based Virtual Maze Navigator</h3>
-        <p>An autonomous e-puck robot agent that has to find a target inside an unknown 3D maze in the Webots simulator using <em>only</em> its first-person camera — no ground-truth map coordinates. Targeting the full perceive → map → plan → act loop (visual SLAM, path planning, closed-loop control). Live camera-feed processing and keyboard teleoperation are shipped; an HSV target detector is being wired into motor control now.</p>
+        <p>An autonomous e-puck robot that navigates an unknown 3D maze and reaches a target in Webots from <em>camera pixels only</em> — no odometry, no map, no distance sensors in the control loop. Three perception streams (Canny edge density across three vertical zones, right-camera near-field brightness, HSV target detection) feed a reactive policy that prioritises obstacle avoidance over target seeking. Key finding: walls register as edge density <em>collapsing</em> to zero, not spiking — which is why the edge-based detectors survived blur and dimming while the one absolute-threshold detector broke. Every frame&#39;s detector flags and wheel commands are logged to CSV for the robustness experiments.</p>
         <div class="tech-tags">
           <span class="tag">OpenCV</span>
-          <span class="tag">Webots</span>
+          <span class="tag">Webots (e-puck)</span>
+          <span class="tag">Canny Edges</span>
+          <span class="tag">HSV Detection</span>
+          <span class="tag">Reactive Control</span>
           <span class="tag">NumPy</span>
-          <span class="tag">Robotics</span>
         </div>
-        <a href="https://github.com/raghav-upadhyay2002/Vision-Based-Virtual-Maze-Navigator" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        <div class="project-link-row">
+          <a href="https://drive.google.com/file/d/1d2R76Qy9Kmbr4RCgXTRKCL5U3j1-cjew/view?usp=sharing" target="_blank" rel="noopener" class="project-link">Watch demo →</a>
+          <a href="https://github.com/raghav-upadhyay2002/Vision-Based-Virtual-Maze-Navigator/blob/main/RESULTS.md" target="_blank" rel="noopener" class="project-link">Read the write-up →</a>
+          <a href="https://github.com/raghav-upadhyay2002/Vision-Based-Virtual-Maze-Navigator" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+        </div>
       </article>
 
       <article class="project-card" data-reveal>
@@ -521,7 +528,7 @@
         <div class="skill-icon">👁️</div>
         <h3>Computer Vision &amp; Robotics</h3>
         <div class="skill-tags">
-          <span>OpenCV</span><span>HSV color detection</span><span>Webots (e-puck)</span><span>Visual SLAM</span><span>Path planning</span><span>Closed-loop control</span>
+          <span>OpenCV</span><span>Canny edge detection</span><span>HSV color detection</span><span>Webots (e-puck)</span><span>Reactive control policies</span><span>Robustness testing</span>
         </div>
       </div>
 
