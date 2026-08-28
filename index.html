@@ -7,7 +7,7 @@
     <meta name="description" content="Raghav Upadhyay – AI Engineer building production-grade LLM systems: RAG pipelines, hybrid retrieval, LLM-as-a-judge evaluation, and deep learning. MS Data Science, University of Arizona (May 2026).">
     <meta name="keywords" content="Raghav Upadhyay, AI Engineer, LLM Engineer, RAG, Retrieval-Augmented Generation, Machine Learning Engineer, NLP, Deep Learning, Portfolio">
     <meta name="author" content="Raghav Upadhyay">
-    <meta name="theme-color" content="#05070d">
+    <meta name="theme-color" content="#0d0d0c">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Raghav Upadhyay | AI Engineer">
@@ -22,12 +22,12 @@
     <meta name="twitter:description" content="AI Engineer building production-grade LLM systems – RAG, hybrid retrieval, hallucination detection, CI-gated evaluation.">
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='28' cy='30' r='8' fill='%23822dff'/><circle cx='72' cy='26' r='8' fill='%232dd4ff'/><circle cx='50' cy='66' r='8' fill='%235b8cff'/><path d='M28 30 L72 26 L50 66 Z' stroke='%237c5cff' stroke-width='4' fill='none' stroke-opacity='0.7'/></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='26' fill='%230d0d0c'/><g stroke='%23ded7c2' stroke-width='2' fill='none'><ellipse cx='50' cy='50' rx='16' ry='34'/><ellipse cx='50' cy='50' rx='16' ry='34' transform='rotate(60 50 50)'/><ellipse cx='50' cy='50' rx='16' ry='34' transform='rotate(120 50 50)'/></g></svg>">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -88,22 +88,17 @@
 <!-- ===== Scroll Progress Bar ===== -->
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-<!-- ===== Cursor Glow ===== -->
-<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-
 <!-- ===== Navbar ===== -->
 <nav class="navbar" id="navbar">
   <a href="#home" class="nav-logo" aria-label="Go to Home">
     <span class="logo-mark" aria-hidden="true">
-      <svg viewBox="0 0 32 32" width="22" height="22">
-        <circle cx="8" cy="9" r="3" fill="#822dff"/>
-        <circle cx="24" cy="7" r="3" fill="#2dd4ff"/>
-        <circle cx="16" cy="22" r="3" fill="#5b8cff"/>
-        <path d="M8 9 L24 7 L16 22 Z" stroke="url(#g)" stroke-width="1.5" fill="none"/>
-        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#822dff"/><stop offset="1" stop-color="#2dd4ff"/></linearGradient></defs>
+      <svg viewBox="0 0 40 40" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.1">
+        <ellipse cx="20" cy="20" rx="6.5" ry="15"/>
+        <ellipse cx="20" cy="20" rx="6.5" ry="15" transform="rotate(60 20 20)"/>
+        <ellipse cx="20" cy="20" rx="6.5" ry="15" transform="rotate(120 20 20)"/>
       </svg>
     </span>
-    Raghav<span class="logo-dot">.</span>
+    Raghav <b>Upadhyay</b>
   </a>
 
   <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -111,178 +106,221 @@
   </button>
 
   <ul class="nav-links" id="navLinks">
-    <li><a href="#home" class="active">Home</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#projects">Work</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#certificates">Certificates</a></li>
-    <li><a href="#education">Education</a></li>
     <li><a href="#publications">Research</a></li>
-    <li><a href="#resume">Resume</a></li>
+    <li><a href="#resume">Résumé</a></li>
     <li><a href="http://blogs.raghavupadhyay.org/" target="_blank" rel="noopener">Blog</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
 
-<!-- ===== Hero Section ===== -->
-<section id="home" class="hero">
-  <canvas id="neural" class="neural-canvas" aria-hidden="true"></canvas>
-  <div class="hero-grid-overlay" aria-hidden="true"></div>
+<!-- ===== Hero ===== -->
+<section id="home" class="hero shell">
+  <div class="bento">
 
-  <div class="hero-inner">
-    <span class="availability" data-reveal>
-      <span class="pulse-dot"></span>
-      Open to full-time AI / ML Engineer roles · US
-    </span>
+    <!-- headline -->
+    <div class="card hero-main" data-reveal>
+      <svg class="deco deco--spin" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.55" aria-hidden="true">
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(0 100 100)"/>
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(15 100 100)"/>
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(30 100 100)"/>
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(45 100 100)"/>
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(60 100 100)"/>
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(75 100 100)"/>
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(90 100 100)"/>
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(105 100 100)"/>
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(120 100 100)"/>
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(135 100 100)"/>
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(150 100 100)"/>
+        <ellipse cx="100" cy="100" rx="32" ry="74" transform="rotate(165 100 100)"/>
+      </svg>
 
-    <h1 class="hero-name" data-reveal>
-      Raghav <span class="grad-text">Upadhyay</span>
-    </h1>
+      <span class="availability">
+        <span class="pulse-dot"></span>
+        Open to AI / ML roles · US
+      </span>
 
-    <h2 class="hero-role" data-reveal>
-      <span class="role-prompt">&gt;</span>
-      <span id="typed-text"></span><span class="cursor">_</span>
-    </h2>
+      <h1 class="hero-headline">
+        Raghav Upadhyay builds <b>reliable LLM systems</b> — retrieval, evaluation, <b>deployment</b>
+      </h1>
 
-    <p class="hero-tagline" data-reveal>
-      I build production-grade LLM systems — from retrieval to evaluation to deployment.
-    </p>
-
-    <p class="hero-about" data-reveal>
-      RAG pipelines with hybrid retrieval and cross-encoder reranking, hallucination detection,
-      LLM-as-a-judge evaluation wired into CI, uncertainty-aware deep learning, and published
-      research on LLM behaviour. <strong>M.S. Data Science, University of Arizona</strong> (May 2026).
-    </p>
-
-    <div class="hero-buttons" data-reveal>
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="https://huggingface.co/spaces/raghavupadhyay/askmydocs" target="_blank" rel="noopener" class="btn btn-ghost">
-        Try AskMyDocs Live
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-
-    <div class="hero-stats" data-reveal>
-      <div class="stat">
-        <span class="stat-num" data-count="7" data-suffix="+">0</span>
-        <span class="stat-label">AI / ML Projects</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num" data-count="3.78" data-decimals="2">0</span>
-        <span class="stat-label">GPA / 4.00</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num" data-count="1">0</span>
-        <span class="stat-label">Live LLM App</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num" data-count="1">0</span>
-        <span class="stat-label">Paper · NeurIPS ’26</span>
+      <div>
+        <p class="hero-role">
+          <span class="role-prompt">&gt;</span>
+          <span id="typed-text"></span><span class="cursor">_</span>
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="https://huggingface.co/spaces/raghavupadhyay/askmydocs" target="_blank" rel="noopener" class="btn btn-ghost">
+            Try AskMyDocs Live
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="hero-socials" data-reveal>
-      <a href="https://github.com/raghav-upadhyay2002" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/raghavupadhya04/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="https://huggingface.co/raghavupadhyay" target="_blank" rel="noopener" aria-label="Hugging Face" class="social-icon">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2zm-3.2 7.1a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zm6.4 0a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM7 14.5c0-.28.22-.5.5-.5h9c.28 0 .5.22.5.5 0 2.49-2.24 4.5-5 4.5s-5-2.01-5-4.5z"/></svg>
-      </a>
-      <a href="mailto:raghav0408upadhyay@gmail.com" aria-label="Email" class="social-icon">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      </a>
+    <!-- portrait -->
+    <div class="card hero-photo" data-reveal>
+      <img src="assets/images/Raghav_profile.jpg" alt="Raghav Upadhyay">
     </div>
+
+    <!-- selected work list -->
+    <aside class="card hero-side" data-reveal>
+      <h2 class="side-title">Selected Work</h2>
+
+      <div class="side-thumb">
+        <span class="st-kicker">★ Featured · Live</span>
+        <p class="st-name">AskMyDocs</p>
+        <div class="side-flow">
+          <span>PDF</span><span>Chunk</span><span>Vector + BM25</span><span>Rerank</span><span>LLM</span><span class="on">Cited answer</span>
+        </div>
+      </div>
+
+      <nav class="side-list" aria-label="Selected projects">
+        <a href="#projects">AskMyDocs <span class="arrow">→</span></a>
+        <a href="#projects">Maze Navigator <span class="arrow">→</span></a>
+        <a href="#publications">Social Networks <span class="arrow">→</span></a>
+        <a href="#projects">RUL / LSTM <span class="arrow">→</span></a>
+        <a href="#projects">Commonsense NLP <span class="arrow">→</span></a>
+      </nav>
+    </aside>
+
+    <!-- short bio -->
+    <div class="card hero-bio" data-reveal>
+      <p class="bio-lead">Engineer, not just experimenter.</p>
+      <p>
+        I care about retrieval quality, grounded answers, measurable evaluation, and shipping
+        things people can actually use. Currently finishing an M.S. in Data Science at the
+        University of Arizona.
+      </p>
+    </div>
+
+    <!-- contact panel -->
+    <div class="card dark hero-contact" data-reveal>
+      <p class="contact-q">Have a Question??</p>
+      <div class="contact-bottom">
+        <h2><a href="#contact">Contact Me</a></h2>
+        <div class="contact-links">
+          <a href="https://github.com/raghav-upadhyay2002" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/raghavupadhya04/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://huggingface.co/raghavupadhyay" target="_blank" rel="noopener">Hugging Face</a>
+          <a href="mailto:raghav0408upadhyay@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-  <a href="#about" class="scroll-cue" aria-label="Scroll to About">
-    <span class="scroll-cue-text">SCROLL</span>
-    <span class="scroll-cue-line"></span>
-  </a>
 </section>
 
 <!-- ===== Tech Marquee ===== -->
-<div class="marquee" aria-hidden="true">
+<div class="marquee shell" aria-hidden="true">
   <div class="marquee-track">
     <span>LLMs</span><span class="sep">/</span><span>RAG</span><span class="sep">/</span><span>PyTorch</span><span class="sep">/</span><span>TensorFlow</span><span class="sep">/</span><span>Hugging Face</span><span class="sep">/</span><span>ChromaDB</span><span class="sep">/</span><span>Cross-Encoder Reranking</span><span class="sep">/</span><span>LLM-as-a-Judge</span><span class="sep">/</span><span>BM25</span><span class="sep">/</span><span>Hybrid Retrieval</span><span class="sep">/</span><span>GitHub Actions</span><span class="sep">/</span><span>Uncertainty Quantification</span><span class="sep">/</span><span>OpenCV</span><span class="sep">/</span><span>Computer Vision</span><span class="sep">/</span>
     <span>LLMs</span><span class="sep">/</span><span>RAG</span><span class="sep">/</span><span>PyTorch</span><span class="sep">/</span><span>TensorFlow</span><span class="sep">/</span><span>Hugging Face</span><span class="sep">/</span><span>ChromaDB</span><span class="sep">/</span><span>Cross-Encoder Reranking</span><span class="sep">/</span><span>LLM-as-a-Judge</span><span class="sep">/</span><span>BM25</span><span class="sep">/</span><span>Hybrid Retrieval</span><span class="sep">/</span><span>GitHub Actions</span><span class="sep">/</span><span>Uncertainty Quantification</span><span class="sep">/</span><span>OpenCV</span><span class="sep">/</span><span>Computer Vision</span><span class="sep">/</span>
   </div>
 </div>
 
+<!-- ===== Stats ===== -->
+<div class="shell">
+  <div class="bento stats-bento">
+    <div class="stat" data-reveal>
+      <span class="stat-num" data-count="7" data-suffix="+">0</span>
+      <span class="stat-label">AI / ML Projects</span>
+    </div>
+    <div class="stat" data-reveal>
+      <span class="stat-num" data-count="3.78" data-decimals="2">0</span>
+      <span class="stat-label">GPA / 4.00</span>
+    </div>
+    <div class="stat" data-reveal>
+      <span class="stat-num" data-count="1">0</span>
+      <span class="stat-label">Live LLM App</span>
+    </div>
+    <div class="stat" data-reveal>
+      <span class="stat-num" data-count="1">0</span>
+      <span class="stat-label">Paper · NeurIPS ’26</span>
+    </div>
+  </div>
+</div>
+
 <!-- ===== About Section ===== -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="section-head" data-reveal>
+<section id="about" class="section shell">
+  <div class="section-head" data-reveal>
+    <div>
       <span class="section-eyebrow">// 01 — about</span>
       <h2 class="section-title">Engineer, not just experimenter</h2>
     </div>
+    <p class="section-note">Retrieval quality, grounded answers, measurable evaluation — the unglamorous parts.</p>
+  </div>
 
-    <div class="about-grid">
-      <div class="about-text" data-reveal>
-        <p>
-          I'm <strong>Raghav Upadhyay</strong>, an AI Engineer focused on the unglamorous part of LLM work:
-          making systems <em>reliable</em>. I care about retrieval quality, grounded answers,
-          measurable evaluation, and shipping things people can actually use.
-        </p>
-        <p>
-          My flagship project, <strong>AskMyDocs</strong>, is a production-grade RAG app with hybrid retrieval,
-          cross-encoder reranking, hallucination detection, and an LLM-as-a-judge harness that
-          <strong>fails the CI build</strong> when answer quality drops below threshold. Beyond LLMs, I've built
-          uncertainty-aware deep learning for predictive maintenance and co-authored a
-          <a href="#publications" class="inline-link">cross-cultural study of LLM-generated social networks</a>
-          currently under review at NeurIPS 2026.
-        </p>
-        <p>
-          Lately I've been pushing into <strong>vision-driven robotics</strong> — I built an autonomous
-          maze-navigating robot in Webots that reaches its target using nothing but a first-person
-          camera feed, then stress-tested the perception stack under blur, occlusion and low light to
-          find where it breaks and why.
-        </p>
-        <p>
-          Currently finishing my <strong>M.S. in Data Science at the University of Arizona</strong> (May 2026)
-          and open to full-time AI / ML Engineer roles across the US.
-        </p>
-        <div class="about-tags">
-          <span class="chip">📍 West Lafayette, IN</span>
-          <span class="chip">🎓 MS Data Science · UArizona</span>
-          <span class="chip">⚡ Available May 2026</span>
+  <div class="bento">
+    <div class="card about-text" data-reveal>
+      <p>
+        I'm <strong>Raghav Upadhyay</strong>, an AI Engineer focused on the unglamorous part of LLM work:
+        making systems <em>reliable</em>. I care about retrieval quality, grounded answers,
+        measurable evaluation, and shipping things people can actually use.
+      </p>
+      <p>
+        My flagship project, <strong>AskMyDocs</strong>, is a production-grade RAG app with hybrid retrieval,
+        cross-encoder reranking, hallucination detection, and an LLM-as-a-judge harness that
+        <strong>fails the CI build</strong> when answer quality drops below threshold. Beyond LLMs, I've built
+        uncertainty-aware deep learning for predictive maintenance and co-authored a
+        <a href="#publications" class="inline-link">cross-cultural study of LLM-generated social networks</a>
+        currently under review at NeurIPS 2026.
+      </p>
+      <p>
+        Lately I've been pushing into <strong>vision-driven robotics</strong> — I built an autonomous
+        maze-navigating robot in Webots that reaches its target using nothing but a first-person
+        camera feed, then stress-tested the perception stack under blur, occlusion and low light to
+        find where it breaks and why.
+      </p>
+      <p>
+        Currently finishing my <strong>M.S. in Data Science at the University of Arizona</strong> (May 2026)
+        and open to full-time AI / ML Engineer roles across the US.
+      </p>
+      <div class="about-tags">
+        <span class="chip">📍 West Lafayette, IN</span>
+        <span class="chip">🎓 MS Data Science · UArizona</span>
+        <span class="chip">⚡ Available May 2026</span>
+      </div>
+    </div>
+
+    <aside class="card hi about-card" data-reveal>
+      <div class="about-card-head">
+        <img src="assets/images/Raghav_profile.jpg" alt="Raghav Upadhyay" class="about-photo" loading="lazy">
+        <div>
+          <h3>Raghav Upadhyay</h3>
+          <p class="about-card-role">AI / ML Engineer</p>
         </div>
       </div>
-
-      <aside class="about-card" data-reveal>
-        <div class="about-card-head">
-          <img src="assets/images/Raghav_profile.jpg" alt="Raghav Upadhyay" class="about-photo" loading="lazy">
-          <div>
-            <h3>Raghav Upadhyay</h3>
-            <p class="about-card-role">AI / ML Engineer</p>
-          </div>
-        </div>
-        <ul class="about-facts">
-          <li><span class="fact-key">focus</span><span class="fact-val">LLMs · RAG · Eval</span></li>
-          <li><span class="fact-key">research</span><span class="fact-val">arXiv:2605.12898</span></li>
-          <li><span class="fact-key">stack</span><span class="fact-val">PyTorch · HF · ChromaDB</span></li>
-          <li><span class="fact-key">grad</span><span class="fact-val">May 2026</span></li>
-          <li><span class="fact-key">status</span><span class="fact-val status-open">open to work</span></li>
-        </ul>
-        <a href="assets/resume/Raghav_Upadhyay_resume.pdf" class="btn btn-primary btn-full" download>Download Résumé</a>
-      </aside>
-    </div>
+      <ul class="about-facts">
+        <li><span class="fact-key">focus</span><span class="fact-val">LLMs · RAG · Eval</span></li>
+        <li><span class="fact-key">research</span><span class="fact-val">arXiv:2605.12898</span></li>
+        <li><span class="fact-key">stack</span><span class="fact-val">PyTorch · HF · ChromaDB</span></li>
+        <li><span class="fact-key">grad</span><span class="fact-val">May 2026</span></li>
+        <li><span class="fact-key">status</span><span class="fact-val status-open">open to work</span></li>
+      </ul>
+      <a href="assets/resume/Raghav_Upadhyay_resume.pdf" class="btn btn-primary btn-full" download>Download Résumé</a>
+    </aside>
   </div>
 </section>
 
 <!-- ===== Projects Section ===== -->
-<section id="projects" class="section alt-bg">
-  <div class="container">
-    <div class="section-head" data-reveal>
+<section id="projects" class="section shell">
+  <div class="section-head" data-reveal>
+    <div>
       <span class="section-eyebrow">// 02 — projects</span>
       <h2 class="section-title">Things I've built &amp; shipped</h2>
     </div>
+    <p class="section-note">Seven projects, one live app, one paper under review.</p>
+  </div>
+
+  <div class="bento">
 
     <!-- Featured project -->
-    <article class="project-featured" data-reveal>
+    <article class="card project-featured" data-reveal>
       <div class="featured-body">
         <div class="featured-top">
           <span class="badge-featured">★ Featured</span>
@@ -327,126 +365,124 @@
       </div>
     </article>
 
-    <!-- Project grid -->
-    <div class="projects-grid">
-      <article class="project-card" data-reveal>
-        <div class="project-card-top">
-          <span class="project-number">02</span>
-          <a href="https://github.com/raghav-upadhyay2002/Vision-Based-Virtual-Maze-Navigator" target="_blank" rel="noopener" class="card-icon-link" aria-label="View on GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-        </div>
-        <span class="project-cat">Computer Vision · Robotics</span>
-        <h3>Vision-Based Virtual Maze Navigator</h3>
-        <p>An autonomous e-puck robot that navigates an unknown 3D maze and reaches a target in Webots from <em>camera pixels only</em> — no odometry, no map, no distance sensors in the control loop. Three perception streams (Canny edge density across three vertical zones, right-camera near-field brightness, HSV target detection) feed a reactive policy that prioritises obstacle avoidance over target seeking. Key finding: walls register as edge density <em>collapsing</em> to zero, not spiking — which is why the edge-based detectors survived blur and dimming while the one absolute-threshold detector broke. Every frame&#39;s detector flags and wheel commands are logged to CSV for the robustness experiments.</p>
-        <div class="tech-tags">
-          <span class="tag">OpenCV</span>
-          <span class="tag">Webots (e-puck)</span>
-          <span class="tag">Canny Edges</span>
-          <span class="tag">HSV Detection</span>
-          <span class="tag">Reactive Control</span>
-          <span class="tag">NumPy</span>
-        </div>
-        <div class="project-link-row">
-          <a href="https://drive.google.com/file/d/1d2R76Qy9Kmbr4RCgXTRKCL5U3j1-cjew/view?usp=sharing" target="_blank" rel="noopener" class="project-link">Watch demo →</a>
-          <a href="https://github.com/raghav-upadhyay2002/Vision-Based-Virtual-Maze-Navigator/blob/main/RESULTS.md" target="_blank" rel="noopener" class="project-link">Read the write-up →</a>
-          <a href="https://github.com/raghav-upadhyay2002/Vision-Based-Virtual-Maze-Navigator" target="_blank" rel="noopener" class="project-link">GitHub →</a>
-        </div>
-      </article>
+    <!-- Maze navigator (wide) -->
+    <article class="card dark project-card wide" data-reveal>
+      <div class="project-card-top">
+        <span class="project-number">02</span>
+        <a href="https://github.com/raghav-upadhyay2002/Vision-Based-Virtual-Maze-Navigator" target="_blank" rel="noopener" class="card-icon-link" aria-label="View on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+      </div>
+      <span class="project-cat">Computer Vision · Robotics</span>
+      <h3>Vision-Based Virtual Maze Navigator</h3>
+      <p>An autonomous e-puck robot that navigates an unknown 3D maze and reaches a target in Webots from <em>camera pixels only</em> — no odometry, no map, no distance sensors in the control loop. Three perception streams (Canny edge density across three vertical zones, right-camera near-field brightness, HSV target detection) feed a reactive policy that prioritises obstacle avoidance over target seeking. Key finding: walls register as edge density <em>collapsing</em> to zero, not spiking — which is why the edge-based detectors survived blur and dimming while the one absolute-threshold detector broke. Every frame&#39;s detector flags and wheel commands are logged to CSV for the robustness experiments.</p>
+      <div class="tech-tags">
+        <span class="tag">OpenCV</span>
+        <span class="tag">Webots (e-puck)</span>
+        <span class="tag">Canny Edges</span>
+        <span class="tag">HSV Detection</span>
+        <span class="tag">Reactive Control</span>
+        <span class="tag">NumPy</span>
+      </div>
+      <div class="project-link-row">
+        <a href="https://drive.google.com/file/d/1d2R76Qy9Kmbr4RCgXTRKCL5U3j1-cjew/view?usp=sharing" target="_blank" rel="noopener" class="project-link">Watch demo →</a>
+        <a href="https://github.com/raghav-upadhyay2002/Vision-Based-Virtual-Maze-Navigator/blob/main/RESULTS.md" target="_blank" rel="noopener" class="project-link">Read the write-up →</a>
+        <a href="https://github.com/raghav-upadhyay2002/Vision-Based-Virtual-Maze-Navigator" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+      </div>
+    </article>
 
-      <article class="project-card" data-reveal>
-        <div class="project-card-top">
-          <span class="project-number">03</span>
-          <a href="https://arxiv.org/abs/2605.12898" target="_blank" rel="noopener" class="card-icon-link" aria-label="Read the paper on arXiv">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
-          </a>
-        </div>
-        <span class="project-cat">LLM Research · Publication</span>
-        <h3>LLM-Generated Social Networks — Cross-Cultural Study (Capstone)</h3>
-        <p>Replicated and extended an ICWSM 2025 paper on whether LLMs generate structurally realistic social networks. Built a full generation–analysis–benchmark pipeline across a 4×4×4×3 experimental matrix (prompting × cultures × languages × GPT-4.1 tiers, 96+ verified conditions), quantifying inter-model divergence and identifying political affiliation as the dominant homophily dimension. Written up as a paper now under review at NeurIPS 2026.</p>
-        <div class="tech-tags">
-          <span class="tag">GPT-4.1</span>
-          <span class="tag">NetworkX</span>
-          <span class="tag">pandas</span>
-          <span class="tag">Experiment Design</span>
-        </div>
-        <a href="https://arxiv.org/abs/2605.12898" target="_blank" rel="noopener" class="project-link">Read on arXiv →</a>
-      </article>
+    <article class="card project-card" data-reveal>
+      <div class="project-card-top">
+        <span class="project-number">03</span>
+        <a href="https://arxiv.org/abs/2605.12898" target="_blank" rel="noopener" class="card-icon-link" aria-label="Read the paper on arXiv">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
+        </a>
+      </div>
+      <span class="project-cat">LLM Research · Publication</span>
+      <h3>LLM-Generated Social Networks — Cross-Cultural Study (Capstone)</h3>
+      <p>Replicated and extended an ICWSM 2025 paper on whether LLMs generate structurally realistic social networks. Built a full generation–analysis–benchmark pipeline across a 4×4×4×3 experimental matrix (prompting × cultures × languages × GPT-4.1 tiers, 96+ verified conditions), quantifying inter-model divergence and identifying political affiliation as the dominant homophily dimension. Written up as a paper now under review at NeurIPS 2026.</p>
+      <div class="tech-tags">
+        <span class="tag">GPT-4.1</span>
+        <span class="tag">NetworkX</span>
+        <span class="tag">pandas</span>
+        <span class="tag">Experiment Design</span>
+      </div>
+      <a href="https://arxiv.org/abs/2605.12898" target="_blank" rel="noopener" class="project-link">Read on arXiv →</a>
+    </article>
 
-      <article class="project-card" data-reveal>
-        <div class="project-card-top">
-          <span class="project-number">04</span>
-          <a href="https://github.com/raghav-upadhyay2002/RUL-prediction-using-LSTM-for-Aircraft-Engine" target="_blank" rel="noopener" class="card-icon-link" aria-label="View on GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-        </div>
-        <span class="project-cat">Deep Learning</span>
-        <h3>RUL Prediction with LSTM — Uncertainty-Aware Predictive Maintenance</h3>
-        <p>Benchmarked four LSTM architectures (Vanilla, Stacked BiLSTM, LSTM-Attention, CNN-LSTM) on NASA C-MAPSS for turbofan Remaining Useful Life. Monte Carlo Dropout and Deep Ensembles for uncertainty quantification (mean ± 2σ risk-adjusted decisions), gradient-based XAI with temporal attention heatmaps, and an ipywidgets dashboard with tiered maintenance alerts.</p>
-        <div class="tech-tags">
-          <span class="tag">PyTorch</span>
-          <span class="tag">TensorFlow</span>
-          <span class="tag">Uncertainty</span>
-          <span class="tag">XAI</span>
-        </div>
-        <a href="https://github.com/raghav-upadhyay2002/RUL-prediction-using-LSTM-for-Aircraft-Engine" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
-      </article>
+    <article class="card project-card" data-reveal>
+      <div class="project-card-top">
+        <span class="project-number">04</span>
+        <a href="https://github.com/raghav-upadhyay2002/RUL-prediction-using-LSTM-for-Aircraft-Engine" target="_blank" rel="noopener" class="card-icon-link" aria-label="View on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+      </div>
+      <span class="project-cat">Deep Learning</span>
+      <h3>RUL Prediction with LSTM — Uncertainty-Aware Predictive Maintenance</h3>
+      <p>Benchmarked four LSTM architectures (Vanilla, Stacked BiLSTM, LSTM-Attention, CNN-LSTM) on NASA C-MAPSS for turbofan Remaining Useful Life. Monte Carlo Dropout and Deep Ensembles for uncertainty quantification (mean ± 2σ risk-adjusted decisions), gradient-based XAI with temporal attention heatmaps, and an ipywidgets dashboard with tiered maintenance alerts.</p>
+      <div class="tech-tags">
+        <span class="tag">PyTorch</span>
+        <span class="tag">TensorFlow</span>
+        <span class="tag">Uncertainty</span>
+        <span class="tag">XAI</span>
+      </div>
+      <a href="https://github.com/raghav-upadhyay2002/RUL-prediction-using-LSTM-for-Aircraft-Engine" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+    </article>
 
-      <article class="project-card" data-reveal>
-        <div class="project-card-top">
-          <span class="project-number">05</span>
-          <a href="https://github.com/raghav-upadhyay2002/-Evaluation-of-Commonsense-Reasoning-Using-Pre-trained-Language-Models" target="_blank" rel="noopener" class="card-icon-link" aria-label="View on GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-        </div>
-        <span class="project-cat">NLP</span>
-        <h3>Commonsense Reasoning with Pre-trained Language Models</h3>
-        <p>Benchmarked RoBERTa-MNLI and OPT-1.3B on commonsense reasoning datasets, analyzing zero-shot and fine-tuned performance across PIQA and related tasks with Hugging Face Transformers.</p>
-        <div class="tech-tags">
-          <span class="tag">RoBERTa</span>
-          <span class="tag">OPT-1.3B</span>
-          <span class="tag">PyTorch</span>
-          <span class="tag">Hugging Face</span>
-        </div>
-        <a href="https://github.com/raghav-upadhyay2002/-Evaluation-of-Commonsense-Reasoning-Using-Pre-trained-Language-Models" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
-      </article>
+    <article class="card project-card" data-reveal>
+      <div class="project-card-top">
+        <span class="project-number">05</span>
+        <a href="https://github.com/raghav-upadhyay2002/-Evaluation-of-Commonsense-Reasoning-Using-Pre-trained-Language-Models" target="_blank" rel="noopener" class="card-icon-link" aria-label="View on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+      </div>
+      <span class="project-cat">NLP</span>
+      <h3>Commonsense Reasoning with Pre-trained Language Models</h3>
+      <p>Benchmarked RoBERTa-MNLI and OPT-1.3B on commonsense reasoning datasets, analyzing zero-shot and fine-tuned performance across PIQA and related tasks with Hugging Face Transformers.</p>
+      <div class="tech-tags">
+        <span class="tag">RoBERTa</span>
+        <span class="tag">OPT-1.3B</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">Hugging Face</span>
+      </div>
+      <a href="https://github.com/raghav-upadhyay2002/-Evaluation-of-Commonsense-Reasoning-Using-Pre-trained-Language-Models" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+    </article>
 
-      <article class="project-card" data-reveal>
-        <div class="project-card-top">
-          <span class="project-number">06</span>
-          <a href="https://github.com/raghav-upadhyay2002/Text-Classification" target="_blank" rel="noopener" class="card-icon-link" aria-label="View on GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-        </div>
-        <span class="project-cat">ML / NLP</span>
-        <h3>Hate Speech Detection</h3>
-        <p>Text classification pipeline detecting hate speech in online content with Logistic Regression and Random Forest, reaching 92% accuracy on a Kaggle-sourced dataset to support content-moderation use cases.</p>
-        <div class="tech-tags">
-          <span class="tag">Python</span>
-          <span class="tag">NLP</span>
-          <span class="tag">scikit-learn</span>
-        </div>
-        <a href="https://github.com/raghav-upadhyay2002/Text-Classification" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
-      </article>
+    <article class="card project-card" data-reveal>
+      <div class="project-card-top">
+        <span class="project-number">06</span>
+        <a href="https://github.com/raghav-upadhyay2002/Text-Classification" target="_blank" rel="noopener" class="card-icon-link" aria-label="View on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+      </div>
+      <span class="project-cat">ML / NLP</span>
+      <h3>Hate Speech Detection</h3>
+      <p>Text classification pipeline detecting hate speech in online content with Logistic Regression and Random Forest, reaching 92% accuracy on a Kaggle-sourced dataset to support content-moderation use cases.</p>
+      <div class="tech-tags">
+        <span class="tag">Python</span>
+        <span class="tag">NLP</span>
+        <span class="tag">scikit-learn</span>
+      </div>
+      <a href="https://github.com/raghav-upadhyay2002/Text-Classification" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+    </article>
 
-      <article class="project-card" data-reveal>
-        <div class="project-card-top">
-          <span class="project-number">07</span>
-          <a href="https://github.com/raghav-upadhyay2002/text-summarizer" target="_blank" rel="noopener" class="card-icon-link" aria-label="View on GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-        </div>
-        <span class="project-cat">NLP / App</span>
-        <h3>Abstractive Text Summarizer</h3>
-        <p>Streamlit app that condenses long articles into short summaries with a distilBART (<span class="mono">sshleifer/distilbart-cnn-12-6</span>) seq2seq model, with adjustable length bounds and summarizer logic factored out for reuse across the notebook and the UI.</p>
-        <div class="tech-tags">
-          <span class="tag">Hugging Face</span>
-          <span class="tag">distilBART</span>
-          <span class="tag">Streamlit</span>
-        </div>
-        <a href="https://github.com/raghav-upadhyay2002/text-summarizer" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
-      </article>
-    </div>
+    <article class="card project-card" data-reveal>
+      <div class="project-card-top">
+        <span class="project-number">07</span>
+        <a href="https://github.com/raghav-upadhyay2002/text-summarizer" target="_blank" rel="noopener" class="card-icon-link" aria-label="View on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+      </div>
+      <span class="project-cat">NLP / App</span>
+      <h3>Abstractive Text Summarizer</h3>
+      <p>Streamlit app that condenses long articles into short summaries with a distilBART (<span class="mono">sshleifer/distilbart-cnn-12-6</span>) seq2seq model, with adjustable length bounds and summarizer logic factored out for reuse across the notebook and the UI.</p>
+      <div class="tech-tags">
+        <span class="tag">Hugging Face</span>
+        <span class="tag">distilBART</span>
+        <span class="tag">Streamlit</span>
+      </div>
+      <a href="https://github.com/raghav-upadhyay2002/text-summarizer" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+    </article>
 
     <p class="projects-more" data-reveal>
       Plus a long tail of smaller ML and annotation work — spam detection, sentiment annotation,
@@ -457,237 +493,238 @@
 </section>
 
 <!-- ===== Experience Section ===== -->
-<section id="experience" class="section">
-  <div class="container">
-    <div class="section-head" data-reveal>
+<section id="experience" class="section shell">
+  <div class="section-head" data-reveal>
+    <div>
       <span class="section-eyebrow">// 03 — experience</span>
       <h2 class="section-title">Where I've worked</h2>
     </div>
+  </div>
 
-    <div class="timeline">
-      <div class="timeline-item" data-reveal>
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-head">
-            <h3>Data Analyst Intern</h3>
-            <span class="timeline-date">Jan 2025 – Aug 2025</span>
-          </div>
-          <h4>Sudhir Mehrotra &amp; Associates, Chartered Accountants <span class="timeline-loc">· Bareilly, India (Hybrid)</span></h4>
-          <ul>
-            <li>Built Python ETL pipelines that automated financial workflows, cutting manual processing effort by 30%.</li>
-            <li>Developed a time-series cash-flow forecasting module that improved estimation accuracy by 15% over baseline.</li>
-            <li>Automated recurring Excel reporting with Python and VBA, eliminating multi-hour weekly manual tasks for the audit team.</li>
-            <li>Designed structured data-reporting systems for audit and compliance teams, improving traceability across reviews.</li>
-          </ul>
-          <div class="tech-tags">
-            <span class="tag">Python</span>
-            <span class="tag">ETL</span>
-            <span class="tag">Time-Series Forecasting</span>
-            <span class="tag">Excel / VBA</span>
-          </div>
-        </div>
+  <div class="bento">
+    <div class="card timeline-card" data-reveal>
+      <div class="timeline-head">
+        <h3>Data Analyst Intern</h3>
+        <span class="timeline-date">Jan 2025 – Aug 2025</span>
+      </div>
+      <h4>Sudhir Mehrotra &amp; Associates, Chartered Accountants <span class="timeline-loc">· Bareilly, India (Hybrid)</span></h4>
+      <ul>
+        <li>Built Python ETL pipelines that automated financial workflows, cutting manual processing effort by 30%.</li>
+        <li>Developed a time-series cash-flow forecasting module that improved estimation accuracy by 15% over baseline.</li>
+        <li>Automated recurring Excel reporting with Python and VBA, eliminating multi-hour weekly manual tasks for the audit team.</li>
+        <li>Designed structured data-reporting systems for audit and compliance teams, improving traceability across reviews.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tag">Python</span>
+        <span class="tag">ETL</span>
+        <span class="tag">Time-Series Forecasting</span>
+        <span class="tag">Excel / VBA</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== Skills Section ===== -->
-<section id="skills" class="section alt-bg">
-  <div class="container">
-    <div class="section-head" data-reveal>
+<section id="skills" class="section shell">
+  <div class="section-head" data-reveal>
+    <div>
       <span class="section-eyebrow">// 04 — skills</span>
       <h2 class="section-title">Tools of the trade</h2>
     </div>
+  </div>
 
-    <div class="skills-grid">
-      <div class="skill-category" data-reveal>
-        <div class="skill-icon">🤖</div>
-        <h3>LLMs &amp; RAG</h3>
-        <div class="skill-tags">
-          <span>OpenAI GPT-4.1</span><span>LLaMA (Groq)</span><span>RAG pipelines</span><span>Hybrid search</span><span>Cross-encoder rerank</span><span>ChromaDB</span><span>sentence-transformers</span><span>Prompt engineering</span><span>Citation grounding</span>
-        </div>
+  <div class="bento">
+    <div class="card skill-category" data-reveal>
+      <div class="skill-icon">🤖</div>
+      <h3>LLMs &amp; RAG</h3>
+      <div class="skill-tags">
+        <span>OpenAI GPT-4.1</span><span>LLaMA (Groq)</span><span>RAG pipelines</span><span>Hybrid search</span><span>Cross-encoder rerank</span><span>ChromaDB</span><span>sentence-transformers</span><span>Prompt engineering</span><span>Citation grounding</span>
       </div>
+    </div>
 
-      <div class="skill-category" data-reveal>
-        <div class="skill-icon">⚖️</div>
-        <h3>LLM Eval &amp; Reliability</h3>
-        <div class="skill-tags">
-          <span>LLM-as-a-judge</span><span>Hallucination detection</span><span>Faithfulness / relevance</span><span>Citation metrics</span><span>CI-gated thresholds</span><span>Versioned prompts</span>
-        </div>
+    <div class="card dark skill-category" data-reveal>
+      <div class="skill-icon">⚖️</div>
+      <h3>LLM Eval &amp; Reliability</h3>
+      <div class="skill-tags">
+        <span>LLM-as-a-judge</span><span>Hallucination detection</span><span>Faithfulness / relevance</span><span>Citation metrics</span><span>CI-gated thresholds</span><span>Versioned prompts</span>
       </div>
+    </div>
 
-      <div class="skill-category" data-reveal>
-        <div class="skill-icon">🔥</div>
-        <h3>Deep Learning</h3>
-        <div class="skill-tags">
-          <span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>HF Transformers</span><span>LSTM</span><span>Attention</span><span>MC Dropout</span><span>Deep ensembles</span><span>Uncertainty</span><span>XAI</span>
-        </div>
+    <div class="card skill-category" data-reveal>
+      <div class="skill-icon">🔥</div>
+      <h3>Deep Learning</h3>
+      <div class="skill-tags">
+        <span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>HF Transformers</span><span>LSTM</span><span>Attention</span><span>MC Dropout</span><span>Deep ensembles</span><span>Uncertainty</span><span>XAI</span>
       </div>
+    </div>
 
-      <div class="skill-category" data-reveal>
-        <div class="skill-icon">👁️</div>
-        <h3>Computer Vision &amp; Robotics</h3>
-        <div class="skill-tags">
-          <span>OpenCV</span><span>Canny edge detection</span><span>HSV color detection</span><span>Webots (e-puck)</span><span>Reactive control policies</span><span>Robustness testing</span>
-        </div>
+    <div class="card skill-category" data-reveal>
+      <div class="skill-icon">👁️</div>
+      <h3>Computer Vision &amp; Robotics</h3>
+      <div class="skill-tags">
+        <span>OpenCV</span><span>Canny edge detection</span><span>HSV color detection</span><span>Webots (e-puck)</span><span>Reactive control policies</span><span>Robustness testing</span>
       </div>
+    </div>
 
-      <div class="skill-category" data-reveal>
-        <div class="skill-icon">&lt;/&gt;</div>
-        <h3>Languages</h3>
-        <div class="skill-tags">
-          <span>Python</span><span>SQL</span><span>R</span><span>Bash</span><span>JavaScript</span>
-        </div>
+    <div class="card skill-category" data-reveal>
+      <div class="skill-icon">&lt;/&gt;</div>
+      <h3>Languages</h3>
+      <div class="skill-tags">
+        <span>Python</span><span>SQL</span><span>R</span><span>Bash</span><span>JavaScript</span>
       </div>
+    </div>
 
-      <div class="skill-category" data-reveal>
-        <div class="skill-icon">📊</div>
-        <h3>Data &amp; Viz</h3>
-        <div class="skill-tags">
-          <span>pandas</span><span>NumPy</span><span>NetworkX</span><span>Matplotlib</span><span>Seaborn</span><span>Jupyter</span><span>ipywidgets</span><span>Gradio</span><span>Streamlit</span>
-        </div>
+    <div class="card skill-category" data-reveal>
+      <div class="skill-icon">📊</div>
+      <h3>Data &amp; Viz</h3>
+      <div class="skill-tags">
+        <span>pandas</span><span>NumPy</span><span>NetworkX</span><span>Matplotlib</span><span>Seaborn</span><span>Jupyter</span><span>ipywidgets</span><span>Gradio</span><span>Streamlit</span>
       </div>
+    </div>
 
-      <div class="skill-category" data-reveal>
-        <div class="skill-icon">⚙️</div>
-        <h3>MLOps &amp; Tools</h3>
-        <div class="skill-tags">
-          <span>Git</span><span>GitHub Actions</span><span>AWS</span><span>Linux</span><span>HF Spaces</span><span>REST APIs</span><span>RAPIDS (GPU)</span>
-        </div>
+    <div class="card skill-category" data-reveal>
+      <div class="skill-icon">⚙️</div>
+      <h3>MLOps &amp; Tools</h3>
+      <div class="skill-tags">
+        <span>Git</span><span>GitHub Actions</span><span>AWS</span><span>Linux</span><span>HF Spaces</span><span>REST APIs</span><span>RAPIDS (GPU)</span>
       </div>
+    </div>
 
-      <div class="skill-category" data-reveal>
-        <div class="skill-icon">🗄️</div>
-        <h3>Databases</h3>
-        <div class="skill-tags">
-          <span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span><span>ChromaDB (vector)</span>
-        </div>
+    <div class="card skill-category" data-reveal>
+      <div class="skill-icon">🗄️</div>
+      <h3>Databases</h3>
+      <div class="skill-tags">
+        <span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span><span>ChromaDB (vector)</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== Certificates Section ===== -->
-<section id="certificates" class="section">
-  <div class="container">
-    <div class="section-head" data-reveal>
+<section id="certificates" class="section shell">
+  <div class="section-head" data-reveal>
+    <div>
       <span class="section-eyebrow">// 05 — certifications</span>
       <h2 class="section-title">Verified credentials</h2>
     </div>
+  </div>
 
-    <div class="certificates-grid">
-      <div class="certificate-card" data-reveal>
-        <div class="certificate-header">
-          <span class="cert-logo cert-logo-mark" aria-hidden="true">A\</span>
-          <div>
-            <h3>AI Fluency: Framework &amp; Foundations</h3>
-            <p><strong>Anthropic</strong> · Issued Jun 2026</p>
-          </div>
+  <div class="bento">
+    <div class="card certificate-card" data-reveal>
+      <div class="certificate-header">
+        <span class="cert-logo cert-logo-mark" aria-hidden="true">A</span>
+        <div>
+          <h3>AI Fluency: Framework &amp; Foundations</h3>
+          <p><strong>Anthropic</strong> · Issued Jun 2026</p>
         </div>
-        <div class="cert-skills">
-          <ul>
-            <li>The 4D framework for working effectively with AI</li>
-            <li>Delegation &amp; task decomposition between human and model</li>
-            <li>Description: prompting, context, and iterative refinement</li>
-            <li>Discernment &amp; diligence — evaluating and verifying AI output</li>
-          </ul>
-        </div>
-        <a href="https://verify.skilljar.com/c/piqmwh97829m" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View Certificate →</a>
       </div>
-      <div class="certificate-card" data-reveal>
-        <div class="certificate-header">
-          <span class="cert-logo cert-logo-mark" aria-hidden="true">A\</span>
-          <div>
-            <h3>Claude 101</h3>
-            <p><strong>Anthropic</strong> · Issued Jun 2026</p>
-          </div>
-        </div>
-        <div class="cert-skills">
-          <ul>
-            <li>Claude model family &amp; capability fundamentals</li>
-            <li>Effective prompting and context management</li>
-            <li>Projects, artifacts, and extended workflows</li>
-            <li>Practical applications and responsible use</li>
-          </ul>
-        </div>
-        <a href="https://verify.skilljar.com/c/ewn9cc9y5uon" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View Certificate →</a>
+      <div class="cert-skills">
+        <ul>
+          <li>The 4D framework for working effectively with AI</li>
+          <li>Delegation &amp; task decomposition between human and model</li>
+          <li>Description: prompting, context, and iterative refinement</li>
+          <li>Discernment &amp; diligence — evaluating and verifying AI output</li>
+        </ul>
       </div>
-      <div class="certificate-card" data-reveal>
-        <div class="certificate-header">
-          <img src="assets/images/nvidia.png" alt="NVIDIA Logo" class="cert-logo" loading="lazy">
-          <div>
-            <h3>Fundamentals of Accelerated Data Science</h3>
-            <p><strong>NVIDIA</strong> · Issued Oct 2025</p>
-          </div>
+      <a href="https://verify.skilljar.com/c/piqmwh97829m" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View Certificate →</a>
+    </div>
+
+    <div class="card certificate-card" data-reveal>
+      <div class="certificate-header">
+        <span class="cert-logo cert-logo-mark" aria-hidden="true">A</span>
+        <div>
+          <h3>Claude 101</h3>
+          <p><strong>Anthropic</strong> · Issued Jun 2026</p>
         </div>
-        <div class="cert-skills">
-          <ul>
-            <li>GPU-Accelerated Computing (RAPIDS Ecosystem)</li>
-            <li>Core Data Science Foundations</li>
-            <li>Applied Machine Learning</li>
-            <li>Accelerated Ecosystem Integration</li>
-          </ul>
-        </div>
-        <a href="https://learn.nvidia.com/certificates?id=wKvpir0fSmGcr57_563S-g" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View Certificate →</a>
       </div>
-      <div class="certificate-card" data-reveal>
-        <div class="certificate-header">
-          <img src="assets/images/aws.png" alt="AWS Logo" class="cert-logo" loading="lazy">
-          <div>
-            <h3>AWS Academy Cloud Operations</h3>
-            <p><strong>Amazon Web Services</strong> · Issued Nov 2022</p>
-          </div>
-        </div>
-        <div class="cert-skills">
-          <ul>
-            <li>Cloud infrastructure operations</li>
-            <li>Monitoring &amp; management on AWS</li>
-            <li>Deployment &amp; automation fundamentals</li>
-          </ul>
-        </div>
-        <a href="https://www.credly.com/badges/bd7fc77f-74fa-4665-9ad8-bb6521bc9f5e/print" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View Certificate →</a>
+      <div class="cert-skills">
+        <ul>
+          <li>Claude model family &amp; capability fundamentals</li>
+          <li>Effective prompting and context management</li>
+          <li>Projects, artifacts, and extended workflows</li>
+          <li>Practical applications and responsible use</li>
+        </ul>
       </div>
+      <a href="https://verify.skilljar.com/c/ewn9cc9y5uon" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View Certificate →</a>
+    </div>
+
+    <div class="card certificate-card" data-reveal>
+      <div class="certificate-header">
+        <img src="assets/images/nvidia.png" alt="NVIDIA Logo" class="cert-logo" loading="lazy">
+        <div>
+          <h3>Fundamentals of Accelerated Data Science</h3>
+          <p><strong>NVIDIA</strong> · Issued Oct 2025</p>
+        </div>
+      </div>
+      <div class="cert-skills">
+        <ul>
+          <li>GPU-Accelerated Computing (RAPIDS Ecosystem)</li>
+          <li>Core Data Science Foundations</li>
+          <li>Applied Machine Learning</li>
+          <li>Accelerated Ecosystem Integration</li>
+        </ul>
+      </div>
+      <a href="https://learn.nvidia.com/certificates?id=wKvpir0fSmGcr57_563S-g" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View Certificate →</a>
+    </div>
+
+    <div class="card certificate-card" data-reveal>
+      <div class="certificate-header">
+        <img src="assets/images/aws.png" alt="AWS Logo" class="cert-logo" loading="lazy">
+        <div>
+          <h3>AWS Academy Cloud Operations</h3>
+          <p><strong>Amazon Web Services</strong> · Issued Nov 2022</p>
+        </div>
+      </div>
+      <div class="cert-skills">
+        <ul>
+          <li>Cloud infrastructure operations</li>
+          <li>Monitoring &amp; management on AWS</li>
+          <li>Deployment &amp; automation fundamentals</li>
+        </ul>
+      </div>
+      <a href="https://www.credly.com/badges/bd7fc77f-74fa-4665-9ad8-bb6521bc9f5e/print" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View Certificate →</a>
     </div>
   </div>
 </section>
 
 <!-- ===== Education Section ===== -->
-<section id="education" class="section alt-bg">
-  <div class="container">
-    <div class="section-head" data-reveal>
+<section id="education" class="section shell">
+  <div class="section-head" data-reveal>
+    <div>
       <span class="section-eyebrow">// 06 — education</span>
       <h2 class="section-title">Academic background</h2>
     </div>
+  </div>
 
-    <div class="education-grid">
-      <div class="education-card" data-reveal>
-        <span class="edu-badge">Apr 2024 – May 2026</span>
-        <h3>M.S. in Data Science</h3>
-        <p class="edu-school">University of Arizona · Tucson, AZ</p>
-        <p class="edu-meta">GPA: 3.78 / 4.00</p>
-        <p class="edu-courses">Machine Learning · Applied NLP · Computational Linguistics · Data Mining &amp; Discovery</p>
-      </div>
+  <div class="bento">
+    <div class="card education-card" data-reveal>
+      <span class="edu-badge">Apr 2024 – May 2026</span>
+      <h3>M.S. in Data Science</h3>
+      <p class="edu-school">University of Arizona · Tucson, AZ</p>
+      <p class="edu-meta">GPA: 3.78 / 4.00</p>
+      <p class="edu-courses">Machine Learning · Applied NLP · Computational Linguistics · Data Mining &amp; Discovery</p>
+    </div>
 
-      <div class="education-card" data-reveal>
-        <span class="edu-badge">2020 – 2024</span>
-        <h3>B.Tech, Computer Science &amp; Engineering (Software Engineering)</h3>
-        <p class="edu-school">SRM Institute of Science and Technology · Chennai, India</p>
-        <p class="edu-meta">CGPA: 8.51 / 10.00</p>
-      </div>
+    <div class="card dark education-card" data-reveal>
+      <span class="edu-badge">2020 – 2024</span>
+      <h3>B.Tech, Computer Science &amp; Engineering (Software Engineering)</h3>
+      <p class="edu-school">SRM Institute of Science and Technology · Chennai, India</p>
+      <p class="edu-meta">CGPA: 8.51 / 10.00</p>
     </div>
   </div>
 </section>
 
-
 <!-- ===== Publications Section ===== -->
-<section id="publications" class="section">
-  <div class="container">
-    <div class="section-head" data-reveal>
+<section id="publications" class="section shell">
+  <div class="section-head" data-reveal>
+    <div>
       <span class="section-eyebrow">// 07 — research</span>
       <h2 class="section-title">Research &amp; publications</h2>
     </div>
+  </div>
 
-    <article class="publication-card" data-reveal>
+  <div class="bento">
+    <article class="card publication-card" data-reveal>
       <div class="pub-status">
         <span class="pub-venue">Under review · NeurIPS 2026</span>
         <span class="pub-id mono">arXiv:2605.12898</span>
@@ -723,10 +760,10 @@
   </div>
 </section>
 
-<!-- ===== Resume / CTA Section ===== -->
-<section id="resume" class="section alt-bg">
-  <div class="container">
-    <div class="resume-banner" data-reveal>
+<!-- ===== Résumé / CTA Section ===== -->
+<section id="resume" class="section shell">
+  <div class="bento">
+    <div class="card dark resume-banner" data-reveal>
       <div class="resume-banner-text">
         <span class="section-eyebrow">// 08 — résumé</span>
         <h2 class="section-title">Want the one-pager?</h2>
@@ -742,49 +779,53 @@
 </section>
 
 <!-- ===== Contact Section ===== -->
-<section id="contact" class="section">
-  <div class="container">
-    <div class="section-head" data-reveal>
+<section id="contact" class="section shell">
+  <div class="section-head" data-reveal>
+    <div>
       <span class="section-eyebrow">// 09 — contact</span>
       <h2 class="section-title">Let's build something</h2>
     </div>
+  </div>
 
-    <p class="contact-text" data-reveal>
-      Open to full-time AI / ML Engineer roles in the US (on-site, hybrid, or remote).
-      If you're hiring — or just want to talk LLMs — reach out.
-    </p>
-
-    <div class="contact-cards" data-reveal>
-      <a href="mailto:raghav0408upadhyay@gmail.com" class="contact-card">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        <strong>Email</strong>
-        <span>raghav0408upadhyay@gmail.com</span>
-      </a>
-
-      <a href="https://www.linkedin.com/in/raghavupadhya04/" target="_blank" rel="noopener" class="contact-card">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        <strong>LinkedIn</strong>
-        <span>raghavupadhya04</span>
-      </a>
-
-      <a href="https://github.com/raghav-upadhyay2002" target="_blank" rel="noopener" class="contact-card">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        <strong>GitHub</strong>
-        <span>raghav-upadhyay2002</span>
-      </a>
-
-      <a href="https://huggingface.co/raghavupadhyay" target="_blank" rel="noopener" class="contact-card">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2zm-3.2 7.1a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zm6.4 0a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM7 14.5c0-.28.22-.5.5-.5h9c.28 0 .5.22.5.5 0 2.49-2.24 4.5-5 4.5s-5-2.01-5-4.5z"/></svg>
-        <strong>Hugging Face</strong>
-        <span>raghavupadhyay</span>
-      </a>
+  <div class="bento">
+    <div class="card contact-intro" data-reveal>
+      <h2>Open to full-time AI / ML Engineer roles</h2>
+      <p>
+        On-site, hybrid, or remote across the US. If you're hiring — or just want to talk
+        LLMs — reach out.
+      </p>
     </div>
+
+    <a href="mailto:raghav0408upadhyay@gmail.com" class="card contact-card" data-reveal>
+      <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <strong>Email</strong>
+      <span>raghav0408upadhyay@gmail.com</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/raghavupadhya04/" target="_blank" rel="noopener" class="card contact-card" data-reveal>
+      <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      <strong>LinkedIn</strong>
+      <span>raghavupadhya04</span>
+    </a>
+
+    <a href="https://github.com/raghav-upadhyay2002" target="_blank" rel="noopener" class="card contact-card" data-reveal>
+      <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      <strong>GitHub</strong>
+      <span>raghav-upadhyay2002</span>
+    </a>
+
+    <a href="https://huggingface.co/raghavupadhyay" target="_blank" rel="noopener" class="card contact-card" data-reveal>
+      <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2zm-3.2 7.1a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zm6.4 0a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM7 14.5c0-.28.22-.5.5-.5h9c.28 0 .5.22.5.5 0 2.49-2.24 4.5-5 4.5s-5-2.01-5-4.5z"/></svg>
+      <strong>Hugging Face</strong>
+      <span>raghavupadhyay</span>
+    </a>
   </div>
 </section>
 
 <!-- ===== Footer ===== -->
 <footer>
   <p>&copy; <span id="footer-year"></span> Raghav Upadhyay</p>
+  <p><a href="#certificates">Certificates</a> · <a href="#education">Education</a> · <a href="http://blogs.raghavupadhyay.org/" target="_blank" rel="noopener">Blog</a></p>
   <p class="footer-built">Designed &amp; built with care · <span class="mono">HTML · CSS · JS</span></p>
 </footer>
 
