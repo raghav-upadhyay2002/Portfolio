@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const typedEl = document.getElementById("typed-text");
   if (typedEl) {
     const phrases = [
-      "AI Engineer",
-      "LLM & RAG Systems Builder",
-      "ML Engineer",
-      "Computer Vision & Robotics Tinkerer",
+      "AI / ML Engineer",
+      "LLM Evaluation & Reliability",
+      "RAG Systems Builder",
+      "Research Assistant @ VSI Lab",
       "MS Data Science @ Arizona",
     ];
     let p = 0, c = 0, deleting = false;

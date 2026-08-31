@@ -875,6 +875,26 @@ body.cursor-active .cursor-glow { opacity: 1; }
   flex-grow: 1;
   margin-bottom: 1rem;
 }
+/* a "this led somewhere" line: sits under the body copy, doesn't absorb the
+   flex-grow that pushes the link row to the card's bottom edge */
+.project-followup {
+  /* NOT flex: the inline link and the text around it would each become a
+     flex item and lay out as separate columns */
+  display: block;
+  flex-grow: 0 !important;
+  margin: 0 0 0.25rem !important;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem !important;
+  color: var(--text-dim);
+}
+.project-followup svg {
+  display: inline-block;
+  width: 14px; height: 14px;
+  vertical-align: -0.15em;
+  margin-right: 0.4rem;
+  color: var(--blue);
+}
 
 /* tech tags */
 .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
@@ -945,6 +965,22 @@ body.cursor-active .cursor-glow { opacity: 1; }
   background: linear-gradient(var(--blue), var(--cyan), transparent);
 }
 .timeline-item { position: relative; }
+/* two entries now, so they need to be told apart */
+.timeline-item + .timeline-item { margin-top: 1.25rem; }
+.badge-current {
+  display: inline-block;
+  margin-left: 0.6rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(44, 230, 160, 0.35);
+  background: rgba(44, 230, 160, 0.08);
+  color: #2ce6a0;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  vertical-align: 0.22em;
+}
 .timeline-dot {
   position: absolute;
   left: -2rem; top: 8px;
@@ -1190,6 +1226,11 @@ body.cursor-active .cursor-glow { opacity: 1; }
   font-family: var(--font-mono);
   letter-spacing: 0.3px;
 }
+.pub-venue-alt {
+  border-color: rgba(44, 230, 160, 0.35);
+  background: rgba(44, 230, 160, 0.08);
+  color: #2ce6a0;
+}
 .pub-id { font-size: 0.74rem; color: var(--text-faint); }
 .publication-card h3 {
   font-size: clamp(1.15rem, 2.4vw, 1.5rem);
@@ -1249,7 +1290,8 @@ body.cursor-active .cursor-glow { opacity: 1; }
 }
 .contact-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* six cards: an explicit 3-up keeps two even rows instead of 4 + 2 */
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 .contact-card {
@@ -1593,6 +1635,7 @@ i[data-lucide] { display: inline-block; width: 1em; height: 1em; }
 
   .section { padding: 4rem 1.25rem; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .contact-cards { grid-template-columns: repeat(2, 1fr); }
   .pillar-row { grid-template-columns: 1fr; }
   .featured-body,
   .resume-banner { padding: 1.75rem; }
@@ -1606,6 +1649,7 @@ i[data-lucide] { display: inline-block; width: 1em; height: 1em; }
   .hero-buttons { flex-direction: column; align-items: stretch; }
   .hero-buttons .btn { justify-content: center; }
   .metric-row { gap: 1rem; }
+  .contact-cards { grid-template-columns: 1fr; }
   .back-to-top { bottom: 1.2rem; right: 1.2rem; }
 }
 
