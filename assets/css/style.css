@@ -64,17 +64,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* subtle global gradient mesh + grain */
+/* ===== Gradient Mesh ===== */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(900px 600px at 12% -5%, rgba(59, 130, 246, 0.10), transparent 60%),
-    radial-gradient(800px 600px at 95% 8%, rgba(45, 212, 255, 0.08), transparent 55%),
-    radial-gradient(700px 700px at 50% 110%, rgba(91, 140, 255, 0.07), transparent 60%);
+    radial-gradient(900px 600px at 12% -5%, rgba(59, 130, 246, 0.16), transparent 60%),
+    radial-gradient(800px 600px at 95% 8%, rgba(45, 212, 255, 0.12), transparent 55%),
+    radial-gradient(700px 700px at 50% 110%, rgba(91, 140, 255, 0.11), transparent 60%),
+    linear-gradient(160deg, #101828 0%, var(--bg) 45%, #0d1420 100%);
   pointer-events: none;
+}
+
+/* ===== Film Grain =====
+   feTurbulence noise baked into an inline SVG data URI -- no image request,
+   and it tiles seamlessly via stitchTiles so there is no visible seam. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  /* soft-light keeps the speckle from washing out the dark surfaces the way
+     a plain white overlay would */
+  mix-blend-mode: soft-light;
 }
 
 h1, h2, h3, h4 { font-family: var(--font-display); color: var(--text); margin: 0; line-height: 1.15; font-weight: 600; }
@@ -539,7 +557,9 @@ body.cursor-active .cursor-glow { opacity: 1; }
   padding: 6rem 1.5rem;
   position: relative;
 }
-.alt-bg { background: var(--bg-2); }
+/* translucent, not opaque: an opaque fill would hide the gradient mesh and
+   grain on the four alt sections (half the page) */
+.alt-bg { background: rgba(255, 255, 255, 0.018); }
 .container { max-width: var(--maxw); margin: 0 auto; }
 
 .section-head { margin-bottom: 3rem; }
@@ -1247,7 +1267,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
 /* ===== Footer ===== */
 footer {
   border-top: 1px solid var(--border);
-  background: var(--bg-2);
+  background: rgba(255, 255, 255, 0.018);
   text-align: center;
   padding: 2.5rem 1.5rem;
 }
