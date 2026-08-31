@@ -17,23 +17,32 @@
   /* text */
   --text: #fafafa;
   --text-dim: #a1a1aa;
-  --text-faint: #71717a;
+  /* 4.5:1 on --bg; the old #71717a was 4.12:1 and this is used at 0.72-0.78rem */
+  --text-faint: #7d7d85;
 
   /* accents */
-  --blue: #fafafa;
-  --indigo: #d4d4d8;
-  --cyan: #fafafa;
-  --pink: #d4d4d8;
-  --grad: #fafafa;
+  --blue: #5b8cff;
+  --indigo: #7c5cff;
+  --cyan: #2dd4ff;
+  --pink: #c4b6ff;
+  /* purple -> blue -> cyan. Thin accents only (progress bar, nav underline,
+     card top strips) -- never as a fill sitting behind body copy. */
+  --grad: linear-gradient(120deg, #7c5cff 0%, #5b8cff 55%, #2dd4ff 100%);
+  /* solid counterpart for the few surfaces that set dark text on top */
+  --grad-solid: #fafafa;
   --grad-soft: #18181b;
-  --glow-blue: rgba(0, 0, 0, 0.5);
-  --glow-cyan: rgba(0, 0, 0, 0.5);
+  --glow-blue: rgba(91, 140, 255, 0.45);
+  --glow-cyan: rgba(45, 212, 255, 0.40);
 
   /* type */
   --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+
+  /* spacing: one value for content cards, one for the large feature panels */
+  --pad-card: 1.75rem;
+  --pad-panel: 2.25rem;
 
   /* misc */
   --radius: 0.5rem;
@@ -178,7 +187,8 @@ body.cursor-active .cursor-glow { opacity: 1; }
 .btn-full { width: 100%; justify-content: center; }
 
 .btn-primary {
-  background: var(--grad);
+  /* solid, not --grad: #07090f on the purple end of the gradient lands under 4.5:1 */
+  background: var(--grad-solid);
   color: #07090f;
   box-shadow: 0 8px 24px -8px var(--glow-blue);
 }
@@ -388,7 +398,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   margin-bottom: 0.5rem;
 }
 .grad-text {
-  background: linear-gradient(120deg, #2563eb 0%, #3b82f6 30%, #2dd4ff 55%, #3b82f6 80%, #2563eb 100%);
+  background: linear-gradient(120deg, #7c5cff 0%, #5b8cff 40%, #2dd4ff 60%, #5b8cff 80%, #7c5cff 100%);
   background-size: 220% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -464,10 +474,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 4vw, 2.1rem);
   font-weight: 700;
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text);
   line-height: 1;
 }
 .stat-label {
@@ -626,7 +633,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   background: var(--grad-soft);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: var(--pad-card);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 100px;
@@ -673,7 +680,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
 .pillar-box {
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem 1.5rem;
+  padding: var(--pad-card);
   text-align: center;
   transition: transform var(--t), border-color var(--t), box-shadow var(--t);
 }
@@ -709,19 +716,20 @@ body.cursor-active .cursor-glow { opacity: 1; }
   border-color: rgba(59, 130, 246, 0.4);
   box-shadow: 0 24px 60px -28px var(--glow-blue);
 }
-.featured-body { padding: 2.5rem; }
+.featured-body { padding: var(--pad-panel); }
 .featured-top {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1rem;
 }
+.featured-top .project-number { font-size: 1.15rem; line-height: 1; }
 .badge-featured {
   font-family: var(--font-mono);
   font-size: 0.74rem;
   font-weight: 600;
   color: #07090f;
-  background: var(--grad);
+  background: var(--grad-solid);
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
 }
@@ -770,7 +778,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: var(--pad-panel);
 }
 .rag-diagram {
   display: flex;
@@ -801,7 +809,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
 .rag-node:last-of-type::after { display: none; }
 .rag-node.n3, .rag-node.n4 { border-color: rgba(45, 212, 255, 0.4); color: var(--cyan); }
 .rag-node.n6 {
-  background: var(--grad);
+  background: var(--grad-solid);
   color: #07090f;
   font-weight: 600;
   border: none;
@@ -829,7 +837,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: var(--pad-card);
   transition: transform var(--t), border-color var(--t), box-shadow var(--t);
 }
 .project-card:hover {
@@ -848,7 +856,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-faint);
-  opacity: 0.5;
+  opacity: 0.75;
 }
 .card-icon-link {
   color: var(--text-faint);
@@ -949,7 +957,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: var(--pad-card);
   transition: transform var(--t), border-color var(--t);
 }
 .timeline-card:hover { transform: translateX(6px); border-color: var(--border-strong); }
@@ -999,7 +1007,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: var(--pad-card);
   transition: transform var(--t), border-color var(--t), box-shadow var(--t);
 }
 .skill-category:hover {
@@ -1046,7 +1054,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: var(--pad-card);
   transition: transform var(--t), border-color var(--t), box-shadow var(--t);
 }
 .certificate-card .btn { margin-top: auto; align-self: flex-start; }
@@ -1110,7 +1118,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: var(--pad-card);
   overflow: hidden;
   transition: transform var(--t), border-color var(--t);
 }
@@ -1149,7 +1157,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: var(--pad-card);
   overflow: hidden;
   transition: transform var(--t), border-color var(--t), box-shadow var(--t);
 }
@@ -1219,7 +1227,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   background: var(--grad-soft);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius);
-  padding: 2.5rem;
+  padding: var(--pad-panel);
   backdrop-filter: blur(12px);
 }
 .resume-banner-text { max-width: 560px; }
@@ -1252,7 +1260,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: var(--pad-card);
   transition: transform var(--t), border-color var(--t), box-shadow var(--t);
 }
 .contact-card:hover {
@@ -1296,7 +1304,7 @@ footer p { margin: 0.25rem 0; font-size: 0.85rem; color: var(--text-faint); }
   backdrop-filter: blur(10px);
 }
 .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-.back-to-top:hover { background: var(--grad); color: #07090f; border-color: transparent; }
+.back-to-top:hover { background: var(--grad-solid); color: #07090f; border-color: transparent; }
 
 /* ===== Scroll Reveal ===== */
 [data-reveal] {
@@ -1319,56 +1327,6 @@ footer p { margin: 0.25rem 0; font-size: 0.85rem; color: var(--text-faint); }
    This intentionally overrides the gradient / glass / colored-border
    treatments above. Delete this block to restore them.
    ============================================================ */
-
-/* --- flat cards: bg-card + 1px hairline, no blur, no ring --- */
-.project-card,
-.certificate-card,
-.timeline-card,
-.education-card,
-.publication-card,
-.about-card,
-.skill-category,
-.contact-card,
-.pillar-box,
-.stat {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: none;
-}
-.project-card:hover,
-.certificate-card:hover,
-.timeline-card:hover,
-.education-card:hover,
-.publication-card:hover,
-.skill-category:hover,
-.contact-card:hover,
-.pillar-box:hover {
-  background: var(--bg);
-  border-color: var(--border-strong);
-  transform: none;
-  box-shadow: none;
-}
-
-/* the gradient ring overlay has no shadcn equivalent */
-.project-card::after,
-.certificate-card::after,
-.timeline-card::after,
-.education-card::after,
-.publication-card::after,
-.about-card::after,
-.skill-category::after,
-.contact-card::after,
-.pillar-box::after,
-.availability::after {
-  display: none;
-}
-
-/* accent strips on education / publication cards */
-.education-card::before,
-.publication-card::before { background: var(--border); }
 
 /* --- Button: shadcn default + outline variants --- */
 .btn {
@@ -1453,14 +1411,8 @@ footer p { margin: 0.25rem 0; font-size: 0.85rem; color: var(--text-faint); }
 .chip svg,
 .availability svg { color: var(--text-dim); }
 
-/* --- Headings: solid foreground, no gradient text --- */
-.grad-text {
-  background: none;
-  -webkit-text-fill-color: currentColor;
-  color: var(--text);
-  animation: none;
-}
-.title-emoji { color: var(--text-dim); filter: none; }
+/* section-heading icons carry the accent; the drop-shadow stays off */
+.title-emoji { color: var(--blue); filter: none; }
 
 /* --- icon tiles: muted square, shadcn radius --- */
 .skill-icon,
@@ -1503,10 +1455,7 @@ i[data-lucide] { display: inline-block; width: 1em; height: 1em; }
 .serif-accent,
 .hero-tagline em,
 .section-title em,
-.about-text em,
-.project-card em,
-.pillar-box em,
-em {
+.pillar-box h3 em {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
@@ -1542,58 +1491,6 @@ em {
 }
 /* .about-card is position: sticky, which is already a containing block */
 .about-card { border-color: rgba(59, 130, 246, 0.28); }
-
-/* gradient ring drawn as a masked 1px overlay so the card keeps its
-   translucent surface fill underneath */
-.project-card::after,
-.certificate-card::after,
-.timeline-card::after,
-.education-card::after,
-.publication-card::after,
-.about-card::after,
-.skill-category::after,
-.contact-card::after,
-.pillar-box::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: var(--grad);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  opacity: 0.45;
-  transition: opacity var(--t);
-  pointer-events: none;
-  z-index: 1;
-}
-.project-card:hover::after,
-.certificate-card:hover::after,
-.timeline-card:hover::after,
-.education-card:hover::after,
-.publication-card:hover::after,
-.about-card:hover::after,
-.skill-category:hover::after,
-.contact-card:hover::after,
-.pillar-box:hover::after {
-  opacity: 1;
-}
-
-/* keep card content above the ring overlay */
-.project-card > *,
-.certificate-card > *,
-.timeline-card > *,
-.education-card > *,
-.publication-card > *,
-.about-card > *,
-.skill-category > *,
-.contact-card > *,
-.pillar-box > * {
-  position: relative;
-  z-index: 2;
-}
 
 /* ===== Glassmorphism Cards ===== */
 .project-card,
@@ -1660,9 +1557,6 @@ em {
   }
 }
 
-/* WIP cards keep their green identity */
-.project-card.is-wip::after { background: linear-gradient(120deg, rgba(44, 230, 160, 0.9), rgba(45, 212, 255, 0.9)); }
-
 @media (max-width: 1180px) and (min-width: 921px) {
   .nav-links { gap: 1rem; }
   .nav-links a { font-size: 0.79rem; }
@@ -1700,8 +1594,8 @@ em {
   .section { padding: 4rem 1.25rem; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .pillar-row { grid-template-columns: 1fr; }
-  .featured-body { padding: 2rem; }
-  .resume-banner { padding: 2rem; }
+  .featured-body,
+  .resume-banner { padding: 1.75rem; }
   .publication-card { padding: 1.5rem; }
 }
 

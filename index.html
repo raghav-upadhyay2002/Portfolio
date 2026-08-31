@@ -137,7 +137,7 @@
       Open to full-time AI / ML Engineer roles · US
     </span>
 
-    <h1 class="hero-name grad-text" data-reveal>
+    <h1 class="hero-name" data-reveal>
       Raghav <span class="serif-accent">Upadhyay</span>
     </h1>
 
@@ -147,13 +147,13 @@
     </h2>
 
     <p class="hero-tagline" data-reveal>
-      Leveraging cutting-edge AI to deliver scalable, end-to-end solutions that drive <em>real-world</em> impact.
+      I build <em>retrieval systems</em> that cite their sources — and a CI gate that blocks the deploy when they stop.
     </p>
 
     <p class="hero-about" data-reveal>
-      Passionate about harnessing the power of next-generation machine learning to unlock
-      actionable insights and transform the way organizations operate. Committed to excellence,
-      innovation, and continuous growth. <strong>M.S. Data Science, University of Arizona</strong> (May 2026).
+      Hybrid vector + BM25 retrieval, cross-encoder reranking, and LLM-as-a-judge scoring wired into
+      GitHub Actions, so a drop in faithfulness fails the build instead of reaching users.
+      <strong>M.S. Data Science, University of Arizona</strong>, May 2026.
     </p>
 
     <div class="hero-buttons" data-reveal>
@@ -224,28 +224,27 @@
     <div class="about-grid">
       <div class="about-text" data-reveal>
         <p>
-          I'm <strong>Raghav Upadhyay</strong>, a results-driven AI Engineer passionate about leveraging
-          <em>innovative</em> technologies to solve complex challenges. I thrive in fast-paced,
-          collaborative environments and am dedicated to delivering excellence at every stage.
+          I'm <strong>Raghav Upadhyay</strong>. Most people can get an LLM to answer a question. My
+          interest is the part after that: proving the answer was grounded, and catching it
+          automatically when it isn't.
         </p>
         <p>
-          My flagship project — <strong>AskMyDocs</strong> — showcases a holistic, best-in-class approach to
-          modern AI development, integrating <strong>cutting-edge techniques</strong> to deliver
-          unparalleled results. Beyond LLMs — I've leveraged advanced methodologies across a range of
-          impactful initiatives, including a
-          <a href="#publications" class="inline-link">comprehensive study of LLM-generated social networks</a>
-          currently under review at NeurIPS 2026.
+          That's what <strong>AskMyDocs</strong> is. It splits retrieval 60/40 between a vector index and
+          BM25, reranks with a cross-encoder, and grades every answer with an LLM judge in CI —
+          faithfulness below 0.70 or citation rate below 0.80 and the pipeline fails. It's deployed
+          and public on Hugging Face Spaces. The same instinct produced my
+          <a href="#publications" class="inline-link">study of LLM-generated social networks</a>, now
+          under review at NeurIPS 2026: 192 generated networks across four cultures, four languages
+          and three model tiers, measured rather than eyeballed.
         </p>
         <p>
-          Lately I've been pushing into <strong>vision-driven robotics</strong> — exploring transformative
-          applications that redefine the boundaries of intelligent automation, while maintaining a
-          relentless focus on quality, scalability and continuous improvement —
-          across the entire stack.
+          Lately that's extended to <strong>vision-driven robotics</strong> — an e-puck robot solving a
+          Webots maze from camera pixels alone, where the useful result was a negative one: the
+          absolute-threshold detector broke under blur, the edge-density ones didn't.
         </p>
         <p>
-          Currently finishing my <strong>M.S. in Data Science at the University of Arizona</strong> — May 2026 —
-          and eager to bring my unique blend of technical expertise and strategic vision to a
-          world-class team.
+          I finish my <strong>M.S. in Data Science at the University of Arizona</strong> in May 2026 and
+          I'm looking for AI / ML engineering roles in the US.
         </p>
         <div class="about-tags">
           <span class="chip"><i data-lucide="map-pin" aria-hidden="true"></i>West Lafayette, IN</span>
@@ -269,7 +268,7 @@
           <li><span class="fact-key">grad</span><span class="fact-val">May 2026</span></li>
           <li><span class="fact-key">status</span><span class="fact-val status-open">open to work</span></li>
         </ul>
-        <a href="assets/resume/Raghav_Upadhyay_resume.pdf" class="btn btn-primary btn-full" download>Download Résumé</a>
+        <a href="assets/resume/Raghav_Upadhyay_Resume.pdf" class="btn btn-primary btn-full" download>Download Résumé</a>
       </aside>
     </div>
 
@@ -277,17 +276,17 @@
       <div class="pillar-box" data-reveal>
         <div class="pillar-icon" aria-hidden="true"><i data-lucide="search"></i></div>
         <h3><em>Retrieve</em></h3>
-        <p>Utilizing state-of-the-art methodologies to seamlessly surface the right information — every single time.</p>
+        <p>Hybrid vector + BM25 search with cross-encoder reranking, tuned on a fixed eval set rather than by feel.</p>
       </div>
       <div class="pillar-box" data-reveal>
         <div class="pillar-icon" aria-hidden="true"><i data-lucide="scale"></i></div>
         <h3><em>Evaluate</em></h3>
-        <p>Employing industry-leading best practices to ensure robust, reliable outcomes — at scale and without compromise.</p>
+        <p>LLM-as-a-judge scoring for faithfulness and citation coverage, versioned alongside the prompts it grades.</p>
       </div>
       <div class="pillar-box" data-reveal>
         <div class="pillar-icon" aria-hidden="true"><i data-lucide="ship"></i></div>
         <h3><em>Ship</em></h3>
-        <p>Delivering seamless, future-proof experiences that empower stakeholders and drive measurable value — end to end.</p>
+        <p>GitHub Actions gates on those scores, so a regression blocks the merge. The demo is live, not a screenshot.</p>
       </div>
     </div>
   </div>
@@ -305,16 +304,17 @@
     <article class="project-featured" data-reveal>
       <div class="featured-body">
         <div class="featured-top">
+          <span class="project-number">01</span>
           <span class="badge-featured"><i data-lucide="star" aria-hidden="true"></i>Featured</span>
           <span class="project-cat">Production RAG</span>
         </div>
         <h3>AskMyDocs — Production-Grade RAG with CI-Gated Evaluation</h3>
         <p>
-          A robust, enterprise-ready solution that leverages cutting-edge retrieval techniques to
-          deliver seamless, high-quality outcomes at scale. Built with a best-in-class stack and a
-          relentless focus on reliability — this project demonstrates a holistic approach to modern
-          AI engineering, empowering users with actionable insights.
-          Deployed live on Hugging Face Spaces — end to end.
+          Ask questions of your own PDFs and get answers with inline citations. Retrieval is hybrid
+          (60% dense vector, 40% BM25) and reranked by a cross-encoder before anything reaches the
+          model. Every release is scored by an LLM judge in GitHub Actions: if faithfulness drops
+          below 0.70 or fewer than 80% of claims carry a citation, the build fails and the version
+          never ships. Live and public on Hugging Face Spaces.
         </p>
         <div class="metric-row">
           <div class="metric"><span class="metric-val">60/40</span><span class="metric-key">vector / BM25</span></div>
@@ -358,7 +358,7 @@
         </div>
         <span class="project-cat">Computer Vision · Robotics</span>
         <h3>Vision-Based Virtual Maze Navigator</h3>
-        <p>An autonomous e-puck robot that navigates an unknown 3D maze and reaches a target in Webots from <em>camera pixels only</em> — no odometry, no map, no distance sensors in the control loop. Three perception streams (Canny edge density across three vertical zones, right-camera near-field brightness, HSV target detection) feed a reactive policy that prioritises obstacle avoidance over target seeking. Key finding: walls register as edge density <em>collapsing</em> to zero, not spiking — which is why the edge-based detectors survived blur and dimming while the one absolute-threshold detector broke. Every frame&#39;s detector flags and wheel commands are logged to CSV for the robustness experiments.</p>
+        <p>An e-puck robot solves an unknown Webots maze from camera pixels only: no odometry, no map, no distance sensors in the control loop. Three perception streams feed a reactive policy that puts obstacle avoidance ahead of target seeking. The useful finding was a negative one — walls make edge density <em>collapse</em> to zero rather than spike, which is why the edge-based detectors survived blur and dimming and the one absolute-threshold detector broke.</p>
         <div class="tech-tags">
           <span class="tag">OpenCV</span>
           <span class="tag">Webots (e-puck)</span>
@@ -469,8 +469,8 @@
     </div>
 
     <p class="projects-more" data-reveal>
-      Plus a long tail of smaller ML and annotation work — spam detection, sentiment annotation,
-      submarine life simulation, classic-algorithm notebooks.
+      Plus smaller ML and annotation work: spam detection, sentiment annotation, submarine life
+      simulation, classic-algorithm notebooks.
       <a href="https://github.com/raghav-upadhyay2002?tab=repositories" target="_blank" rel="noopener">Browse all repositories →</a>
     </p>
   </div>
@@ -754,8 +754,8 @@
         <p class="updated-date">Last updated: August 2026</p>
       </div>
       <div class="resume-buttons">
-        <a href="assets/resume/Raghav_Upadhyay_resume.pdf" class="btn btn-primary" download>Download Résumé</a>
-        <a href="assets/resume/Raghav_Upadhyay_resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">View Online →</a>
+        <a href="assets/resume/Raghav_Upadhyay_Resume.pdf" class="btn btn-primary" download>Download Résumé</a>
+        <a href="assets/resume/Raghav_Upadhyay_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">View Online →</a>
       </div>
     </div>
   </div>
@@ -770,8 +770,8 @@
     </div>
 
     <p class="contact-text" data-reveal>
-      Always excited to connect with forward-thinking teams and explore synergies that push
-      the boundaries of what's possible. Let's collaborate — and build the future together.
+      I'm graduating in May 2026 and looking for AI / ML engineering roles in the US. If you're
+      hiring, or you want to talk about retrieval evaluation, email is the fastest way to reach me.
     </p>
 
     <div class="contact-cards">

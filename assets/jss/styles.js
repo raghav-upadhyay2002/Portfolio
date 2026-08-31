@@ -302,7 +302,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const mdx = a.x - mouse.x;
         const mdy = a.y - mouse.y;
         const md = Math.hypot(mdx, mdy);
-        if (md < 150) {
+        // md === 0 when a node lands exactly on the pointer; dividing by it
+        // yields NaN coordinates the node never recovers from
+        if (md > 0.001 && md < 150) {
           const f = (150 - md) / 150 * 0.6;
           a.x += (mdx / md) * f;
           a.y += (mdy / md) * f;
