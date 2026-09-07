@@ -56,6 +56,16 @@
 /* ===== Reset & Base ===== */
 *, *::before, *::after { box-sizing: border-box; }
 
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
@@ -1290,7 +1300,6 @@ body.cursor-active .cursor-glow { opacity: 1; }
 }
 .contact-cards {
   display: grid;
-  /* six cards: an explicit 3-up keeps two even rows instead of 4 + 2 */
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
