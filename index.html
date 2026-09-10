@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raghav Upadhyay | AI Engineer – LLMs, RAG &amp; Production ML</title>
-    <meta name="description" content="Raghav Upadhyay – AI/ML engineer and researcher working on LLM evaluation and reliability: hallucination detection, LLM-as-a-judge methodology, and vision-only robot navigation. M.S. Data Science, University of Arizona (2026). Research Assistant, VSI Lab.">
+    <meta name="description" content="Raghav Upadhyay – AI/ML engineer and researcher working on LLM evaluation and reliability: hallucination detection, LLM-as-a-judge methodology, and vision-only robot navigation. M.S. Data Science, University of Arizona (2026). Research Collaborator, University of Arizona.">
     <meta name="keywords" content="Raghav Upadhyay, AI Engineer, LLM Engineer, LLM evaluation, hallucination detection, LLM-as-a-judge, RAG, Retrieval-Augmented Generation, uncertainty quantification, robot navigation, Machine Learning Engineer, NLP, Deep Learning, Portfolio">
     <meta name="author" content="Raghav Upadhyay">
     <meta name="theme-color" content="#0e1219">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Raghav Upadhyay | AI Engineer">
-    <meta property="og:description" content="LLM evaluation and reliability – hallucination detection, LLM-as-a-judge, CI-gated RAG. First-author paper under review at NeurIPS 2026. Research Assistant, VSI Lab, University of Arizona.">
+    <meta property="og:description" content="LLM evaluation and reliability – hallucination detection, LLM-as-a-judge, CI-gated RAG. First-author paper under review at NeurIPS 2026. Research Collaborator, University of Arizona.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://raghavupadhyay.org">
     <meta property="og:image" content="https://raghavupadhyay.org/assets/images/Raghav_profile.jpg">
@@ -47,13 +47,12 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Raghav Upadhyay",
-      "jobTitle": "Research Assistant",
+      "jobTitle": "Research Collaborator",
       "url": "https://raghavupadhyay.org",
       "email": "raghav0408upadhyay@gmail.com",
       "affiliation": {
-        "@type": "ResearchOrganization",
-        "name": "Vision Systems and Intelligence (VSI) Lab, University of Arizona",
-        "parentOrganization": { "@type": "CollegeOrUniversity", "name": "University of Arizona" }
+        "@type": "CollegeOrUniversity",
+        "name": "University of Arizona"
       },
       "alumniOf": [
         { "@type": "CollegeOrUniversity", "name": "University of Arizona" },
@@ -148,7 +147,7 @@
     <h2 class="hero-role" data-reveal>
       <span class="role-prompt" aria-hidden="true">&gt;</span>
       <span id="typed-text" aria-hidden="true">AI / ML Engineer</span><span class="cursor" aria-hidden="true">_</span>
-      <span class="sr-only">AI / ML Engineer, LLM Evaluation &amp; Reliability, RAG Systems Builder, Research Assistant at VSI Lab, MS Data Science at Arizona</span>
+      <span class="sr-only">AI / ML Engineer, LLM Evaluation &amp; Reliability, RAG Systems Builder, Research Collaborator at University of Arizona, MS Data Science at Arizona</span>
     </h2>
 
     <p class="hero-tagline" data-reveal>
@@ -240,9 +239,9 @@
           That extended into <strong>vision-driven robotics</strong>: an e-puck robot solving a Webots maze
           from camera pixels alone, where the useful result was a negative one — the detector keyed on
           absolute brightness broke under dimming, and the ones keyed on relative structure didn't.
-          That finding is now the seed for my work as a <strong>Research Assistant at the Vision Systems
-          and Intelligence (VSI) Lab, University of Arizona</strong>, under Prof. Eungjoo Lee, asking
-          whether a vision-only robot can tell when its own visual evidence has stopped being trustworthy.
+          That finding is now the seed for my work as a <strong>Research Collaborator at the University of
+          Arizona</strong>, under Prof. Eungjoo Lee, asking whether a vision-only robot can tell when its
+          own visual evidence has stopped being trustworthy.
         </p>
         <p>
           I completed my <strong>M.S. in Data Science at the University of Arizona</strong> in May 2026 and
@@ -265,7 +264,7 @@
         </div>
         <ul class="about-facts">
           <li><span class="fact-key">focus</span><span class="fact-val">LLM eval · reliability</span></li>
-          <li><span class="fact-key">now</span><span class="fact-val">RA · VSI Lab, UArizona</span></li>
+          <li><span class="fact-key">now</span><span class="fact-val">Research Collaborator · UArizona</span></li>
           <li><span class="fact-key">research</span><span class="fact-val">arXiv:2605.12898</span></li>
           <li><span class="fact-key">stack</span><span class="fact-val">PyTorch · HF · ChromaDB</span></li>
           <li><span class="fact-key">degree</span><span class="fact-val">M.S. Data Science · 2026</span></li>
@@ -449,23 +448,23 @@
         <div class="timeline-dot"></div>
         <div class="timeline-card">
           <div class="timeline-head">
-            <h3>Research Assistant <span class="badge-current">Current</span></h3>
+            <h3>Research Collaborator <span class="badge-current">Current</span></h3>
             <span class="timeline-date">Aug 2026 – Present</span>
           </div>
-          <h4>Vision Systems and Intelligence (VSI) Lab, University of Arizona <span class="timeline-loc">· Advisor: Prof. Eungjoo Lee · Target venue: IEEE RA-L</span></h4>
+          <h4>University of Arizona <span class="timeline-loc">· Advisor: Prof. Eungjoo Lee, School of Electrical, Computing &amp; Software Engineering · Target venue: IEEE RA-L</span></h4>
           <ul>
-            <li>Investigating whether a vision-only mobile robot can recognise that its visual evidence has become unreliable and adapt before it makes an unsafe call — generalising a failure mode found in the Vision-Based Virtual Maze Navigator.</li>
-            <li>Designing a multi-environment Webots benchmark (10–20 maze layouts, randomised start and target positions) across six visual perturbation types — illumination, blur, occlusion, noise, contrast/brightness and field of view — following the RobustNav (ICCV 2021) evaluation protocol.</li>
-            <li>Building an automated logging pipeline capturing per-frame imagery, perception outputs, actions, pose and collision/success outcomes, with simulator ground truth reserved for labels and evaluation rather than exposed to the policy at test time.</li>
-            <li>Establishing baselines — absolute-threshold Canny/HSV controller vs. a relative-threshold variant vs. a lightweight learned CNN policy — to characterise failure under corruption, toward a reliability-aware act / re-observe / escalate framework.</li>
+            <li>Investigating whether a vision-only mobile robot can recognize when its visual evidence is unreliable for navigation and adapt its behavior before an unsafe or incorrect decision, generalizing a failure mode found in the Vision-Based Virtual Maze Navigator.</li>
+            <li>Built a multi-environment Webots evaluation benchmark spanning 16 maze layouts (11 training, 5 held-out test) under 8 visual corruption types — low illumination, motion blur, defocus blur, occlusion, noise, brightness/contrast, reduced field of view, plus clean — at 5 severity levels each, informed by the RobustNav (ICCV 2021) evaluation protocol.</li>
+            <li>Built an automated data-logging pipeline capturing per-frame camera imagery, perception outputs, actions, pose and collision/success outcomes, with simulator ground truth reserved for training labels and evaluation rather than exposed to the navigation policy at test time.</li>
+            <li>Ran the baseline Canny/HSV controller across 792 trials and uncovered a structural wall-following loop-trap masked by single-maze testing, plus sharply differential corruption sensitivity — 4–8% collision under blur vs. 60–84% under illumination, brightness/contrast, occlusion and noise — now driving a controller redesign and a relative-threshold baseline comparison.</li>
           </ul>
           <div class="tech-tags">
             <span class="tag">Webots</span>
             <span class="tag">OpenCV</span>
-            <span class="tag">PyTorch</span>
             <span class="tag">Robustness Benchmarking</span>
-            <span class="tag">Reliability-Aware Control</span>
+            <span class="tag">RobustNav Protocol</span>
           </div>
+          <a href="https://github.com/raghav-upadhyay2002/visual-reliability-nav" target="_blank" rel="noopener" class="project-link">Code →</a>
         </div>
       </div>
 
@@ -758,8 +757,9 @@
 
     <p class="contact-text" data-reveal>
       I finished my M.S. in May 2026 and I'm looking for AI / ML engineering and research roles in
-      the US, while working as a Research Assistant at the VSI Lab. If you're hiring, or you want to
-      talk about LLM evaluation or reliability under perturbation, email is the fastest way to reach me.
+      the US, while working as a Research Collaborator at the University of Arizona. If you're hiring,
+      or you want to talk about LLM evaluation or reliability under perturbation, email is the fastest
+      way to reach me.
     </p>
 
     <div class="contact-cards">
