@@ -951,6 +951,52 @@ body.cursor-active .cursor-glow { opacity: 1; }
 .project-card.is-wip { border-color: rgba(44, 230, 160, 0.22); }
 .project-card.is-wip:hover { border-color: rgba(44, 230, 160, 0.45); }
 
+/* ===== Minor Projects (compact rows) ===== */
+/* One shared bordered container instead of a full card each -- a deliberately
+   quieter tier so the jump from the project grid to the one-line "plus smaller
+   work" mention isn't a single step. */
+.projects-minor {
+  margin-top: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.project-mini {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--t);
+}
+.project-mini:last-child { border-bottom: none; }
+.project-mini:hover { background: var(--surface-2); }
+.project-mini-number {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-faint);
+  opacity: 0.6;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+.project-mini-body { flex: 1; min-width: 0; }
+.project-mini-body h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.3rem;
+}
+.project-mini-body p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin: 0 0 0.6rem;
+}
+.project-mini-body .tech-tags { margin-top: 0; }
+.project-mini-body .tag { font-size: 0.68rem; padding: 0.2rem 0.6rem; }
+.project-mini-link { flex-shrink: 0; margin-top: 0.15rem; }
+
 .projects-more {
   margin: 2.5rem 0 0;
   text-align: center;
@@ -1639,6 +1685,8 @@ em { font-style: normal; font-weight: 600; }
   .featured-body,
   .resume-banner { padding: 1.75rem; }
   .publication-card { padding: 1.5rem; }
+  .project-mini { flex-wrap: wrap; }
+  .project-mini-link { margin-left: calc(1rem + 1.25rem); }
 }
 
 @media (max-width: 480px) {
