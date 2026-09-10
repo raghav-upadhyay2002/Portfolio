@@ -272,7 +272,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const buildNodes = () => {
-      const density = Math.min(Math.max((w * h) / 16000, 32), 110);
+      // sparse on purpose -- this is background texture, not the focal point
+      const density = Math.min(Math.max((w * h) / 32000, 16), 50);
       nodes = [];
       for (let i = 0; i < density; i++) {
         nodes.push({
@@ -286,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    const linkDist = 130;
+    const linkDist = 105;
 
     const draw = () => {
       ctx.clearRect(0, 0, w, h);
@@ -317,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const dy = a.y - b.y;
           const dist = Math.hypot(dx, dy);
           if (dist < linkDist) {
-            const op = (1 - dist / linkDist) * 0.5;
+            const op = (1 - dist / linkDist) * 0.32;
             ctx.strokeStyle = `rgba(${a.c}, ${op})`;
             ctx.lineWidth = 0.7;
             ctx.beginPath();
@@ -333,8 +334,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const near = Math.hypot(a.x - mouse.x, a.y - mouse.y) < 150;
         ctx.beginPath();
         ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${a.c}, ${near ? 0.95 : 0.65})`;
-        if (near) { ctx.shadowColor = `rgba(${a.c},0.9)`; ctx.shadowBlur = 10; }
+        ctx.fillStyle = `rgba(${a.c}, ${near ? 0.85 : 0.45})`;
+        if (near) { ctx.shadowColor = `rgba(${a.c},0.7)`; ctx.shadowBlur = 8; }
         ctx.fill();
         ctx.shadowBlur = 0;
       }
