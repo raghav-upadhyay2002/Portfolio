@@ -38,7 +38,6 @@
   --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
 
   /* spacing: one value for content cards, one for the large feature panels */
   --pad-card: 1.75rem;
@@ -1500,33 +1499,24 @@ i[data-lucide] { display: inline-block; width: 1em; height: 1em; }
 .rag-judge { display: inline-flex; align-items: center; gap: 0.5rem; }
 
 
-/* ===== Serif Italic Accents ===== */
-/* Instrument Serif runs small and light next to Space Grotesk, so accents get a
-   size and weight bump to hold the same optical presence on the line. */
-.serif-accent,
+/* ===== Gradient Accents ===== */
+/* Plain-prose emphasis: weight instead of italic, same face as the body. */
+em { font-style: normal; font-weight: 600; }
+
+/* Emphasis stays in the display face -- weight and the brand gradient carry
+   the accent instead of switching typeface. */
+.grad-accent,
 .hero-tagline em,
 .section-title em,
 .pillar-box h3 em {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.1em;
-  letter-spacing: 0.01em;
-  color: var(--text);
+  font-style: normal;
+  font-weight: 700;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
-/* accents inside display type need less of a bump -- they are already large */
-.hero-name .serif-accent,
-.section-title .serif-accent,
-.section-title em {
-  font-size: 1.04em;
-  letter-spacing: -0.01em;
-}
-/* keep mono contexts monospaced -- an italic serif in a code-styled run
-   breaks the terminal read those elements are going for */
-.mono em,
-.section-eyebrow em,
-.skill-tags em,
-.fact-key em { font-family: inherit; font-style: italic; font-size: 1em; }
 
 /* ===== Colored Card Borders ===== */
 .project-card,
