@@ -904,7 +904,9 @@ body.cursor-active .cursor-glow { opacity: 1; }
   color: var(--blue);
 }
 
-/* tech tags */
+/* tech tags -- still used by the experience timeline and publication cards,
+   where one or two entries don't create the pill pile-up a 5-7 tag project
+   card did */
 .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
 .tag {
   font-family: var(--font-mono);
@@ -914,6 +916,24 @@ body.cursor-active .cursor-glow { opacity: 1; }
   background: rgba(59, 130, 246, 0.10);
   border: 1px solid rgba(59, 130, 246, 0.22);
   color: #c4b6ff;
+}
+
+/* tech line: quieter stand-in for tech-tags on project cards, where 5-7
+   pills repeated down the page became noise rather than signal */
+.tech-line {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  letter-spacing: 0.2px;
+  margin: 0.5rem 0 0;
+}
+/* .project-card p / .featured-body p set flex-grow/font-size generically for
+   the body copy; beat that here so the tech line stays small and unstretched */
+.project-card .tech-line,
+.featured-body .tech-line {
+  flex-grow: 0;
+  font-size: 0.78rem;
+  margin: 0.5rem 0 0;
 }
 .project-link {
   margin-top: 1rem;
@@ -992,8 +1012,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   color: var(--text-dim);
   margin: 0 0 0.6rem;
 }
-.project-mini-body .tech-tags { margin-top: 0; }
-.project-mini-body .tag { font-size: 0.68rem; padding: 0.2rem 0.6rem; }
+.project-mini-body .tech-line { margin-top: 0; font-size: 0.72rem; }
 .project-mini-link { flex-shrink: 0; margin-top: 0.15rem; }
 
 .projects-more {
