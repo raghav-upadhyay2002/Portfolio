@@ -446,13 +446,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   color: var(--text);
   font-weight: 500;
   max-width: 640px;
-  margin: 0 auto 1rem;
-}
-.hero-about {
-  font-size: 1rem;
-  color: var(--text-dim);
-  max-width: 640px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.5rem;
 }
 
 .hero-buttons {
@@ -594,17 +588,6 @@ body.cursor-active .cursor-glow { opacity: 1; }
   font-weight: 600;
   letter-spacing: -0.8px;
 }
-.title-emoji {
-  display: inline-block;
-  width: 0.82em;
-  height: 0.82em;
-  margin-right: 0.5rem;
-  vertical-align: -0.04em;
-  color: var(--blue);
-  stroke-width: 2;
-  filter: drop-shadow(0 2px 10px var(--glow-blue));
-}
-
 /* ===== About ===== */
 .about-grid {
   display: grid;
@@ -696,17 +679,13 @@ body.cursor-active .cursor-glow { opacity: 1; }
   transition: transform var(--t), border-color var(--t), box-shadow var(--t);
 }
 .pillar-box:hover { transform: translateY(-6px); }
-.pillar-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 1rem;
-  display: grid;
-  place-items: center;
-  font-size: 1.6rem;
-  line-height: 1;
-  border-radius: 14px;
-  background: var(--grad-soft);
-  border: 1px solid rgba(59, 130, 246, 0.28);
+.pillar-index {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
 }
 .pillar-box h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
 .pillar-box p { font-size: 0.92rem; margin: 0; }
@@ -1527,18 +1506,13 @@ footer p { margin: 0.25rem 0; font-size: 0.85rem; color: var(--text-faint); }
 .chip svg,
 .availability svg { color: var(--text-dim); }
 
-/* section-heading icons carry the accent; the drop-shadow stays off */
-.title-emoji { color: var(--blue); filter: none; }
-
 /* --- icon tiles: muted square, shadcn radius --- */
-.skill-icon,
-.pillar-icon {
+.skill-icon {
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text);
 }
-.pillar-icon svg { color: var(--text); }
 
 /* --- misc surfaces --- */
 .navbar.scrolled {
@@ -1555,7 +1529,6 @@ footer p { margin: 0.25rem 0; font-size: 0.85rem; color: var(--text-faint); }
 
 /* ===== Lucide Icon Sizing ===== */
 .skill-icon svg { width: 26px; height: 26px; stroke-width: 1.9; }
-.pillar-icon svg { width: 26px; height: 26px; stroke-width: 1.9; color: var(--blue); }
 /* placeholders are invisible until lucide swaps them in, so nothing flashes */
 i[data-lucide] { display: inline-block; width: 1em; height: 1em; }
 
