@@ -713,7 +713,6 @@ body.cursor-active .cursor-glow { opacity: 1; }
   gap: 0.75rem;
   margin-bottom: 1rem;
 }
-.featured-top .project-number { font-size: 1.15rem; line-height: 1; }
 .badge-featured {
   font-family: var(--font-mono);
   font-size: 0.74rem;
@@ -841,19 +840,11 @@ body.cursor-active .cursor-glow { opacity: 1; }
   justify-content: space-between;
   margin-bottom: 0.5rem;
 }
-.project-number {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--text-faint);
-  opacity: 0.75;
-}
 .card-icon-link {
   color: var(--text-faint);
   transition: color var(--t), transform var(--t);
 }
 .card-icon-link:hover { color: var(--text); transform: translateY(-2px); }
-.project-card .project-cat { margin-bottom: 0.5rem; display: block; }
 .project-card h3 {
   font-size: 1.16rem;
   margin-bottom: 0.75rem;
