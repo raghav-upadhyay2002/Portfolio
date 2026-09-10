@@ -22,12 +22,10 @@
 
   /* accents */
   --blue: #5b8cff;
-  --indigo: #7c5cff;
   --cyan: #2dd4ff;
-  --pink: #c4b6ff;
-  /* purple -> blue -> cyan. Thin accents only (progress bar, nav underline,
+  /* blue -> cyan. Thin accents only (progress bar, nav underline,
      card top strips) -- never as a fill sitting behind body copy. */
-  --grad: linear-gradient(120deg, #7c5cff 0%, #5b8cff 55%, #2dd4ff 100%);
+  --grad: linear-gradient(120deg, #5b8cff 0%, #2dd4ff 100%);
   /* solid counterpart for the few surfaces that set dark text on top */
   --grad-solid: #fafafa;
   --grad-soft: #18181b;
@@ -141,48 +139,13 @@ em { color: var(--text); font-style: italic; }
   box-shadow: 0 0 12px var(--glow-cyan);
 }
 
-/* ===== Cursor Glow ===== */
-.cursor-glow {
-  position: fixed;
-  top: 0; left: 0;
-  width: 480px; height: 480px;
-  margin: -240px 0 0 -240px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.10), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  will-change: transform;
-}
-body.cursor-active .cursor-glow { opacity: 1; }
-
-/* ===== Cursor Beam ===== */
-.cursor-beam {
-  position: fixed;
-  top: 0; left: 0;
-  height: 2px;
-  /* real base width: JS scales by len/100, so the blur and glow stretch
-     at most ~2x rather than being smeared by a 190x scale on a 1px box */
-  width: 100px;
-  pointer-events: none;
-  z-index: 1;
-  border-radius: 2px;
-  /* the beam trails the cursor, so it is brightest at its leading (right) edge */
-  background: linear-gradient(90deg, transparent, var(--blue));
-  transform-origin: 100% 50%;
-  opacity: 0;
-  filter: blur(0.5px) drop-shadow(0 0 6px var(--blue));
-  will-change: transform, opacity;
-}
-
 /* ===== Buttons ===== */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.95rem;
@@ -282,7 +245,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
 .nav-cta {
   padding: 0.5rem 1rem;
   border: 1px solid var(--border-strong);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   color: var(--text) !important;
 }
 .nav-cta::after { display: none; }
@@ -408,23 +371,6 @@ body.cursor-active .cursor-glow { opacity: 1; }
   letter-spacing: -1.5px;
   margin-bottom: 0.5rem;
 }
-.grad-text {
-  background: linear-gradient(120deg, #7c5cff 0%, #5b8cff 40%, #2dd4ff 60%, #5b8cff 80%, #7c5cff 100%);
-  background-size: 220% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  animation: grad-shift 8s var(--ease) infinite;
-}
-@keyframes grad-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50%      { background-position: 100% 50%; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .grad-text { animation: none; }
-}
-
 .hero-role {
   font-family: var(--font-mono);
   font-size: clamp(1rem, 3vw, 1.5rem);
@@ -887,7 +833,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   border-radius: 999px;
   background: rgba(59, 130, 246, 0.10);
   border: 1px solid rgba(59, 130, 246, 0.22);
-  color: #c4b6ff;
+  color: #a8c4ff;
 }
 
 /* tech line: quieter stand-in for tech-tags on project cards, where 5-7
@@ -1392,19 +1338,6 @@ footer p { margin: 0.25rem 0; font-size: 0.85rem; color: var(--text-faint); }
 .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top:hover { background: var(--grad-solid); color: #07090f; border-color: transparent; }
 
-/* ===== Scroll Reveal ===== */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
-  will-change: opacity, transform;
-}
-[data-reveal].revealed {
-  opacity: 1;
-  transform: none;
-  /* release the compositor layer once the element has settled */
-  will-change: auto;
-}
 
 
 /* ============================================================
@@ -1692,6 +1625,5 @@ em { font-style: normal; font-weight: 600; }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  [data-reveal] { opacity: 1; transform: none; }
   .marquee-track { animation: none; }
 }

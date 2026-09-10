@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="LLM evaluation and reliability – hallucination detection, LLM-as-a-judge, CI-gated RAG. First-author paper under review at NeurIPS 2026.">
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='28' cy='30' r='8' fill='%23822dff'/><circle cx='72' cy='26' r='8' fill='%232dd4ff'/><circle cx='50' cy='66' r='8' fill='%235b8cff'/><path d='M28 30 L72 26 L50 66 Z' stroke='%237c5cff' stroke-width='4' fill='none' stroke-opacity='0.7'/></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='28' cy='30' r='8' fill='%232ce6a0'/><circle cx='72' cy='26' r='8' fill='%232dd4ff'/><circle cx='50' cy='66' r='8' fill='%235b8cff'/><path d='M28 30 L72 26 L50 66 Z' stroke='%235b8cff' stroke-width='4' fill='none' stroke-opacity='0.7'/></svg>">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,20 +92,17 @@
 <!-- ===== Scroll Progress Bar ===== -->
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-<!-- ===== Cursor Glow ===== -->
-<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-<div class="cursor-beam" id="cursorBeam" aria-hidden="true"></div>
 
 <!-- ===== Navbar ===== -->
 <nav class="navbar" id="navbar">
   <a href="#home" class="nav-logo" aria-label="Go to Home">
     <span class="logo-mark" aria-hidden="true">
       <svg viewBox="0 0 32 32" width="22" height="22">
-        <circle cx="8" cy="9" r="3" fill="#822dff"/>
+        <circle cx="8" cy="9" r="3" fill="#2ce6a0"/>
         <circle cx="24" cy="7" r="3" fill="#2dd4ff"/>
         <circle cx="16" cy="22" r="3" fill="#5b8cff"/>
         <path d="M8 9 L24 7 L16 22 Z" stroke="url(#g)" stroke-width="1.5" fill="none"/>
-        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#822dff"/><stop offset="1" stop-color="#2dd4ff"/></linearGradient></defs>
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b8cff"/><stop offset="1" stop-color="#2dd4ff"/></linearGradient></defs>
       </svg>
     </span>
     Raghav<span class="logo-dot">.</span>
@@ -151,7 +148,7 @@
     </h2>
 
     <p class="hero-tagline" data-reveal>
-      I build <em>retrieval systems</em> that cite their sources — and a CI gate that blocks the deploy when they stop.
+      I build <em>retrieval systems</em> that cite their sources. A CI gate blocks the deploy when they stop.
     </p>
 
     <div class="hero-buttons" data-reveal>
@@ -215,7 +212,7 @@
 <section id="about" class="section">
   <div class="container">
     <div class="section-head" data-reveal>
-      <span class="section-eyebrow">// 01 — about</span>
+      <span class="section-eyebrow">// 01 · about</span>
       <h2 class="section-title">Engineer, not just <em>experimenter</em></h2>
     </div>
 
@@ -228,7 +225,7 @@
         </p>
         <p>
           That's what <strong>AskMyDocs</strong> is. It splits retrieval 60/40 between a vector index and
-          BM25, reranks with a cross-encoder, and grades every answer with an LLM judge in CI —
+          BM25, reranks with a cross-encoder, and grades every answer with an LLM judge in CI:
           faithfulness below 0.70 or citation rate below 0.80 and the pipeline fails. It's deployed
           and public on Hugging Face Spaces. The same instinct produced my
           <a href="#publications" class="inline-link">study of LLM-generated social networks</a>, now
@@ -237,7 +234,7 @@
         </p>
         <p>
           That extended into <strong>vision-driven robotics</strong>: an e-puck robot solving a Webots maze
-          from camera pixels alone, where the useful result was a negative one — the detector keyed on
+          from camera pixels alone, where the useful result was a negative one: the detector keyed on
           absolute brightness broke under dimming, and the ones keyed on relative structure didn't.
           That finding is now the seed for my work as a <strong>Research Collaborator at the University of
           Arizona</strong>, under Prof. Eungjoo Lee, asking whether a vision-only robot can tell when its
@@ -298,7 +295,7 @@
 <section id="projects" class="section alt-bg">
   <div class="container">
     <div class="section-head" data-reveal>
-      <span class="section-eyebrow">// 02 — projects</span>
+      <span class="section-eyebrow">// 02 · projects</span>
       <h2 class="section-title">Things I've built &amp; <em>shipped</em></h2>
     </div>
 
@@ -309,16 +306,16 @@
           <span class="badge-featured"><i data-lucide="star" aria-hidden="true"></i>Featured</span>
           <span class="project-cat">01 · Production RAG</span>
         </div>
-        <h3>AskMyDocs — Production-Grade RAG with CI-Gated Evaluation</h3>
+        <h3>AskMyDocs: Production-Grade RAG with CI-Gated Evaluation</h3>
         <p>
-          Ask questions of your own PDFs and get answers with inline citations. Retrieval is hybrid —
-          60% ChromaDB vector similarity, 40% BM25 — with the top 10 candidates re-scored to the top 3
+          Ask questions of your own PDFs and get answers with inline citations. Retrieval is hybrid
+          (60% ChromaDB vector similarity, 40% BM25) with the top 10 candidates re-scored to the top 3
           by an <span class="mono">ms-marco-MiniLM-L-6-v2</span> cross-encoder. Any answer that comes back
           without citations is flagged as a hallucination, and prompt templates are versioned
           (default / strict / concise) and selectable per query. Every release is graded by an
           LLM judge in GitHub Actions: faithfulness under 0.70, relevance under 0.70 or citation rate
           under 0.80 fails the build and the version never ships. The whole pipeline is built as
-          swappable modules — loader, chunker, embedder, vectorstore, reranker, LLM, prompts — so any
+          swappable modules (loader, chunker, embedder, vectorstore, reranker, LLM, prompts) so any
           stage can be ablated on its own. Live and public on Hugging Face Spaces.
         </p>
         <div class="metric-row">
@@ -356,8 +353,8 @@
           </a>
         </div>
         <h3>Vision-Based Virtual Maze Navigator</h3>
-        <p>An e-puck robot solves an unmapped Webots maze from camera pixels only — no odometry, no map, no distance sensors in the control loop. The finding was counter-intuitive: wall proximity registers as edge density <em>collapsing</em> toward zero rather than spiking, and the detector built on that survived a blur test unmodified. Per-frame CSV telemetry surfaced six failure modes; five are fixed on <span class="mono">main</span>, and the last traced to the one detector keyed on absolute intensity rather than relative structure — with a relative-brightness fix specified that holds through a 50% illumination drop.</p>
-        <p class="project-followup"><i data-lucide="git-branch" aria-hidden="true"></i>Now the seed project for faculty-advised research targeting IEEE RA-L — see <a href="#experience" class="inline-link">Research &amp; work</a>.</p>
+        <p>An e-puck robot solves an unmapped Webots maze from camera pixels only: no odometry, no map, no distance sensors in the control loop. The finding was counter-intuitive: wall proximity registers as edge density <em>collapsing</em> toward zero rather than spiking, and the detector built on that survived a blur test unmodified. Per-frame CSV telemetry surfaced six failure modes; five are fixed on <span class="mono">main</span>, and the last traced to the one detector keyed on absolute intensity rather than relative structure, with a relative-brightness fix specified that holds through a 50% illumination drop.</p>
+        <p class="project-followup"><i data-lucide="git-branch" aria-hidden="true"></i>Now the seed project for faculty-advised research targeting IEEE RA-L. See <a href="#experience" class="inline-link">Research &amp; work</a>.</p>
         <p class="tech-line">OpenCV · Webots (e-puck) · Canny Edges · HSV Detection · Reactive Control · NumPy</p>
         <div class="project-link-row">
           <a href="https://drive.google.com/file/d/1d2R76Qy9Kmbr4RCgXTRKCL5U3j1-cjew/view?usp=sharing" target="_blank" rel="noopener" class="project-link">Watch demo →</a>
@@ -373,8 +370,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
           </a>
         </div>
-        <h3>LLM-Generated Social Networks — Cross-Cultural Study (Capstone)</h3>
-        <p>Replicated and extended an ICWSM 2025 paper on whether LLMs generate structurally realistic social networks. Built a full generation–analysis–benchmark pipeline across a 4×4×4×3 matrix (prompting × cultures × languages × GPT-4.1 tiers, two seeds per condition) producing 192 verified directed networks from 50 demographically grounded personas. Political affiliation dominates tie formation under three of four methods — but the global method substitutes age, which means homophily results reported under a single prompting scheme may be design artifacts. <strong>First-author paper</strong>, under review at NeurIPS 2026.</p>
+        <h3>LLM-Generated Social Networks: Cross-Cultural Study (Capstone)</h3>
+        <p>Replicated and extended an ICWSM 2025 paper on whether LLMs generate structurally realistic social networks. Built a full generation-analysis-benchmark pipeline across a 4×4×4×3 matrix (prompting × cultures × languages × GPT-4.1 tiers, two seeds per condition) producing 192 verified directed networks from 50 demographically grounded personas. Political affiliation dominates tie formation under three of four methods, but the global method substitutes age, which means homophily results reported under a single prompting scheme may be design artifacts. <strong>First-author paper</strong>, under review at NeurIPS 2026.</p>
         <p class="tech-line">GPT-4.1 · NetworkX · pandas · Experiment Design</p>
         <a href="https://arxiv.org/abs/2605.12898" target="_blank" rel="noopener" class="project-link">Read on arXiv →</a>
       </article>
@@ -386,7 +383,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
         </div>
-        <h3>RUL Prediction with LSTM — Uncertainty-Aware Predictive Maintenance</h3>
+        <h3>RUL Prediction with LSTM: Uncertainty-Aware Predictive Maintenance</h3>
         <p>Benchmarked four recurrent architectures (Vanilla LSTM, Stacked BiLSTM, LSTM-Attention, CNN-LSTM) on NASA C-MAPSS for turbofan Remaining Useful Life. Monte Carlo Dropout and deep ensembles supply the uncertainty, and maintenance decisions are taken on a <strong>mean − 2σ lower bound</strong> rather than a point estimate. Gradient-based attribution and temporal attention heatmaps give per-prediction explanations that can be audited, and zero-shot transfer was evaluated across C-MAPSS subsets.</p>
         <p class="tech-line">PyTorch · TensorFlow · Uncertainty · XAI</p>
         <a href="https://github.com/raghav-upadhyay2002/RUL-prediction-using-LSTM-for-Aircraft-Engine" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
@@ -439,7 +436,7 @@
 <section id="experience" class="section">
   <div class="container">
     <div class="section-head" data-reveal>
-      <span class="section-eyebrow">// 03 — experience</span>
+      <span class="section-eyebrow">// 03 · experience</span>
       <h2 class="section-title">Research &amp; <em>work</em></h2>
     </div>
 
@@ -454,9 +451,9 @@
           <h4>University of Arizona <span class="timeline-loc">· Advisor: Prof. Eungjoo Lee, School of Electrical, Computing &amp; Software Engineering · Target venue: IEEE RA-L</span></h4>
           <ul>
             <li>Investigating whether a vision-only mobile robot can recognize when its visual evidence is unreliable for navigation and adapt its behavior before an unsafe or incorrect decision, generalizing a failure mode found in the Vision-Based Virtual Maze Navigator.</li>
-            <li>Built a multi-environment Webots evaluation benchmark spanning 16 maze layouts (11 training, 5 held-out test) under 8 visual corruption types — low illumination, motion blur, defocus blur, occlusion, noise, brightness/contrast, reduced field of view, plus clean — at 5 severity levels each, informed by the RobustNav (ICCV 2021) evaluation protocol.</li>
+            <li>Built a multi-environment Webots evaluation benchmark spanning 16 maze layouts (11 training, 5 held-out test) under 8 visual corruption types (low illumination, motion blur, defocus blur, occlusion, noise, brightness/contrast, reduced field of view, plus clean) at 5 severity levels each, informed by the RobustNav (ICCV 2021) evaluation protocol.</li>
             <li>Built an automated data-logging pipeline capturing per-frame camera imagery, perception outputs, actions, pose and collision/success outcomes, with simulator ground truth reserved for training labels and evaluation rather than exposed to the navigation policy at test time.</li>
-            <li>Ran the baseline Canny/HSV controller across 792 trials and uncovered a structural wall-following loop-trap masked by single-maze testing, plus sharply differential corruption sensitivity — 4–8% collision under blur vs. 60–84% under illumination, brightness/contrast, occlusion and noise — now driving a controller redesign and a relative-threshold baseline comparison.</li>
+            <li>Ran the baseline Canny/HSV controller across 792 trials and uncovered a structural wall-following loop-trap masked by single-maze testing, plus sharply differential corruption sensitivity (4–8% collision under blur vs. 60–84% under illumination, brightness/contrast, occlusion and noise) that's now driving a controller redesign and a relative-threshold baseline comparison.</li>
           </ul>
           <div class="tech-tags">
             <span class="tag">Webots</span>
@@ -477,7 +474,7 @@
           </div>
           <h4>Sudhir Mehrotra &amp; Associates, Chartered Accountants <span class="timeline-loc">· Bareilly, India (Hybrid)</span></h4>
           <ul>
-            <li>First hands-on exposure to production data pipelines — the itch that led into the ML/LLM research and engineering work featured throughout this site.</li>
+            <li>First hands-on exposure to production data pipelines: the itch that led into the ML/LLM research and engineering work featured throughout this site.</li>
             <li>Built Python ETL pipelines that automated financial workflows, cutting manual processing effort by 30%.</li>
             <li>Developed a time-series cash-flow forecasting module that improved estimation accuracy by 15% over baseline.</li>
             <li>Automated recurring Excel reporting with Python and VBA, eliminating multi-hour weekly manual tasks for the audit team.</li>
@@ -499,7 +496,7 @@
 <section id="skills" class="section alt-bg">
   <div class="container">
     <div class="section-head" data-reveal>
-      <span class="section-eyebrow">// 04 — skills</span>
+      <span class="section-eyebrow">// 04 · skills</span>
       <h2 class="section-title">Tools of the <em>trade</em></h2>
     </div>
 
@@ -575,7 +572,7 @@
 <section id="certificates" class="section">
   <div class="container">
     <div class="section-head" data-reveal>
-      <span class="section-eyebrow">// 05 — certifications</span>
+      <span class="section-eyebrow">// 05 · certifications</span>
       <h2 class="section-title">Verified credentials</h2>
     </div>
 
@@ -593,7 +590,7 @@
             <li>The 4D framework for working effectively with AI</li>
             <li>Delegation &amp; task decomposition between human and model</li>
             <li>Description: prompting, context, and iterative refinement</li>
-            <li>Discernment &amp; diligence — evaluating and verifying AI output</li>
+            <li>Discernment &amp; diligence: evaluating and verifying AI output</li>
           </ul>
         </div>
         <a href="https://verify.skilljar.com/c/piqmwh97829m" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View Certificate →</a>
@@ -659,7 +656,7 @@
 <section id="education" class="section alt-bg">
   <div class="container">
     <div class="section-head" data-reveal>
-      <span class="section-eyebrow">// 06 — education</span>
+      <span class="section-eyebrow">// 06 · education</span>
       <h2 class="section-title">Academic background</h2>
     </div>
 
@@ -688,7 +685,7 @@
 <section id="publications" class="section">
   <div class="container">
     <div class="section-head" data-reveal>
-      <span class="section-eyebrow">// 07 — research</span>
+      <span class="section-eyebrow">// 07 · research</span>
       <h2 class="section-title">Research &amp; <em>publications</em></h2>
     </div>
 
@@ -705,14 +702,14 @@
       </p>
       <p>
         Building on homophily and structural balance theory, we formalize four LLM-based tie-formation
-        mechanisms — sequential, global, local, and iterative — as distinct conditional distributions over
+        mechanisms (sequential, global, local, and iterative) as distinct conditional distributions over
         edge sets. Using a fixed roster of 50 demographically grounded personas, we generate 192 verified
         directed networks across four cultural contexts, four prompt languages, three GPT-4.1 variants and
         four prompting architectures, with two seeds per condition.
       </p>
       <ul class="pub-findings">
         <li>Cultural framing measurably shifts inbreeding homophily and largest-component connectivity.</li>
-        <li>Political affiliation dominates tie formation under three of four methods, while the global method substitutes age. Prompt architecture is therefore a substantive sociological variable — homophily findings reported under a single prompting scheme may be design artifacts.</li>
+        <li>Political affiliation dominates tie formation under three of four methods, while the global method substitutes age. Prompt architecture is therefore a substantive sociological variable: homophily findings reported under a single prompting scheme may be design artifacts.</li>
         <li>Model scale produces a divergence ranking that reproduced across all three studies (GPT-4.1 ↔ mini = 0.074, ↔ nano = 0.119), with the smallest variant differing qualitatively rather than only in noise.</li>
       </ul>
       <div class="tech-tags">
@@ -734,7 +731,7 @@
   <div class="container">
     <div class="resume-banner" data-reveal>
       <div class="resume-banner-text">
-        <span class="section-eyebrow">// 08 — cv</span>
+        <span class="section-eyebrow">// 08 · cv</span>
         <h2 class="section-title">The full record</h2>
         <p>Two pages: research experience, publications, projects with methods and numbers, and coursework.</p>
         <p class="updated-date">Last updated: August 2026</p>
@@ -751,7 +748,7 @@
 <section id="contact" class="section">
   <div class="container">
     <div class="section-head" data-reveal>
-      <span class="section-eyebrow">// 09 — contact</span>
+      <span class="section-eyebrow">// 09 · contact</span>
       <h2 class="section-title">Let's build <em>something</em></h2>
     </div>
 
@@ -798,7 +795,7 @@
 
 <!-- ===== Footer ===== -->
 <footer>
-  <p>&copy; <span id="footer-year"></span> Raghav Upadhyay</p>
+  <p>&copy; <span id="footer-year"></span> Raghav Upadhyay · <a href="privacy.html" class="inline-link">Privacy Policy</a></p>
   <p class="footer-built">Designed &amp; built with care · <span class="mono">HTML · CSS · JS</span></p>
 </footer>
 

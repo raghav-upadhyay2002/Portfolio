@@ -3,7 +3,6 @@
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
   /* ===== Mobile Menu ===== */
   const menuToggle = document.getElementById("menuToggle");
@@ -117,39 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ===== Scroll Reveal ===== */
-  const revealEls = document.querySelectorAll("[data-reveal]");
-  if ("IntersectionObserver" in window && !reduceMotion) {
-    // Stagger by position among revealing siblings, not by batch index --
-    // the observer hands us entries in arbitrary order and in varying batch
-    // sizes, so indexing the batch gives inconsistent delays run to run.
-    const staggerIndex = (el) => {
-      const parent = el.parentElement;
-      if (!parent) return 0;
-      const sibs = Array.prototype.filter.call(
-        parent.children,
-        (n) => n.hasAttribute && n.hasAttribute("data-reveal")
-      );
-      return Math.max(0, sibs.indexOf(el));
-    };
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target;
-          el.style.transitionDelay = Math.min(staggerIndex(el) * 70, 350) + "ms";
-          el.classList.add("revealed");
-          io.unobserve(el);
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-    revealEls.forEach((el) => io.observe(el));
-  } else {
-    revealEls.forEach((el) => el.classList.add("revealed"));
-  }
-
   /* ===== Animated Counters ===== */
   const counters = document.querySelectorAll(".stat-num[data-count]");
   const animateCount = (el) => {
@@ -186,70 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const d = parseInt(c.dataset.decimals || "0", 10);
       c.textContent = parseFloat(c.dataset.count).toFixed(d) + (c.dataset.suffix || "");
     });
-  }
-
-  /* ===== Cursor Glow ===== */
-  const glow = document.getElementById("cursorGlow");
-  if (glow && !isTouch && !reduceMotion) {
-    let gx = window.innerWidth / 2, gy = window.innerHeight / 2;
-    let cx = gx, cy = gy;
-    document.body.classList.add("cursor-active");
-    window.addEventListener("mousemove", (e) => {
-      gx = e.clientX;
-      gy = e.clientY;
-    }, { passive: true });
-    const follow = () => {
-      cx += (gx - cx) * 0.15;
-      cy += (gy - cy) * 0.15;
-      glow.style.transform = `translate(${cx}px, ${cy}px)`;
-      requestAnimationFrame(follow);
-    };
-    follow();
-  }
-
-  /* ===== Cursor Beam =====
-     A streak that trails the pointer: it points along the direction of travel
-     and its length scales with speed, so it stretches on a fast flick and
-     collapses to nothing when the pointer rests. */
-  const beam = document.getElementById("cursorBeam");
-  if (beam && !isTouch && !reduceMotion) {
-    const MAX_LEN = 190;   // px, cap so fast flicks stay tasteful
-    const EASE = 0.22;
-
-    let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
-    let bx = tx, by = ty;
-    let angle = 0, len = 0;
-
-    window.addEventListener("mousemove", (e) => {
-      tx = e.clientX;
-      ty = e.clientY;
-    }, { passive: true });
-
-    const draw = () => {
-      const px = bx, py = by;
-      bx += (tx - bx) * EASE;
-      by += (ty - by) * EASE;
-
-      const dx = bx - px;
-      const dy = by - py;
-      const speed = Math.hypot(dx, dy);
-
-      // only re-aim while actually moving; below this the angle is just noise
-      if (speed > 0.6) angle = Math.atan2(dy, dx);
-
-      // ease length toward the speed-derived target so it grows and decays smoothly
-      const target = Math.min(speed * 9, MAX_LEN);
-      len += (target - len) * 0.18;
-
-      beam.style.opacity = Math.min(len / 70, 0.85).toFixed(3);
-      // BASE_W matches the element's CSS width, so scaleX maps len -> pixels
-      const BASE_W = 100;
-      beam.style.transform =
-        `translate(${bx}px, ${by}px) rotate(${angle}rad) scaleX(${Math.max(len / BASE_W, 0.001)})`;
-
-      requestAnimationFrame(draw);
-    };
-    draw();
   }
 
   /* ===== Neural Network Canvas ===== */
