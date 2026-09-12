@@ -16,3 +16,35 @@ __pycache__/
 *.swp
 *~
 Thumbs.db
+
+# Node / npm
+/node_modules
+/.pnp
+.pnp.*
+npm-debug.log*
+*.tsbuildinfo
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+
+# env
+.env*.local
+.env
+
+# Impeccable (local overrides only; committed config stays tracked)
+.impeccable/config.local.json
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/build/
+.impeccable/hook.cache.json
+
+# Playwright MCP debug output
+.playwright-mcp/
+
+# AI coding-tool skill installations (local tooling, not site source)
+.agents/
+.claude/
+.codex/
+skills-lock.json
