@@ -67,7 +67,7 @@ Current typography (Space Grotesk + JetBrains Mono) and current color system are
 
 **Skills:** real tag lists across LLMs & RAG, LLM Eval & Reliability, Deep Learning, Computer Vision & Robotics, Languages, Data & Viz, MLOps & Tools, Databases — see current `index.html` for exact tags; do not invent additional ones.
 
-**Contact:** email `raghav0408upadhyay@gmail.com`, LinkedIn `raghavupadhya04`, GitHub `raghav-upadhyay2002`, Hugging Face `raghavupadhyay`, arXiv author page. No Twitter/X presence.
+**Contact:** email `raghav0408upadhyay@gmail.com`, LinkedIn `raghavupadhyay04`, GitHub `raghav-upadhyay2002`, Hugging Face `raghavupadhyay`, arXiv author page. No Twitter/X presence.
 
 **Absences to not fabricate:** no testimonials, no customer/client logos, no pricing, no press mentions, no additional employers or degrees beyond the above.
 

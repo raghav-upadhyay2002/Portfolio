@@ -18,8 +18,8 @@ export const site = {
 
 export const social = {
   email: `mailto:${site.email}`,
-  linkedin: "https://www.linkedin.com/in/raghavupadhya04/",
-  linkedinHandle: "raghavupadhya04",
+  linkedin: "https://www.linkedin.com/in/raghavupadhyay04/",
+  linkedinHandle: "raghavupadhyay04",
   github: "https://github.com/raghav-upadhyay2002",
   githubHandle: "raghav-upadhyay2002",
   huggingface: "https://huggingface.co/raghavupadhyay",
