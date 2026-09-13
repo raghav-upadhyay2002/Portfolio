@@ -9,6 +9,7 @@ import {
   site,
   tags,
   thesis,
+  workAuthorization,
 } from "@/lib/content";
 
 export function TitleBlock() {
@@ -20,7 +21,10 @@ export function TitleBlock() {
             {site.url.replace("https://", "")} / {site.revision}
           </span>
           <span>Revised {site.lastRevised}</span>
-          <span className="text-mark">{availability}</span>
+          <span className="flex flex-col items-end gap-0.5 text-right">
+            <span className="text-mark">{availability}</span>
+            <span className="normal-case tracking-normal text-ink-dim">{workAuthorization}</span>
+          </span>
         </div>
 
         <div className="pt-10 sm:pt-14">
@@ -107,9 +111,13 @@ export function TitleBlock() {
                 <dt className="text-ink-dim">location</dt>
                 <dd className="text-right text-ink">{tags.location}</dd>
               </div>
-              <div className="flex items-baseline justify-between gap-3">
+              <div className="flex items-baseline justify-between gap-3 hairline-b border-border pb-3">
                 <dt className="text-ink-dim">degree</dt>
                 <dd className="text-right text-ink">{tags.degree}</dd>
+              </div>
+              <div className="flex items-baseline justify-between gap-3">
+                <dt className="text-ink-dim">work auth</dt>
+                <dd className="text-right text-ink">{tags.workAuth}</dd>
               </div>
             </dl>
 

@@ -31,6 +31,7 @@ export const social = {
 // Hero thesis / abstract -----------------------------------------------------
 
 export const availability = "Open to full-time AI / ML Engineer roles · US";
+export const workAuthorization = "Authorized to work in the U.S. on F-1 OPT through Jul 2027 — no sponsorship needed";
 
 export const thesis =
   "I build retrieval systems that cite their sources. A CI gate blocks the deploy when they stop.";
@@ -61,6 +62,7 @@ export const tags = {
   location: "West Lafayette, IN",
   degree: "MS Data Science · UArizona",
   status: "Available now",
+  workAuth: "F-1 OPT, through Jul 2027",
 } as const;
 
 // Method (formerly "pillars") -------------------------------------------------
