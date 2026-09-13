@@ -70,6 +70,7 @@ export function RunningHeader() {
                   active === s.id ? "text-mark" : "hover:text-ink"
                 )}
                 aria-current={active === s.id ? "true" : undefined}
+                aria-label={`${s.label} (${s.plain})`}
               >
                 {s.label}
               </a>
@@ -112,6 +113,7 @@ export function RunningHeader() {
                 "px-1 py-2 font-mono text-xs uppercase tracking-[0.14em] transition-colors",
                 active === s.id ? "text-mark" : "text-ink-dim hover:text-ink"
               )}
+              aria-label={`${s.label} (${s.plain})`}
             >
               {s.label}
             </a>

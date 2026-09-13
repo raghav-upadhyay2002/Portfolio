@@ -3,6 +3,7 @@ import { Citation } from "@/components/citation";
 import { BuildLogTicker } from "@/components/sections/build-log-ticker";
 import {
   abstract,
+  alsoSearchingTitles,
   availability,
   cv,
   headlineFigures,
@@ -38,6 +39,10 @@ export function TitleBlock() {
 
           <p className="mt-5 max-w-2xl font-sans text-base leading-relaxed text-ink-dim sm:text-lg">
             {plainSummary}
+          </p>
+
+          <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-faint">
+            Also searching under: {alsoSearchingTitles.join(" · ")}
           </p>
 
           <p className="mt-8 max-w-3xl border-l border-border py-1 pl-5 font-serif text-xl italic leading-relaxed text-ink sm:text-2xl">

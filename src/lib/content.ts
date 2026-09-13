@@ -42,6 +42,15 @@ export const thesis =
 export const plainSummary =
   "Recent M.S. Data Science grad (May 2026) looking for AI / ML Engineer roles — hands-on with LLMs, retrieval systems (RAG), and computer vision. Based in West Lafayette, IN; open to relocating or remote.";
 
+// Adjacent job titles this candidate would accept — literal keyword strings
+// for recruiter boolean search / ATS title matching, not a design element.
+export const alsoSearchingTitles = [
+  "ML Engineer",
+  "Applied Scientist",
+  "NLP Engineer",
+  "AI Research Engineer",
+] as const;
+
 export const abstract = [
   "I'm Raghav Upadhyay. Most people can get an LLM to answer a question. My interest is the part after that: proving the answer was grounded, and catching it automatically when it isn't.",
   "That's what AskMyDocs is. It splits retrieval 60/40 between a vector index and BM25, reranks with a cross-encoder, and grades every answer with an LLM judge in CI: faithfulness below 0.70 or citation rate below 0.80 and the pipeline fails. It's deployed and public on Hugging Face Spaces. The same instinct produced my study of LLM-generated social networks, now under review at NeurIPS 2026: 192 generated networks across four cultures, four languages and three model tiers, measured rather than eyeballed.",
@@ -379,12 +388,12 @@ export const correspondence = {
 // Section registry (drives running header + scrollspy) --------------------------
 
 export const sections = [
-  { id: "abstract", label: "Abstract" },
-  { id: "method", label: "Method" },
-  { id: "projects", label: "Figures" },
-  { id: "experience", label: "Revisions" },
-  { id: "skills", label: "Results" },
-  { id: "appendix", label: "Appendix" },
-  { id: "publication", label: "References" },
-  { id: "correspondence", label: "Correspondence" },
+  { id: "abstract", label: "Abstract", plain: "About" },
+  { id: "method", label: "Method", plain: "Approach" },
+  { id: "projects", label: "Figures", plain: "Projects" },
+  { id: "experience", label: "Revisions", plain: "Work Experience" },
+  { id: "skills", label: "Results", plain: "Skills" },
+  { id: "appendix", label: "Appendix", plain: "Education & Certifications" },
+  { id: "publication", label: "References", plain: "Publications" },
+  { id: "correspondence", label: "Correspondence", plain: "Contact" },
 ] as const;

@@ -4,7 +4,9 @@ export function Method() {
   return (
     <section id="method" className="scroll-mt-12 hairline-t border-border">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-serif text-2xl text-ink sm:text-3xl">2. Method</h2>
+        <h2 className="font-serif text-2xl text-ink sm:text-3xl">
+          2. Method <span className="text-ink-faint">(Approach)</span>
+        </h2>
         <p className="prose-measure mt-3 font-serif text-ink-dim">
           Three steps, in order. Skipping the second is how the first stops meaning anything.
         </p>

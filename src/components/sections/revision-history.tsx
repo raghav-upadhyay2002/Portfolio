@@ -4,7 +4,9 @@ export function RevisionHistory() {
   return (
     <section id="experience" className="scroll-mt-12 hairline-t border-border">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-serif text-2xl text-ink sm:text-3xl">4. Revision History</h2>
+        <h2 className="font-serif text-2xl text-ink sm:text-3xl">
+          4. Revision History <span className="text-ink-faint">(Work Experience)</span>
+        </h2>
         <p className="prose-measure mt-3 font-serif text-ink-dim">
           Work experience, kept as a paper keeps its versions: what changed, and why it needed a new one.
         </p>

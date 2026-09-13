@@ -4,7 +4,9 @@ export function ResultsTable() {
   return (
     <section id="skills" className="scroll-mt-12 hairline-t border-border">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-serif text-2xl text-ink sm:text-3xl">5. Results</h2>
+        <h2 className="font-serif text-2xl text-ink sm:text-3xl">
+          5. Results <span className="text-ink-faint">(Skills)</span>
+        </h2>
         <p className="prose-measure mt-3 font-serif text-ink-dim">
           Tools and methods, grouped the way they get used together rather than alphabetized.
         </p>

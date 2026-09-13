@@ -5,7 +5,9 @@ export function Publication() {
   return (
     <section id="publication" className="scroll-mt-12 hairline-t border-border">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-serif text-2xl text-ink sm:text-3xl">7. References</h2>
+        <h2 className="font-serif text-2xl text-ink sm:text-3xl">
+          7. References <span className="text-ink-faint">(Publications)</span>
+        </h2>
 
         <article id="fig-publication-full" className="mt-10 border border-border bg-surface p-5 sm:p-8">
           <div className="flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-[0.1em]">

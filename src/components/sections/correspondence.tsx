@@ -4,7 +4,9 @@ export function Correspondence() {
   return (
     <section id="correspondence" className="scroll-mt-12 hairline-t border-border">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
-        <h2 className="font-serif text-2xl text-ink sm:text-3xl">8. Correspondence</h2>
+        <h2 className="font-serif text-2xl text-ink sm:text-3xl">
+          8. Correspondence <span className="text-ink-faint">(Contact)</span>
+        </h2>
 
         <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[1fr_320px] lg:gap-16">
           <p className="prose-measure font-serif text-lg leading-[1.75] text-ink-dim">

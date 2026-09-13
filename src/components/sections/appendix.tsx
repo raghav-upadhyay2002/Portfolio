@@ -5,7 +5,9 @@ export function Appendix() {
   return (
     <section id="appendix" className="scroll-mt-12 hairline-t border-border">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-serif text-2xl text-ink sm:text-3xl">6. Appendix</h2>
+        <h2 className="font-serif text-2xl text-ink sm:text-3xl">
+          6. Appendix <span className="text-ink-faint">(Education &amp; Certifications)</span>
+        </h2>
 
         <div className="mt-10">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-mark">A. Education</p>

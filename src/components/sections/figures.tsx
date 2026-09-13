@@ -76,7 +76,9 @@ export function Figures() {
   return (
     <section id="projects" className="scroll-mt-12 hairline-t border-border">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-serif text-2xl text-ink sm:text-3xl">3. Figures</h2>
+        <h2 className="font-serif text-2xl text-ink sm:text-3xl">
+          3. Figures <span className="text-ink-faint">(Projects)</span>
+        </h2>
         <p className="prose-measure mt-3 font-serif text-ink-dim">
           Seven projects, numbered as figures. Each links to the artifact it describes — a live app, a repo, or a paper — rather than a screenshot of one.
         </p>
