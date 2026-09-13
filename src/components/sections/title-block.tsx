@@ -6,6 +6,7 @@ import {
   availability,
   cv,
   headlineFigures,
+  plainSummary,
   site,
   tags,
   thesis,
@@ -33,6 +34,10 @@ export function TitleBlock() {
           </h1>
           <p className="mt-3 font-sans text-sm uppercase tracking-[0.1em] text-ink-dim sm:text-base">
             {site.role} — Research Collaborator, {site.affiliation}
+          </p>
+
+          <p className="mt-5 max-w-2xl font-sans text-base leading-relaxed text-ink-dim sm:text-lg">
+            {plainSummary}
           </p>
 
           <p className="mt-8 max-w-3xl border-l border-border py-1 pl-5 font-serif text-xl italic leading-relaxed text-ink sm:text-2xl">

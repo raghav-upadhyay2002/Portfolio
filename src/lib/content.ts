@@ -31,10 +31,16 @@ export const social = {
 // Hero thesis / abstract -----------------------------------------------------
 
 export const availability = "Open to full-time AI / ML Engineer roles · US";
-export const workAuthorization = "Authorized to work in the U.S. on F-1 OPT through Jul 2027 — no sponsorship needed";
+export const workAuthorization = "Authorized to work in the U.S. on F-1 OPT — no sponsorship needed";
 
 export const thesis =
   "I build retrieval systems that cite their sources. A CI gate blocks the deploy when they stop.";
+
+// Plain-English line for non-technical / generalist recruiters — the sentence
+// they could paste into a Slack message to a hiring manager. Kept separate
+// from `thesis` (the technical pull-quote) on purpose: different readers.
+export const plainSummary =
+  "Recent M.S. Data Science grad (May 2026) looking for AI / ML Engineer roles — hands-on with LLMs, retrieval systems (RAG), and computer vision. Based in West Lafayette, IN; open to relocating or remote.";
 
 export const abstract = [
   "I'm Raghav Upadhyay. Most people can get an LLM to answer a question. My interest is the part after that: proving the answer was grounded, and catching it automatically when it isn't.",
@@ -62,7 +68,7 @@ export const tags = {
   location: "West Lafayette, IN",
   degree: "MS Data Science · UArizona",
   status: "Available now",
-  workAuth: "F-1 OPT, through Jul 2027",
+  workAuth: "F-1 OPT",
 } as const;
 
 // Method (formerly "pillars") -------------------------------------------------
