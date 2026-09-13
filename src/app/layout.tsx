@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 import { RunningHeader } from "@/components/running-header";
-import { Colophon } from "@/components/colophon";
 import { BackToTop } from "@/components/back-to-top";
 import { site, social } from "@/lib/content";
 
@@ -69,8 +69,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b0c0e",
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f4ef" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0c0e" },
+  ],
+  colorScheme: "light dark",
 };
 
 const jsonLd = {
@@ -125,6 +128,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${sourceSerif.variable} ${inter.variable} ${jetbrainsMono.variable} h-full`}
     >
       <head>
@@ -134,10 +138,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-full flex flex-col font-sans antialiased">
-        <RunningHeader />
-        <div className="flex-1">{children}</div>
-        <Colophon />
-        <BackToTop />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <RunningHeader />
+          <div className="flex-1">{children}</div>
+          <BackToTop />
+        </ThemeProvider>
       </body>
     </html>
   );

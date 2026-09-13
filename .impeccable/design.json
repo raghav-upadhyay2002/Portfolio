@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-12T07:21:24Z",
+  "generatedAt": "2026-09-13T10:10:00Z",
   "title": "Design System: Raghav Upadhyay — Portfolio",
   "extensions": {
     "colorMeta": {
@@ -12,7 +12,16 @@
       "faint-ink": { "role": "neutral", "displayName": "Faint Ink", "canonical": "#79766d", "tonalRamp": ["#201f1c", "#37352f", "#4f4d43", "#665f52", "#79766d", "#948f83", "#b3afa4", "#d6d3cc"] },
       "non-repro-blue": { "role": "primary", "displayName": "Non-Repro Blue", "canonical": "#86b3da", "tonalRamp": ["#152433", "#1f3a52", "#2c5171", "#3f6d92", "#5a8bb3", "#86b3da", "#aecbe5", "#d6e5f2"] },
       "gate-vermillion": { "role": "secondary", "displayName": "Gate Vermillion / Reviewer's Red", "canonical": "#dd6a49", "tonalRamp": ["#331711", "#4d221a", "#6f3125", "#95412f", "#bb5138", "#dd6a49", "#e99677", "#f4c1ac"] },
-      "hairline-border": { "role": "neutral", "displayName": "Hairline Border", "canonical": "#26282d", "tonalRamp": ["#0e0f11", "#17181b", "#202225", "#26282d", "#3b3e44", "#585c63", "#7c8087", "#a8abb1"] }
+      "hairline-border": { "role": "neutral", "displayName": "Hairline Border", "canonical": "#26282d", "tonalRamp": ["#0e0f11", "#17181b", "#202225", "#26282d", "#3b3e44", "#585c63", "#7c8087", "#a8abb1"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#f6f4ef", "tonalRamp": ["#1f1d18", "#3a3730", "#565248", "#726d60", "#8f8a78", "#aca691", "#c9c3ab", "#f6f4ef"] },
+      "raised-paper": { "role": "neutral", "displayName": "Raised Paper", "canonical": "#efece3", "tonalRamp": ["#1c1a15", "#38352d", "#535045", "#6f6a5b", "#8b8672", "#a8a28c", "#c6c0a8", "#efece3"] },
+      "elevated-paper": { "role": "neutral", "displayName": "Elevated Paper", "canonical": "#e7e3d7", "tonalRamp": ["#191712", "#332f27", "#4d483c", "#686050", "#847a64", "#a1957a", "#bfb090", "#e7e3d7"] },
+      "warm-manuscript-ink-on-paper": { "role": "neutral", "displayName": "Warm Manuscript Ink on Paper", "canonical": "#1d1a15", "tonalRamp": ["#1d1a15", "#3a352c", "#585144", "#786f5d", "#988d76", "#b9ac90", "#dccbab", "#f7f0e0"] },
+      "dimmed-ink-on-paper": { "role": "neutral", "displayName": "Dimmed Ink on Paper", "canonical": "#57534a", "tonalRamp": ["#1a1815", "#302c26", "#463f36", "#57534a", "#726b5c", "#928a77", "#b5ac97", "#dcd4c3"] },
+      "faint-ink-on-paper": { "role": "neutral", "displayName": "Faint Ink on Paper", "canonical": "#8a8577", "tonalRamp": ["#242219", "#403c30", "#5c5647", "#787060", "#8a8577", "#a59f8f", "#c3beac", "#e4e0d4"] },
+      "non-repro-blue-on-paper": { "role": "primary", "displayName": "Non-Repro Blue on Paper", "canonical": "#3d6ea5", "tonalRamp": ["#101d29", "#182c3e", "#223f57", "#2e5374", "#3d6ea5", "#5c8cbe", "#8bafd4", "#c1d6ea"] },
+      "gate-vermillion-on-paper": { "role": "secondary", "displayName": "Gate Vermillion on Paper", "canonical": "#a8432a", "tonalRamp": ["#25100a", "#3c1a11", "#55251a", "#743224", "#a8432a", "#c26548", "#dc8e73", "#f0bda9"] },
+      "hairline-border-on-paper": { "role": "neutral", "displayName": "Hairline Border on Paper", "canonical": "#ddd7c9", "tonalRamp": ["#26241d", "#413d32", "#5c5747", "#78715d", "#948c74", "#b3aa8f", "#ddd7c9", "#f2efe7"] }
     },
     "typographyMeta": {
       "display": { "displayName": "Display (Title Block H1)", "purpose": "The subject's name, set as a paper title. Source Serif 4 only." },
@@ -23,11 +32,13 @@
       "data": { "displayName": "Data / Mono", "purpose": "JetBrains Mono for all timestamps, figure numbers, captions, table data, tabular-nums metrics." }
     },
     "shadows": [
-      { "name": "floating-control", "value": "0 4px 16px rgba(0,0,0,0.35)", "purpose": "Back-to-top button only — floating overlay UI, never page content." },
-      { "name": "overlay-tooltip", "value": "0 8px 24px rgba(0,0,0,0.45)", "purpose": "Citation footnote tooltip popover only." }
+      { "name": "floating-control", "value": "0 4px 16px rgba(0,0,0,0.35)", "purpose": "Back-to-top button only — floating overlay UI, never page content. Same value in both lightings." },
+      { "name": "overlay-tooltip", "value": "0 8px 24px rgba(0,0,0,0.45)", "purpose": "Citation footnote tooltip popover only. Same value in both lightings." }
     ],
     "motion": [
-      { "name": "ease-out-manuscript", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Shared ease for the two authored scroll-triggered reveals (RAG diagram gate outcome, illumination-demo line draw)." }
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "The system's one shared UI easing token (`var(--ease-out)` in globals.css `:root`) — reused for the RAG diagram gate-outcome draw-on, the illumination-demo line draw, and the theme-toggle icon crossfade. Extend, don't fork: any new entrance/exit reuses this." },
+      { "name": "theme-toggle-crossfade", "value": "200ms var(--ease-out)", "purpose": "Sun/Moon icon crossfade (transform + opacity only) in theme-toggle.tsx." },
+      { "name": "theme-page-crossfade", "value": "200ms ease", "purpose": "Global, site-wide background-color/border-color/color/fill/stroke transition fired on every element when the theme toggles — a deliberate, occasional (clicked once or twice a visit) 'preventing a jarring change' animation, not UI feedback timing. Defined once in globals.css @layer base, zeroed by prefers-reduced-motion." }
     ],
     "breakpoints": [
       { "name": "sm", "value": "640px" },
@@ -42,23 +53,31 @@
       "refersTo": "button-bordered",
       "description": "The shipped button pattern: a plain 1px-bordered anchor with an uppercase mono label. Used for 'Download CV' and 'Back to home'.",
       "html": "<a class=\"ds-btn-bordered\" href=\"#\">Download CV ↓</a>",
-      "css": ".ds-btn-bordered { display: inline-block; background: transparent; color: #e9e6df; border: 1px solid #26282d; border-radius: 0.1875rem; padding: 0.625rem 1.25rem; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; text-align: center; text-decoration: none; transition: color 0.15s, border-color 0.15s; } .ds-btn-bordered:hover { border-color: #86b3da; color: #86b3da; } .ds-btn-bordered:focus-visible { outline: 2px solid #86b3da; outline-offset: 2px; }"
+      "css": ".ds-btn-bordered { display: inline-block; background: transparent; color: var(--ink, #e9e6df); border: 1px solid var(--border, #26282d); border-radius: 0.1875rem; padding: 0.625rem 1.25rem; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; text-align: center; text-decoration: none; transition: color 0.15s, border-color 0.15s; } .ds-btn-bordered:hover { border-color: var(--mark, #86b3da); color: var(--mark, #86b3da); } .ds-btn-bordered:focus-visible { outline: 2px solid var(--mark, #86b3da); outline-offset: 2px; }"
     },
     {
       "name": "Citation Footnote",
       "kind": "custom",
       "refersTo": "citation-mark",
-      "description": "Superscript mono cross-reference mark that reveals a bordered tooltip with real preview text and a jump-to-source link. The load-bearing proof of the Citation Rule.",
+      "description": "Superscript mono cross-reference mark: a button (not a link) that toggles a bordered tooltip with real preview text and a jump-to-source link, so touch users get the same inspectable preview mouse users get on hover. The load-bearing proof of the Citation Rule.",
       "html": "<span class=\"ds-citation\"><button class=\"ds-citation-mark\" aria-expanded=\"false\">[1]</button><span class=\"ds-citation-tooltip\" role=\"tooltip\">AskMyDocs — hybrid 60/40 retrieval, CI-gated on faithfulness ≥0.70.<a class=\"ds-citation-link\" href=\"#fig-askmydocs\">jump to source →</a></span></span>",
-      "css": ".ds-citation { position: relative; display: inline-block; } .ds-citation-mark { margin: 0; border: 0; background: transparent; padding: 0; vertical-align: super; font-size: 0.7em; font-family: 'JetBrains Mono', ui-monospace, monospace; color: #86b3da; cursor: pointer; } .ds-citation-mark:hover { color: #e9e6df; } .ds-citation-tooltip { position: absolute; bottom: 100%; left: 50%; transform: translate(-50%, 4px); z-index: 20; margin-bottom: 8px; width: 224px; border: 1px solid #26282d; background: #181a1f; padding: 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.4; color: #a9a59c; opacity: 0; box-shadow: 0 8px 24px rgba(0,0,0,0.45); pointer-events: none; transition: opacity 0.15s, transform 0.15s; } .ds-citation:hover .ds-citation-tooltip, .ds-citation:focus-within .ds-citation-tooltip { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; } .ds-citation-link { margin-top: 4px; display: block; color: #86b3da; text-decoration: none; } .ds-citation-link:hover { color: #e9e6df; }"
+      "css": ".ds-citation { position: relative; display: inline-block; } .ds-citation-mark { margin: 0; border: 0; background: transparent; padding: 0; vertical-align: super; font-size: 0.7em; font-family: 'JetBrains Mono', ui-monospace, monospace; color: var(--mark, #86b3da); cursor: pointer; } .ds-citation-mark:hover { color: var(--ink, #e9e6df); } .ds-citation-tooltip { position: absolute; bottom: 100%; left: 50%; transform: translate(-50%, 4px); z-index: 20; margin-bottom: 8px; width: 224px; border: 1px solid var(--border, #26282d); background: var(--surface-2, #181a1f); padding: 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.4; color: var(--ink-dim, #a9a59c); opacity: 0; box-shadow: 0 8px 24px rgba(0,0,0,0.45); pointer-events: none; transition: opacity 0.15s, transform 0.15s; } .ds-citation:hover .ds-citation-tooltip, .ds-citation:focus-within .ds-citation-tooltip, .ds-citation-tooltip.is-open { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; } .ds-citation-link { margin-top: 4px; display: block; color: var(--mark, #86b3da); text-decoration: none; } .ds-citation-link:hover { color: var(--ink, #e9e6df); }"
     },
     {
       "name": "Running Paper-Header",
       "kind": "nav",
       "refersTo": "nav-running-header",
-      "description": "Fixed arXiv-style running head replacing a navbar: section links as uppercase mono labels, active section tinted Non-Repro Blue, revision string persisted at right.",
-      "html": "<header class=\"ds-header\"><a class=\"ds-header-mark\" href=\"#\">§ R. Upadhyay</a><nav class=\"ds-header-nav\"><a class=\"ds-header-link ds-header-link-active\" href=\"#abstract\">Abstract</a><a class=\"ds-header-link\" href=\"#projects\">Figures</a></nav><span class=\"ds-header-rev\">v1.2</span></header>",
-      "css": ".ds-header { position: fixed; inset-inline: 0; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 48px; padding: 0 24px; border-bottom: 1px solid #26282d; background: rgba(11,12,14,0.92); backdrop-filter: blur(4px); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #a9a59c; } .ds-header-mark { color: #e9e6df; text-decoration: none; } .ds-header-mark:hover { color: #86b3da; } .ds-header-nav { display: flex; gap: 20px; } .ds-header-link { color: #a9a59c; text-decoration: none; transition: color 0.15s; } .ds-header-link:hover { color: #e9e6df; } .ds-header-link-active { color: #86b3da; } .ds-header-rev { color: #79766d; }"
+      "description": "Fixed arXiv-style running head replacing a navbar: section links as uppercase mono labels, active section tinted Non-Repro Blue, revision string and theme toggle persisted at right. No page footer exists — the document ends after Correspondence.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-header-mark\" href=\"#\">§ R. Upadhyay</a><nav class=\"ds-header-nav\"><a class=\"ds-header-link ds-header-link-active\" href=\"#abstract\">Abstract</a><a class=\"ds-header-link\" href=\"#projects\">Figures</a></nav><span class=\"ds-header-rev\">v7</span></header>",
+      "css": ".ds-header { position: fixed; inset-inline: 0; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 48px; padding: 0 24px; border-bottom: 1px solid var(--border, #26282d); background: color-mix(in srgb, var(--ground, #0b0c0e) 92%, transparent); backdrop-filter: blur(4px); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-dim, #a9a59c); } .ds-header-mark { color: var(--ink, #e9e6df); text-decoration: none; } .ds-header-mark:hover { color: var(--mark, #86b3da); } .ds-header-nav { display: flex; gap: 20px; } .ds-header-link { color: var(--ink-dim, #a9a59c); text-decoration: none; transition: color 0.15s; } .ds-header-link:hover { color: var(--ink, #e9e6df); } .ds-header-link-active { color: var(--mark, #86b3da); } .ds-header-rev { color: var(--ink-faint, #79766d); }"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "theme-toggle",
+      "description": "28×28px bordered icon button, rightmost control in the running header. A Lucide Sun/Moon pair crossfades (transform + opacity, 200ms, var(--ease-out)); the icon shown is the current mode, not the click target. Driven by next-themes, defaults to system preference, persists thereafter. Triggers the separate global site-wide color crossfade (theme-page-crossfade, 200ms ease) on every element.",
+      "html": "<button class=\"ds-theme-toggle\" aria-label=\"Switch to dark mode\"><svg class=\"ds-theme-toggle-sun\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4\"/></svg><svg class=\"ds-theme-toggle-moon\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z\"/></svg></button>",
+      "css": ".ds-theme-toggle { position: relative; display: flex; height: 1.75rem; width: 1.75rem; flex-shrink: 0; align-items: center; justify-content: center; border: 1px solid var(--border, #26282d); background: transparent; color: var(--ink-dim, #a9a59c); cursor: pointer; transition: color 0.15s, border-color 0.15s; } .ds-theme-toggle:hover { border-color: var(--mark, #86b3da); color: var(--mark, #86b3da); } .ds-theme-toggle-sun, .ds-theme-toggle-moon { position: absolute; transition: transform 0.2s var(--ease-out, cubic-bezier(0.23,1,0.32,1)), opacity 0.2s var(--ease-out, cubic-bezier(0.23,1,0.32,1)); } /* light mode (default): sun shown */ .ds-theme-toggle-sun { transform: rotate(0deg) scale(1); opacity: 1; } .ds-theme-toggle-moon { transform: rotate(90deg) scale(0); opacity: 0; } /* dark mode: swap via .dark on a theme-aware ancestor */ .dark .ds-theme-toggle-sun { transform: rotate(-90deg) scale(0); opacity: 0; } .dark .ds-theme-toggle-moon { transform: rotate(0deg) scale(1); opacity: 1; }"
     },
     {
       "name": "Manuscript Table",
@@ -66,7 +85,7 @@
       "refersTo": "table-manuscript",
       "description": "Real HTML table with hairline row rules and a mono/serif split between header and body cells; no zebra striping.",
       "html": "<table class=\"ds-table\"><caption class=\"ds-table-caption\">Table 1 — CI gate thresholds</caption><thead><tr><th>Metric</th><th>Gate</th></tr></thead><tbody><tr><td>Faithfulness</td><td class=\"ds-table-value\">≥ 0.70</td></tr></tbody></table>",
-      "css": ".ds-table { width: 100%; border-collapse: collapse; text-align: left; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; } .ds-table-caption { margin-bottom: 8px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #79766d; } .ds-table th { padding: 8px 8px 8px 0; border-bottom: 1px solid #26282d; font-weight: 400; text-transform: uppercase; letter-spacing: 0.12em; color: #79766d; } .ds-table td { padding: 8px 8px 8px 0; border-bottom: 1px solid #26282d; color: #a9a59c; } .ds-table-value { color: #86b3da; font-variant-numeric: tabular-nums; }"
+      "css": ".ds-table { width: 100%; border-collapse: collapse; text-align: left; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; } .ds-table-caption { margin-bottom: 8px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint, #79766d); } .ds-table th { padding: 8px 8px 8px 0; border-bottom: 1px solid var(--border, #26282d); font-weight: 400; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-faint, #79766d); } .ds-table td { padding: 8px 8px 8px 0; border-bottom: 1px solid var(--border, #26282d); color: var(--ink-dim, #a9a59c); } .ds-table-value { color: var(--mark, #86b3da); font-variant-numeric: tabular-nums; }"
     },
     {
       "name": "Verified Mark",
@@ -74,40 +93,43 @@
       "refersTo": "verified-mark",
       "description": "Small mono checkmark trust signal reserved for independently-checkable claims. Appears in exactly two places on the shipped page.",
       "html": "<span class=\"ds-verified\"><svg width=\"9\" height=\"9\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg>verifiable</span>",
-      "css": ".ds-verified { margin-left: 8px; display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(134,179,218,0.8); }"
+      "css": ".ds-verified { margin-left: 8px; display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; color: color-mix(in srgb, var(--mark, #86b3da) 80%, transparent); }"
     },
     {
       "name": "Back-to-Top Control",
       "kind": "button",
       "refersTo": "button-floating",
-      "description": "Floating overlay control — the only other place besides citation tooltips that carries a drop shadow.",
+      "description": "Floating overlay control — the only other place besides citation tooltips that carries a drop shadow. Same shadow value in both lightings.",
       "html": "<button class=\"ds-back-to-top\">↑ top</button>",
-      "css": ".ds-back-to-top { position: fixed; bottom: 24px; right: 24px; z-index: 40; border: 1px solid #26282d; background: #111317; padding: 8px 12px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: #a9a59c; box-shadow: 0 4px 16px rgba(0,0,0,0.35); transition: color 0.2s, border-color 0.2s; } .ds-back-to-top:hover { border-color: rgba(134,179,218,0.5); color: #86b3da; }"
+      "css": ".ds-back-to-top { position: fixed; bottom: 24px; right: 24px; z-index: 40; border: 1px solid var(--border, #26282d); background: var(--surface, #111317); padding: 8px 12px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-dim, #a9a59c); box-shadow: 0 4px 16px rgba(0,0,0,0.35); transition: color 0.2s, border-color 0.2s; } .ds-back-to-top:hover { border-color: color-mix(in srgb, var(--mark, #86b3da) 50%, transparent); color: var(--mark, #86b3da); }"
     }
   ],
   "narrative": {
     "northStar": "The Manuscript",
-    "overview": "The site reads as a living academic preprint rather than a resume page — a technical paper read at night on a screen. It refuses two AI-portfolio defaults observed and rejected during the build: the dashboard/glassmorphism dark-neon look (the exact look this project's own prior design used, now replaced) and the cream-paper/serif editorial cliché. Its argument — evidence over decoration, nothing ships without a real citation, link, or number behind it — is made through actual document conventions rather than described in copy: a running paper-header instead of a navbar, numbered Figures with real captions, inline citation numbers that are real cross-references, a revision-history timeline, an Appendix, a References section, and Correspondence instead of a contact form.\n\nThe register is restrained, citational, and documentary throughout. Confirmed visual rejections carried through the shipped build: no gradient text anywhere, no glassmorphism or blur used as decoration (the one backdrop-blur-sm in the system is on the fixed paper-header, a functional legibility aid over scrolling content, not a decorative panel), no stat-card grids (the 'big number, small label' hero-metric template), no decorative eyebrow/kicker sitting above a heading with no referential meaning, no colored border-left accents used as decoration, and no rounded 'app UI' corners.",
+    "overview": "The site reads as a living academic preprint rather than a resume page — a technical paper read at night on a screen, or the same paper printed and read in daylight. It refuses two AI-portfolio defaults observed and rejected during the build: the dashboard/glassmorphism dark-neon look (the exact look this project's own prior design used, now replaced) and the cream-paper/serif editorial cliché. A later proposal to reskin toward a generic system look (neutral grays, frosted-glass blur, a system-UI display face) was also explicitly declined — see the Re-Lit, Not Reinvented rule. Its argument — evidence over decoration, nothing ships without a real citation, link, or number behind it — is made through actual document conventions rather than described in copy: a running paper-header instead of a navbar, numbered Figures with real captions, inline citation numbers that are real cross-references, a revision-history timeline, an Appendix, a References section, and Correspondence instead of a contact form. There is no page footer.\n\nThe register is restrained, citational, and documentary throughout, in both lightings. Confirmed visual rejections carried through the shipped build: no gradient text anywhere, no glassmorphism or blur used as decoration (the one backdrop-blur-sm in the system is on the fixed paper-header, a functional legibility aid over scrolling content, not a decorative panel), no stat-card grids (the 'big number, small label' hero-metric template), no decorative eyebrow/kicker sitting above a heading with no referential meaning, no colored border-left accents used as decoration, and no rounded 'app UI' corners.",
     "keyCharacteristics": [
-      "Single committed dark world — near-black graphite ground, warm off-white ink, no light mode offered (the scene is a document read at night, so light mode is not a variant to add later)",
-      "Exactly two functional accent colors in the entire system (see The Two-Mark Rule)",
+      "Two lightings of one manuscript — dark (default, a document read at night) and light (the same paper printed and read in daylight), toggled via a .dark class on <html> (next-themes, attribute=\"class\", defaultTheme=\"system\"); neither is a generic app light/dark swap, both keep the same warm ink/paper relationship and the same two accents, just re-lit",
+      "Exactly two functional accent colors in the entire system, in both lightings (see The Two-Mark Rule)",
       "Near-square corners everywhere (--radius: 0.1875rem) — a manuscript, table, or form has square corners",
       "Flat by default: hairline borders delineate surfaces, not shadows",
       "Three-font system with strict role separation: serif for manuscript voice, sans only at UI-chrome sizes, mono for every data/timestamp/figure-number value"
     ],
     "rules": [
-      { "name": "The Two-Mark Rule", "body": "Exactly two functional accent colors exist in the whole system: Non-Repro Blue for every default mark, link, and citation, and Gate Vermillion reserved only for fail/attention states. A third accent is never introduced, even for a 'success' state — an absence of red already reads as passing.", "section": "colors" },
+      { "name": "The Two-Mark Rule", "body": "Exactly two functional accent colors exist in the whole system, in either lighting: Non-Repro Blue for every default mark, link, and citation, and Gate Vermillion reserved only for fail/attention states. A third accent is never introduced, even for a 'success' state — an absence of red already reads as passing.", "section": "colors" },
       { "name": "The Citation Rule", "body": "Every numbered mark on the page — [1], Fig. 2, Table 1 — is a real, working cross-reference a reader can follow, never a decorative label. This is also why section numbers are permitted here despite eyebrow/kicker devices being generally refused elsewhere in this system: they carry real referential information, not decorative rank.", "section": "colors" },
+      { "name": "The Re-Lit, Not Reinvented Rule", "body": "Light mode is the same manuscript under different light, not a different identity: every role (ground, two panel levels, three ink weights, hairline border, both accents) exists in both lightings under the same name and the same job, values re-tuned only for contrast. Never introduce a color, a component, or a piece of chrome (a shadow, a blur, a corner radius) that exists in one lighting but not the other.", "section": "colors" },
       { "name": "The Voice-vs-Chrome Rule", "body": "Source Serif 4 is reserved for the document's own voice (headings and prose); Inter never appears above UI-chrome size and never carries a heading. Mixing the two inverts the manuscript metaphor.", "section": "typography" },
       { "name": "The Flat-by-Default Rule", "body": "Page content — cards, tables, figures, the status aside — is delineated by hairline borders, never shadows. Shadow is reserved exclusively for floating/overlay UI (back-to-top, citation tooltips) that visually detaches from the document flow.", "section": "elevation" }
     ],
     "dos": [
-      "Do use Non-Repro Blue (#86b3da) as the only default link/mark/citation color, and Gate Vermillion (#dd6a49) only for fail/attention/gate states — never introduce a third accent.",
+      "Do use Non-Repro Blue (dark #86b3da / light #3d6ea5) as the only default link/mark/citation color, and Gate Vermillion (dark #dd6a49 / light #a8432a) only for fail/attention/gate states — never introduce a third accent.",
       "Do delineate all page-content surfaces with 1px --border hairlines; reserve shadow exclusively for floating/overlay UI (back-to-top, tooltips).",
       "Do keep every numbered mark ([n], Fig. n, Table n) wired to a real, followable cross-reference.",
       "Do hold corners at 0.1875rem (near-square) everywhere; do not introduce a larger, softer radius scale for new surfaces.",
       "Do restrict Inter to UI-chrome sizes (nav, labels, buttons) and JetBrains Mono to data/timestamps/captions; keep Source Serif 4 as the only heading and prose voice.",
-      "Do gate any new scroll-triggered animation on useReducedMotion and fire it whileInView with once: true, matching the two existing authored moments (RAG diagram, illumination demo)."
+      "Do gate any new scroll-triggered animation on useReducedMotion and fire it whileInView with once: true, matching the two existing authored moments (RAG diagram, illumination demo).",
+      "Do reuse var(--ease-out) for any new UI entrance/exit curve instead of inlining a fresh cubic-bezier.",
+      "Do give any new color role a value in both the :root (light) and .dark blocks in globals.css, under the same variable name."
     ],
     "donts": [
       "Don't add gradient text, glassmorphism-as-decoration, or a stat-card 'big number, small label' hero-metric grid — all three were explicitly rejected in this build.",
@@ -115,7 +137,8 @@
       "Don't add colored border-left accent bars as a decorative device.",
       "Don't use the unused shadcn Button primitive's filled/gradient/rounded-pill variants (src/components/ui/button.tsx) as a model for new buttons; the shipped pattern is the bordered text-label anchor.",
       "Don't scatter the Verified Mark as a generic trust badge; it is reserved for independently-checkable claims and currently appears in exactly two places by design.",
-      "Don't add a light mode variant; the single dark graphite world is a stated invariant of this surface, not a missing feature."
+      "Don't reskin either lighting toward a generic system (neutral grays, frosted/translucent glass panels, a system-UI display face) — explicitly proposed and declined during the build.",
+      "Don't add a page footer/colophon; the document ends after Correspondence by design."
     ]
   }
 }

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { sections, site } from "@/lib/content";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const staticLabels: Record<string, string> = {
   "/privacy": "Privacy Addendum",
@@ -82,6 +83,7 @@ export function RunningHeader() {
             {site.revision}
           </span>
           {isHome && <span className="text-ink-faint md:hidden">· {rightLabel}</span>}
+          <ThemeToggle />
           {isHome && (
             <button
               type="button"

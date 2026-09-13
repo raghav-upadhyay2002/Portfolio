@@ -2,6 +2,7 @@
 name: Raghav Upadhyay — Portfolio
 description: A living academic preprint, not a resume page — evidence over decoration, argued through real manuscript conventions.
 colors:
+  # dark (default — applied via .dark on <html>; toggled by next-themes)
   near-black-graphite: "#0b0c0e"
   raised-graphite: "#111317"
   elevated-graphite: "#181a1f"
@@ -13,6 +14,18 @@ colors:
   gate-vermillion: "#dd6a49"
   gate-vermillion-dim: "rgba(221, 106, 73, 0.14)"
   hairline-border: "#26282d"
+  # light (:root default state — the same manuscript printed and read in daylight)
+  paper: "#f6f4ef"
+  raised-paper: "#efece3"
+  elevated-paper: "#e7e3d7"
+  warm-manuscript-ink-on-paper: "#1d1a15"
+  dimmed-ink-on-paper: "#57534a"
+  faint-ink-on-paper: "#8a8577"
+  non-repro-blue-on-paper: "#3d6ea5"
+  non-repro-blue-on-paper-dim: "rgba(61, 110, 165, 0.10)"
+  gate-vermillion-on-paper: "#a8432a"
+  gate-vermillion-on-paper-dim: "rgba(168, 67, 42, 0.10)"
+  hairline-border-on-paper: "#ddd7c9"
 typography:
   display:
     fontFamily: "Source Serif 4, Georgia, serif"
@@ -62,6 +75,13 @@ components:
     backgroundColor: "transparent"
     textColor: "{colors.non-repro-blue}"
     typography: "{typography.data}"
+  theme-toggle:
+    backgroundColor: "transparent"
+    textColor: "{colors.dimmed-ink}"
+    rounded: "{rounded.none}"
+    size: "1.75rem"
+  theme-toggle-hover:
+    textColor: "{colors.non-repro-blue}"
 ---
 
 # Design System: Raghav Upadhyay — Portfolio
@@ -75,23 +95,24 @@ The site reads as a living academic preprint rather than a resume page — a tec
 The register is restrained, citational, and documentary throughout. Confirmed visual rejections carried through the shipped build: no gradient text anywhere, no glassmorphism or blur used as decoration (the one `backdrop-blur-sm` in the system is on the fixed paper-header, a functional legibility aid over scrolling content, not a decorative panel), no stat-card grids (the "big number, small label" hero-metric template), no decorative eyebrow/kicker sitting above a heading with no referential meaning, no colored border-left accents used as decoration, and no rounded "app UI" corners.
 
 **Key Characteristics:**
-- Single committed dark world — near-black graphite ground, warm off-white ink, no light mode offered (the scene is a document read at night, so light mode is not a variant to add later)
-- Exactly two functional accent colors in the entire system (see The Two-Mark Rule)
+- Two lightings of one manuscript — dark (default, a document read at night) and light (the same paper printed and read in daylight), toggled via a `.dark` class on `<html>` (`next-themes`, `attribute="class"`, `defaultTheme="system"`); neither is a generic app light/dark swap, both keep the same warm ink/paper relationship and the same two accents, just re-lit (see The Re-Lit, Not Reinvented Rule)
+- Exactly two functional accent colors in the entire system, in both lightings (see The Two-Mark Rule)
 - Near-square corners everywhere (`--radius: 0.1875rem`) — a manuscript, table, or form has square corners
 - Flat by default: hairline borders delineate surfaces, not shadows
 - Three-font system with strict role separation: serif for manuscript voice, sans only at UI-chrome sizes, mono for every data/timestamp/figure-number value
 
 ## Colors
 
-The palette is a single dark graphite scale with exactly two functional accents; there is no light mode.
+Two lightings of one palette — dark (default) and light — each a single graphite/paper neutral scale with exactly two functional accents, re-tuned per lighting to hold contrast rather than shared verbatim.
 
 ### Primary
-- **Non-Repro Blue** (`#86b3da`): the one default functional accent — a real print-production term for a blue used in editorial markup that doesn't reproduce when scanned. Used for all links, citation numbers (`[1]`, `Fig. 2`, `Table 1`), figure/table markers, the "current" revision tag, and focus rings (`--ring`). A 13%-opacity tint (`--mark-dim`, `rgba(134,179,218,0.13)`) is available for subtle fills/backgrounds keyed to the same accent.
+- **Non-Repro Blue** — dark: `#86b3da`, light: `#3d6ea5` (darker/more saturated to hold contrast on paper): the one default functional accent — a real print-production term for a blue used in editorial markup that doesn't reproduce when scanned. Used for all links, citation numbers (`[1]`, `Fig. 2`, `Table 1`), figure/table markers, the "current" revision tag, and focus rings (`--ring`). A ~10–13%-opacity tint (`--mark-dim`) is available in both lightings for subtle fills/backgrounds keyed to the same accent.
 
 ### Secondary
-- **Gate Vermillion / Reviewer's Red** (`#dd6a49`): reserved only for fail/attention/gate states — e.g. the "fail → blocked" branch of the CI-gate diagram outcome reveal. Never used decoratively and never doubles as a second "pretty" accent. A 14%-opacity tint (`--gate-dim`, `rgba(221,106,73,0.14)`) exists for the same reserved purpose.
+- **Gate Vermillion / Reviewer's Red** — dark: `#dd6a49`, light: `#a8432a`: reserved only for fail/attention/gate states — e.g. the "fail → blocked" branch of the CI-gate diagram outcome reveal. Never used decoratively and never doubles as a second "pretty" accent. A ~10–14%-opacity tint (`--gate-dim`) exists in both lightings for the same reserved purpose.
 
 ### Neutral
+**Dark (default):**
 - **Near-Black Graphite** (`#0b0c0e`): page background (`--ground`).
 - **Raised Graphite** (`#111317`): first-level panel background (`--surface`) — the status aside, standard figure cards, the back-to-top control.
 - **Elevated Graphite** (`#181a1f`): second-level panel background (`--surface-2`) — citation tooltips, popovers.
@@ -100,8 +121,17 @@ The palette is a single dark graphite scale with exactly two functional accents;
 - **Faint Ink** (`#79766d`): metadata, timestamps, captions, figure/table labels, section eyebrows.
 - **Hairline border** (`#26282d`): the single rule color for every divider, table rule, and card outline in the system (`--border`).
 
+**Light — the same manuscript printed and read in daylight, not a generic inverted theme:**
+- **Paper** (`#f6f4ef`): page background — a warm off-white, deliberately not stark `#fff`.
+- **Raised Paper** (`#efece3`) / **Elevated Paper** (`#e7e3d7`): the same two panel levels as dark, re-lit.
+- **Warm Manuscript Ink on Paper** (`#1d1a15`): primary text — warm near-black, not pure `#000`.
+- **Dimmed Ink on Paper** (`#57534a`) / **Faint Ink on Paper** (`#8a8577`): the same two secondary/tertiary text roles, re-lit.
+- **Hairline Border on Paper** (`#ddd7c9`): the same single rule color, re-lit.
+
 ### Named Rules
-**The Two-Mark Rule.** Exactly two functional accent colors exist in the whole system: Non-Repro Blue for every default mark, link, and citation, and Gate Vermillion reserved only for fail/attention states. A third accent is never introduced, even for a "success" state — an absence of red already reads as passing.
+**The Two-Mark Rule.** Exactly two functional accent colors exist in the whole system, in either lighting: Non-Repro Blue for every default mark, link, and citation, and Gate Vermillion reserved only for fail/attention states. A third accent is never introduced, even for a "success" state — an absence of red already reads as passing.
+
+**The Re-Lit, Not Reinvented Rule.** Light mode is the same manuscript under different light, not a different identity: every role (ground, two panel levels, three ink weights, hairline border, both accents) exists in both lightings under the same name and the same job, values re-tuned only for contrast. Never introduce a color, a component, or a piece of chrome (a shadow, a blur, a corner radius) that exists in one lighting but not the other — see `src/app/globals.css`'s `:root` (light) / `.dark` (dark) token blocks, which mirror each other property-for-property.
 
 **The Citation Rule.** Every numbered mark on the page — `[1]`, `Fig. 2`, `Table 1` — is a real, working cross-reference a reader can follow (confirmed in `src/components/citation.tsx`, whose tooltip carries a "jump to source →" anchor link, and in `figures.tsx`'s numbered Fig./Table captions), never a decorative label. This is also why section numbers (e.g. "3. Figures", "4. Revision History", "5. Results") are permitted here despite eyebrow/kicker devices being generally refused elsewhere in this system: they carry real referential information, not decorative rank.
 
@@ -158,10 +188,14 @@ Corners are near-square throughout (`--radius: 0.1875rem`, scaled up via `--radi
 ### Navigation (Running Paper-Header)
 - **Style:** fixed 48px bar, `bg-ground/92` with `backdrop-blur-sm` (the one functional, non-decorative blur in the system — legibility over scrolling content), 1px bottom border. Section links render as uppercase mono labels (`11px`, `0.14em` tracking); the active section (via `IntersectionObserver`) turns Non-Repro Blue, inactive sections dim to ink on hover.
 - **Mobile:** collapses to a hamburger-toggled dropdown list rendered inline below the bar, same label typography.
-- This is a paper-header, not a navbar: it also carries the site's revision string as a persistent identifier, echoing an arXiv-style running head.
+- This is a paper-header, not a navbar: it also carries the site's revision string as a persistent identifier, echoing an arXiv-style running head, and the theme toggle (below) as its rightmost control.
+- There is no page footer — the document simply ends after Correspondence; no colophon/copyright strip.
 
 ### Signature: Citation Footnote (`src/components/citation.tsx`)
-A superscript mono `[n]` button that toggles (and also responds to hover/focus) a bordered `Elevated Graphite` tooltip containing the real citation preview text and a "jump to source →` anchor link to the actual figure/section `id`. This is the load-bearing proof of the Citation Rule: every mark is a real cross-reference, not a decorative footnote glyph.
+A superscript mono `[n]` button that toggles (and also responds to hover/focus) a bordered `Elevated Graphite`/`Elevated Paper` tooltip containing the real citation preview text and a "jump to source →" anchor link to the actual figure/section `id`. This is the load-bearing proof of the Citation Rule: every mark is a real cross-reference, not a decorative footnote glyph.
+
+### Signature: Theme Toggle (`src/components/theme-toggle.tsx`)
+A 28×28px (`h-7 w-7`) bordered square button, not a labeled control — a Lucide `Sun`/`Moon` pair (14px, `strokeWidth 1.75`) stacked absolutely, crossfading via `transform`/`opacity` only (`rotate-90`/`scale-0`/`opacity-0` → `rotate-0`/`scale-100`/`opacity-100`), 200ms, `var(--ease-out)` (`cubic-bezier(0.23, 1, 0.32, 1)` — the system's one shared UI easing token, defined once in `globals.css` and meant to be reused rather than re-inlined). The icon shown is the *current* mode (sun visible in light, moon in dark), not the click target. Driven by `next-themes` (`resolvedTheme`/`setTheme`), defaulting to system preference, persisted thereafter. The site-wide theme cross-fade itself (every `background-color`/`border-color`/`color`/`fill`/`stroke`, 200ms `ease`) is a separate, global rule in `globals.css`, not part of this component.
 
 ### Signature: RAG Pipeline Diagram (`src/components/sections/rag-diagram.tsx`)
 A hand-authored SVG diagram of the AskMyDocs pipeline (PDF → chunk → hybrid search → rerank → LLM → judge → CI gate), stroked in the neutral `ink-faint` outline color with Non-Repro Blue and Gate Vermillion reserved for the two gate outcomes. The pass/fail branches are revealed via one authored `motion`/`whileInView` sequence (`pathLength` draw-on + staggered label fade), gated on `useReducedMotion` and firing only `once`.
@@ -181,6 +215,8 @@ A small mono checkmark + label (`Check` icon, 9px, Non-Repro Blue at 80% opacity
 - **Do** hold corners at `0.1875rem` (near-square) everywhere; do not introduce a larger, softer radius scale for new surfaces.
 - **Do** restrict Inter to UI-chrome sizes (nav, labels, buttons) and JetBrains Mono to data/timestamps/captions; keep Source Serif 4 as the only heading and prose voice.
 - **Do** gate any new scroll-triggered animation on `useReducedMotion` and fire it `whileInView` with `once: true`, matching the two existing authored moments (RAG diagram, illumination demo).
+- **Do** reuse `var(--ease-out)` (`globals.css` `:root`) for any new UI entrance/exit curve instead of inlining a fresh `cubic-bezier`.
+- **Do** give any new color role a value in both the `:root` (light) and `.dark` blocks in `globals.css`, under the same variable name — see The Re-Lit, Not Reinvented Rule.
 
 ### Don't:
 - **Don't** add gradient text, glassmorphism-as-decoration, or a stat-card "big number, small label" hero-metric grid — all three were explicitly rejected in this build.
@@ -188,4 +224,5 @@ A small mono checkmark + label (`Check` icon, 9px, Non-Repro Blue at 80% opacity
 - **Don't** add colored border-left accent bars as a decorative device.
 - **Don't** use the unused shadcn `Button` primitive's filled/gradient/rounded-pill variants (`src/components/ui/button.tsx`) as a model for new buttons; the shipped pattern is the bordered text-label anchor.
 - **Don't** scatter the Verified Mark as a generic trust badge; it is reserved for independently-checkable claims and currently appears in exactly two places by design.
-- **Don't** add a light mode variant; the single dark graphite world is a stated invariant of this surface, not a missing feature.
+- **Don't** reskin either lighting toward a generic system (neutral grays, frosted/translucent glass panels, a system-UI display face) — this was explicitly proposed and declined during the build; the warm graphite/paper relationship, hairline-only borders, and the three-font role system are the identity in both lightings, not a dark-mode-only affectation.
+- **Don't** add a page footer/colophon; the document ends after Correspondence by design.

@@ -4,13 +4,22 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* shared motion tokens — extend, don't fork: reuse this curve for any future
+   UI entrance/exit rather than inlining a new cubic-bezier. */
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
 /* ---------------------------------------------------------------------------
    THE MANUSCRIPT — design tokens
-   A preprint read at night on a screen, not paper on a desk: graphite ground,
-   warm manuscript ink, one functional mark color (non-repro blue) for links,
-   citations and figure numbers, one gate color (reviewer red) reserved only
-   for fail / attention states. See .impeccable/surfaces/home.md for the full
-   direction contract and DESIGN.md for the shipped system.
+   Two lightings of one manuscript: dark (default) is a preprint read at night
+   on a screen; light is the same paper printed and read in daylight. Both
+   keep one functional mark color (non-repro blue) for links, citations and
+   figure numbers, and one gate color (reviewer red) reserved only for fail /
+   attention states — see the Two-Mark Rule in DESIGN.md. Toggled via a
+   `.dark` class on <html> (next-themes, attribute="class").
+   See .impeccable/surfaces/home.md for the full direction contract and
+   DESIGN.md for the shipped system.
 --------------------------------------------------------------------------- */
 
 @theme inline {
@@ -68,16 +77,20 @@
 }
 
 :root {
-  --ground: #0b0c0e;
-  --surface: #111317;
-  --surface-2: #181a1f;
-  --ink: #e9e6df;
-  --ink-dim: #a9a59c;
-  --ink-faint: #79766d;
-  --mark: #86b3da;
-  --mark-dim: rgba(134, 179, 218, 0.13);
-  --gate: #dd6a49;
-  --gate-dim: rgba(221, 106, 73, 0.14);
+  /* THE MANUSCRIPT — light: the same paper, printed and read in daylight.
+     Warm paper ground (not stark white), dark warm ink, both accents shifted
+     darker to hold contrast against a light ground. */
+  --ground: #f6f4ef;
+  --surface: #efece3;
+  --surface-2: #e7e3d7;
+  --ink: #1d1a15;
+  --ink-dim: #57534a;
+  --ink-faint: #8a8577;
+  --mark: #3d6ea5;
+  --mark-dim: rgba(61, 110, 165, 0.1);
+  --gate: #a8432a;
+  --gate-dim: rgba(168, 67, 42, 0.1);
+  --border: #ddd7c9;
 
   --background: var(--ground);
   --foreground: var(--ink);
@@ -95,8 +108,7 @@
   --accent-foreground: var(--ink);
   --destructive: var(--gate);
   --destructive-foreground: var(--ground);
-  --border: #26282d;
-  --input: #26282d;
+  --input: var(--border);
   --ring: var(--mark);
 
   /* near-square: a manuscript has no rounded corners */
@@ -108,12 +120,58 @@
   --sidebar-primary-foreground: var(--ground);
   --sidebar-accent: var(--surface-2);
   --sidebar-accent-foreground: var(--ink);
-  --sidebar-border: #26282d;
+  --sidebar-border: var(--border);
   --sidebar-ring: var(--mark);
 }
 
-/* Single committed world — light mode is intentionally not offered. The scene
-   this surface serves (a technical document read at night) forces dark. */
+.dark {
+  /* THE MANUSCRIPT — dark (default): a PDF read at night, not paper on a desk. */
+  --ground: #0b0c0e;
+  --surface: #111317;
+  --surface-2: #181a1f;
+  --ink: #e9e6df;
+  --ink-dim: #a9a59c;
+  --ink-faint: #79766d;
+  --mark: #86b3da;
+  --mark-dim: rgba(134, 179, 218, 0.13);
+  --gate: #dd6a49;
+  --gate-dim: rgba(221, 106, 73, 0.14);
+  --border: #26282d;
+
+  --background: var(--ground);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface-2);
+  --popover-foreground: var(--ink);
+  --primary: var(--mark);
+  --primary-foreground: var(--ground);
+  --secondary: var(--surface);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface);
+  --muted-foreground: var(--ink-dim);
+  --accent: var(--surface-2);
+  --accent-foreground: var(--ink);
+  --destructive: var(--gate);
+  --destructive-foreground: var(--ground);
+  --input: var(--border);
+  --ring: var(--mark);
+
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--mark);
+  --sidebar-primary-foreground: var(--ground);
+  --sidebar-accent: var(--surface-2);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--mark);
+}
+
+/* Two modes of one committed world (see DESIGN.md): dark is the default scene
+   (a document read at night); light is the same manuscript printed and read
+   in daylight. Neither is a generic app light/dark swap — both keep the warm,
+   never-neutral-gray ink/paper relationship and the same two functional
+   accents, just re-lit. */
 
 @layer base {
   * {
@@ -122,13 +180,29 @@
 
   html {
     @apply font-sans;
-    color-scheme: dark;
+    color-scheme: light;
     scroll-behavior: smooth;
+  }
+
+  html.dark {
+    color-scheme: dark;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "tnum" 1, "cv11" 1;
+  }
+
+  /* theme crossfade: a deliberate, occasional action (clicked once or twice a
+     visit), not UI feedback — so it gets a visible, unhurried cross-fade
+     rather than button-press timing. Named properties only, paint-only (no
+     layout cost). Zeroed by the reduced-motion override below. */
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
   }
 
   @media (prefers-reduced-motion: reduce) {
