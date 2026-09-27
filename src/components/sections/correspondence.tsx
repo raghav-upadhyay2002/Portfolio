@@ -15,13 +15,13 @@ export function Correspondence() {
 
           <address className="h-fit space-y-4 border border-border bg-surface p-5 not-italic">
             {correspondence.channels.map((c) => (
-              <div key={c.label} className="flex items-baseline justify-between gap-3 border-b border-border pb-3 last:border-0 last:pb-0">
+              <div key={c.label} className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 border-b border-border pb-3 last:border-0 last:pb-0">
                 <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-faint">{c.label}</span>
                 <a
                   href={c.href}
                   target={c.href.startsWith("http") ? "_blank" : undefined}
                   rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="font-mono text-[13px] text-mark transition-colors hover:text-ink"
+                  className="ml-auto min-w-0 text-right font-mono text-[13px] text-mark transition-colors [overflow-wrap:anywhere] hover:text-ink"
                 >
                   {c.value}
                 </a>

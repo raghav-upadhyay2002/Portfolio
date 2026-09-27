@@ -9,7 +9,7 @@ import { Correspondence } from "@/components/sections/correspondence";
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <TitleBlock />
       <Method />
       <Figures />

@@ -96,6 +96,7 @@ export function TitleBlock() {
                 alt={site.name}
                 width={56}
                 height={56}
+                loading="eager"
                 className="h-14 w-14 shrink-0 border border-border object-cover object-[50%_22%]"
               />
               <div>

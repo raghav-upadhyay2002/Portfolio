@@ -78,17 +78,17 @@ export function RunningHeader() {
           </nav>
         )}
 
-        <div className="flex shrink-0 items-center gap-3">
-          {!isHome && <span className="text-ink-faint">{rightLabel}</span>}
+        <div className="flex min-w-0 items-center gap-3">
+          {!isHome && <span className="truncate text-ink-faint">{rightLabel}</span>}
           <span className="hidden text-ink-faint sm:inline" title="Current revision">
             {site.revision}
           </span>
-          {isHome && <span className="text-ink-faint md:hidden">· {rightLabel}</span>}
+          {isHome && <span className="truncate text-ink-faint md:hidden">· {rightLabel}</span>}
           <ThemeToggle />
           {isHome && (
             <button
               type="button"
-              className="text-ink transition-colors hover:text-mark md:hidden"
+              className="-ml-2.5 -mr-3.5 flex h-11 w-11 shrink-0 items-center justify-center text-ink transition-colors hover:text-mark md:hidden"
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-label="Toggle contents"

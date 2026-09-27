@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="mx-auto flex min-h-[70vh] max-w-xl flex-col items-center justify-center px-4 pt-12 text-center sm:px-6">
+    <main id="main-content" className="mx-auto flex min-h-[70vh] max-w-xl flex-col items-center justify-center px-4 pt-12 text-center sm:px-6">
       <p aria-hidden className="font-mono text-6xl text-ink-faint sm:text-7xl">
         [404]
       </p>

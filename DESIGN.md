@@ -8,7 +8,7 @@ colors:
   elevated-graphite: "#181a1f"
   warm-manuscript-ink: "#e9e6df"
   dimmed-ink: "#a9a59c"
-  faint-ink: "#79766d"
+  faint-ink: "#87847a"
   non-repro-blue: "#86b3da"
   non-repro-blue-dim: "rgba(134, 179, 218, 0.13)"
   gate-vermillion: "#dd6a49"
@@ -20,9 +20,9 @@ colors:
   elevated-paper: "#e7e3d7"
   warm-manuscript-ink-on-paper: "#1d1a15"
   dimmed-ink-on-paper: "#57534a"
-  faint-ink-on-paper: "#8a8577"
-  non-repro-blue-on-paper: "#3d6ea5"
-  non-repro-blue-on-paper-dim: "rgba(61, 110, 165, 0.10)"
+  faint-ink-on-paper: "#686459"
+  non-repro-blue-on-paper: "#396699"
+  non-repro-blue-on-paper-dim: "rgba(57, 102, 153, 0.10)"
   gate-vermillion-on-paper: "#a8432a"
   gate-vermillion-on-paper-dim: "rgba(168, 67, 42, 0.10)"
   hairline-border-on-paper: "#ddd7c9"
@@ -106,7 +106,7 @@ The register is restrained, citational, and documentary throughout. Confirmed vi
 Two lightings of one palette — dark (default) and light — each a single graphite/paper neutral scale with exactly two functional accents, re-tuned per lighting to hold contrast rather than shared verbatim.
 
 ### Primary
-- **Non-Repro Blue** — dark: `#86b3da`, light: `#3d6ea5` (darker/more saturated to hold contrast on paper): the one default functional accent — a real print-production term for a blue used in editorial markup that doesn't reproduce when scanned. Used for all links, citation numbers (`[1]`, `Fig. 2`, `Table 1`), figure/table markers, the "current" revision tag, and focus rings (`--ring`). A ~10–13%-opacity tint (`--mark-dim`) is available in both lightings for subtle fills/backgrounds keyed to the same accent.
+- **Non-Repro Blue** — dark: `#86b3da`, light: `#396699` (darker/more saturated to hold contrast on paper): the one default functional accent — a real print-production term for a blue used in editorial markup that doesn't reproduce when scanned. Used for all links, citation numbers (`[1]`, `Fig. 2`, `Table 1`), figure/table markers, the "current" revision tag, and focus rings (`--ring`). A ~10–13%-opacity tint (`--mark-dim`) is available in both lightings for subtle fills/backgrounds keyed to the same accent.
 
 ### Secondary
 - **Gate Vermillion / Reviewer's Red** — dark: `#dd6a49`, light: `#a8432a`: reserved only for fail/attention/gate states — e.g. the "fail → blocked" branch of the CI-gate diagram outcome reveal. Never used decoratively and never doubles as a second "pretty" accent. A ~10–14%-opacity tint (`--gate-dim`) exists in both lightings for the same reserved purpose.
@@ -118,14 +118,14 @@ Two lightings of one palette — dark (default) and light — each a single grap
 - **Elevated Graphite** (`#181a1f`): second-level panel background (`--surface-2`) — citation tooltips, popovers.
 - **Warm Manuscript Ink** (`#e9e6df`): primary text color, deliberately warm off-white rather than pure white, evoking paper ink read on a dark screen.
 - **Dimmed Ink** (`#a9a59c`): secondary/body-dim text — abstract prose, figure bodies, nav hover-inactive state.
-- **Faint Ink** (`#79766d`): metadata, timestamps, captions, figure/table labels, section eyebrows.
+- **Faint Ink** (`#87847a`): metadata, timestamps, captions, figure/table labels, section eyebrows.
 - **Hairline border** (`#26282d`): the single rule color for every divider, table rule, and card outline in the system (`--border`).
 
 **Light — the same manuscript printed and read in daylight, not a generic inverted theme:**
 - **Paper** (`#f6f4ef`): page background — a warm off-white, deliberately not stark `#fff`.
 - **Raised Paper** (`#efece3`) / **Elevated Paper** (`#e7e3d7`): the same two panel levels as dark, re-lit.
 - **Warm Manuscript Ink on Paper** (`#1d1a15`): primary text — warm near-black, not pure `#000`.
-- **Dimmed Ink on Paper** (`#57534a`) / **Faint Ink on Paper** (`#8a8577`): the same two secondary/tertiary text roles, re-lit.
+- **Dimmed Ink on Paper** (`#57534a`) / **Faint Ink on Paper** (`#686459`): the same two secondary/tertiary text roles, re-lit.
 - **Hairline Border on Paper** (`#ddd7c9`): the same single rule color, re-lit.
 
 ### Named Rules

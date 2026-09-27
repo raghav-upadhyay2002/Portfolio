@@ -85,9 +85,9 @@
   --surface-2: #e7e3d7;
   --ink: #1d1a15;
   --ink-dim: #57534a;
-  --ink-faint: #8a8577;
-  --mark: #3d6ea5;
-  --mark-dim: rgba(61, 110, 165, 0.1);
+  --ink-faint: #686459;
+  --mark: #396699;
+  --mark-dim: rgba(57, 102, 153, 0.1);
   --gate: #a8432a;
   --gate-dim: rgba(168, 67, 42, 0.1);
   --border: #ddd7c9;
@@ -131,7 +131,7 @@
   --surface-2: #181a1f;
   --ink: #e9e6df;
   --ink-dim: #a9a59c;
-  --ink-faint: #79766d;
+  --ink-faint: #87847a;
   --mark: #86b3da;
   --mark-dim: rgba(134, 179, 218, 0.13);
   --gate: #dd6a49;
